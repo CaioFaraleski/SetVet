@@ -1,0 +1,30 @@
+@import 'header.scss';
+@import 'variables.scss';
+
+main {
+    background-size: cover;
+    .bg-img {
+        height: 55vh;
+    }
+    .section-card {
+        height: 45vh;
+    }
+    .logo {
+        background-image: url(/assets/img/home/bg-home-1.png);
+        background-attachment: fixed;
+        background-position: top center;
+        background-size: cover;
+    }
+    .catmouse {
+        background-image: url(/assets/img/home/bg-home-2.png);
+        background-attachment: fixed;
+        background-position: top center;
+        background-size: cover;
+    }
+    .doctor {
+        background-image: url(/assets/img/home/bg-home-3.png);
+        background-attachment: fixed;
+        background-position: top center;
+        background-size: cover;
+    }
+}

@@ -1,0 +1,66 @@
+@import 'header.scss';
+@import 'variables.scss';
+
+main {
+    min-height: 91vh;
+    margin: 0;
+    .table {
+        width: 75rem;
+        height: 45rem;
+        position: relative;
+        .table-header {
+            height: 15%;
+            font-size: 1.5rem;
+        }
+        figure {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+        .table-content {
+            height: 85%;
+            border: 6px solid $dark-green;
+            .table-titles {
+                font-size: 1.4rem;
+                color: $white;
+                background-color: $dark-green;
+                border-right: 2px solid $white;
+                border-left: 2px solid $white;
+            }
+            .items {
+                color: $dark-green;
+                overflow: auto;
+                width: 100%;
+                height: 34.5rem;
+                div {
+                    font-size: 1.3rem;
+                    color: #9c9898;
+                    height: 3.5rem;
+                    border-bottom: solid 1px #9c9898;
+                }
+                &::-webkit-scrollbar {
+                    width: 0.9rem;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background-color: $dark-green;
+                    border-radius: 20px;
+                    border: 1px solid $white;
+                }
+
+            }
+        }
+        .plus {
+            width: 7.3rem;
+            height: 7.3rem;
+            background-color: rgb(16, 134, 16);
+            border-radius: 20rem;
+            border: none;
+            position: absolute;
+            top: 39rem;
+            right: -3rem;
+            figure {
+                height: 4.5rem;
+                width: 4.5rem;
+            }
+        }
+    }
+}

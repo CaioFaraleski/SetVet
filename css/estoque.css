@@ -1,0 +1,128 @@
+* {
+  margin: none;
+  padding: none;
+  max-width: 100vw;
+}
+
+body {
+  min-height: 100vh;
+}
+
+body header {
+  max-width: 100vw;
+  height: 9vh;
+  background-color: #006e34;
+}
+
+body header figure {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 0 0 1rem;
+}
+
+body header figure img {
+  width: 100%;
+  height: 100%;
+}
+
+body header h1 {
+  font-family: 'Anton', sans-serif;
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+body header .buttons-home {
+  width: 40rem;
+}
+
+body header .buttons-home a {
+  color: #ffffff;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+body header .buttons-home a:hover {
+  color: black;
+}
+
+body header .signup a {
+  color: #ffffff;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+main {
+  min-height: 91vh;
+  margin: 0;
+}
+
+main .table {
+  width: 75rem;
+  height: 45rem;
+  position: relative;
+}
+
+main .table .table-header {
+  height: 15%;
+  font-size: 1.5rem;
+}
+
+main .table figure {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+main .table .table-content {
+  height: 85%;
+  border: 6px solid #006e34;
+}
+
+main .table .table-content .table-titles {
+  font-size: 1.4rem;
+  color: #ffffff;
+  background-color: #006e34;
+  border-right: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+}
+
+main .table .table-content .items {
+  color: #006e34;
+  overflow: auto;
+  width: 100%;
+  height: 34.5rem;
+}
+
+main .table .table-content .items div {
+  font-size: 1.3rem;
+  color: #9c9898;
+  height: 3.5rem;
+  border-bottom: solid 1px #9c9898;
+}
+
+main .table .table-content .items::-webkit-scrollbar {
+  width: 0.9rem;
+}
+
+main .table .table-content .items::-webkit-scrollbar-thumb {
+  background-color: #006e34;
+  border-radius: 20px;
+  border: 1px solid #ffffff;
+}
+
+main .table .plus {
+  width: 7.3rem;
+  height: 7.3rem;
+  background-color: #108610;
+  border-radius: 20rem;
+  border: none;
+  position: absolute;
+  top: 39rem;
+  right: -3rem;
+}
+
+main .table .plus figure {
+  height: 4.5rem;
+  width: 4.5rem;
+}
+/*# sourceMappingURL=estoque.css.map */

@@ -8,23 +8,36 @@ main {
     }
     .section-card {
         height: 45vh;
+        background-color: $white;
+        .card {
+            width: 22rem;
+            height: 17rem;
+            background-color: #3ad16c;
+            border: none;
+            border-radius: 1rem;
+            figure {
+                width: 5rem;
+                height: 5rem;
+            }
+        }
     }
     .logo {
         background-image: url(/assets/img/home/bg-home-1.png);
-        background-attachment: fixed;
+        // background-attachment: fixed;
         background-position: top center;
         background-size: cover;
     }
     .catmouse {
         background-image: url(/assets/img/home/bg-home-2.png);
-        background-attachment: fixed;
+        // background-attachment: fixed;
         background-position: top center;
         background-size: cover;
     }
     .doctor {
         background-image: url(/assets/img/home/bg-home-3.png);
-        background-attachment: fixed;
+        // background-attachment: fixed;
         background-position: top center;
         background-size: cover;
     }
+    
 }

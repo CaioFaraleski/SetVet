@@ -91,28 +91,20 @@ main .table .table-content .table-titles {
   font-size: 1.4rem;
   color: #ffffff;
   background-color: #00B554;
-  border-right: 2px solid #ffffff;
-  border-left: 2px solid #ffffff;
-}
-
-main .table .table-content .inventory {
-  border: none;
-  font-size: 1.9rem;
-  height: 3.5rem;
-  border-bottom: 4px solid #ffffff;
 }
 
 main .table .table-content .items {
   color: #00B554;
   overflow: auto;
   width: 100%;
-  height: 31rem;
+  height: 34.5rem;
 }
 
 main .table .table-content .items div {
   font-size: 1.3rem;
   color: #9c9898;
   height: 3.5rem;
+  width: 1118px;
   border-bottom: solid 1px #9c9898;
 }
 
@@ -149,4 +141,4 @@ main .table .plus figure {
 ::-webkit-scrollbar-thumb {
   background-color: #006e34;
 }
-/*# sourceMappingURL=estoque.css.map */
+/*# sourceMappingURL=clients.css.map */

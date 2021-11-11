@@ -95,4 +95,12 @@ main .doctor {
   background-position: top center;
   background-size: cover;
 }
+
+::-webkit-scrollbar {
+  width: 0.7rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #006e34;
+}
 /*# sourceMappingURL=home.css.map */

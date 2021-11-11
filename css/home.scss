@@ -41,3 +41,9 @@ main {
     }
     
 }
+::-webkit-scrollbar {
+    width: 0.7rem;
+}
+::-webkit-scrollbar-thumb {
+    background-color: $dark-green;
+}

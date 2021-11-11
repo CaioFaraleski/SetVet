@@ -14,6 +14,9 @@ main {
             input {
                 border: none;
                 border-bottom: solid 1px $black;
+                &:focus {
+                    outline: none;
+                }
             }
         }
         figure {
@@ -22,16 +25,16 @@ main {
         }
         .table-content {
             height: 85%;
-            border: 6px solid $dark-green;
+            border: 6px solid $green;
             .table-titles {
                 font-size: 1.4rem;
                 color: $white;
-                background-color: $dark-green;
+                background-color: $green;
                 border-right: 2px solid $white;
                 border-left: 2px solid $white;
             }
             .items {
-                color: $dark-green;
+                color: $green;
                 overflow: auto;
                 width: 100%;
                 height: 34.5rem;
@@ -45,7 +48,7 @@ main {
                     width: 0.9rem;
                 }
                 &::-webkit-scrollbar-thumb {
-                    background-color: $dark-green;
+                    background-color: $green;
                     border-radius: 20px;
                     border: 1px solid $white;
                 }
@@ -55,7 +58,7 @@ main {
         .plus {
             width: 7.3rem;
             height: 7.3rem;
-            background-color: rgb(16, 134, 16);
+            background-color: $green;
             border-radius: 20rem;
             border: none;
             position: absolute;

@@ -1,3 +1,78 @@
 @import 'header.scss';
 @import 'variables.scss';
 
+main {
+    min-height: 91vh;
+    .calendar {
+        width: 80rem;
+        height: 45rem;
+        .left {
+            width: 20%;
+            height: 100%;
+            background-color: $green;
+            box-shadow: 0 0 1em $green;
+            .years {
+                height: 8rem;
+                button {
+                    background-color: transparent;
+                    border: none;
+                    width: 1.8rem;
+                }
+                .year {
+                    color: $white;
+                    font-size: 1.5rem;
+                }
+            }
+            .months {
+                button {
+                    color: $white;
+                    background-color: $green;
+                    border: none;
+                    font-size: 1.2rem;
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    height: 2.8rem;
+                    padding-left: 3.8rem;
+                    &:hover {
+                        background-color: #00a84f;
+                    }
+                }
+            }
+        }
+        .mid {
+            width: 50%;
+            height: 100%;
+            .month {
+                height: 17%;
+                font-size: 2rem;
+                color: $light-gray;
+            }
+            .week-days {
+                height: 10%;
+                div {
+                    width: 12.5%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 1.2rem;
+                    color: $light-gray;
+                }
+            }
+            .days {
+                height: 60%;
+                display: grid;
+            }
+            .button-add {
+                height: 13%;
+                .add {
+                    background-color: $green;
+                }
+            }
+        }
+        .right {
+            width: 30%;
+            height: 100%;
+        }
+    }
+}

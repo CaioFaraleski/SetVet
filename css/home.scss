@@ -13,7 +13,7 @@ body {
         padding: 0 2rem;
     }
     main {
-        background-image: url(/assets/img/home/dog-green.svg);
+        background-image: url(/assets/img/home/dog.svg);
         background-position-x: 260px;
         background-position-y: 130px;
         background-repeat: no-repeat;
@@ -38,7 +38,8 @@ body {
             box-shadow: 0 0 0.5em #e2e2e2;
             cursor: pointer;
             &:hover {
-                color: #007235;
+                background-color: #f1f1f1;
+                color: $green;
             }
             &:active {
                 box-shadow: none;

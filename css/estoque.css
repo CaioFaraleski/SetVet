@@ -54,92 +54,142 @@ body header .signup a {
 
 main {
   min-height: 91vh;
-  margin: 0;
 }
 
 main .table {
-  width: 75rem;
-  height: 45rem;
-  position: relative;
+  width: 100rem;
+  height: 50rem;
+  margin: 0;
 }
 
-main .table .table-header {
-  height: 15%;
-  font-size: 1.5rem;
+main .table .left-infos {
+  color: #ffffff;
+  font-size: 1.7rem;
+  height: 100%;
+  width: 20%;
+  background-color: #2dbb70;
+  background-image: linear-gradient(170deg, #2dbb70 15%, #189251 99%);
+  -webkit-box-shadow: 0 0 1em #00B554;
+          box-shadow: 0 0 1em #00B554;
 }
 
-main .table .table-header input {
+main .table .left-infos div {
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+main .table .left-infos div span {
+  font-size: 1.8rem;
+  margin: 0;
+  padding: 0;
+}
+
+main .table .left-infos button {
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-top: 15rem;
+  background-color: #ffffff;
+  color: #007235;
   border: none;
-  border-bottom: solid 1px #000000;
+  width: 17rem;
+  height: 3rem;
+  -webkit-box-shadow: 0 0 0.3em #ffffff;
+          box-shadow: 0 0 0.3em #ffffff;
 }
 
-main .table .table-header input:focus {
+main .table .left-infos button:hover {
+  background-color: #f1f1f1;
+}
+
+main .table .left-infos button:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+main .table .sub-table {
+  height: 100%;
+  width: 80%;
+  border: none;
+}
+
+main .table .sub-table .search-order {
+  width: 100%;
+  height: 14%;
+}
+
+main .table .sub-table .search-order .title {
+  font-size: 1.5rem;
+  color: #5e5e5e;
+}
+
+main .table .sub-table .search-order .orderby {
+  width: 10.5rem;
+  font-size: 1.3rem;
+  color: #999999;
+  margin-bottom: 1px;
+}
+
+main .table .sub-table .search-order .orderby figure {
+  width: 1rem;
+  margin: 0;
+}
+
+main .table .sub-table .search-order .search {
+  height: 3rem;
+}
+
+main .table .sub-table .search-order .search figure {
+  width: 2rem;
+  height: 2rem;
+}
+
+main .table .sub-table .search-order .search input {
+  border: none;
+  border-bottom: 2px solid #999999;
+}
+
+main .table .sub-table .search-order .search input:focus {
   outline: none;
 }
 
-main .table figure {
-  width: 2.5rem;
-  height: 2.5rem;
+main .table .sub-table .inf-table {
+  height: 100%;
+  width: 97%;
+  background-color: #f1f1f1;
+  color: #000000;
 }
 
-main .table .table-content {
-  height: 85%;
-  border: 6px solid #00B554;
+main .table .sub-table .inf-table .table-titles {
+  height: 8%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 2fr 1fr 1fr 1.5fr;
+      grid-template-columns: 2fr 2fr 1fr 1fr 1.5fr;
 }
 
-main .table .table-content .table-titles {
-  font-size: 1.4rem;
-  color: #ffffff;
-  background-color: #00B554;
-  border-right: 2px solid #ffffff;
-  border-left: 2px solid #ffffff;
-}
-
-main .table .table-content .inventory {
-  border: none;
-  font-size: 1.9rem;
-  height: 3.5rem;
-  border-bottom: 4px solid #ffffff;
-}
-
-main .table .table-content .items {
-  color: #00B554;
-  overflow: auto;
-  width: 100%;
-  height: 31rem;
-}
-
-main .table .table-content .items div {
+main .table .sub-table .inf-table .table-titles div {
+  color: #999999;
   font-size: 1.3rem;
-  color: #9c9898;
-  height: 3.5rem;
-  border-bottom: solid 1px #9c9898;
 }
 
-main .table .table-content .items::-webkit-scrollbar {
-  width: 0.9rem;
+main .table .sub-table .inf-table .table-items {
+  height: 92%;
 }
 
-main .table .table-content .items::-webkit-scrollbar-thumb {
-  background-color: #00B554;
-  border-radius: 20px;
-  border: 1px solid #ffffff;
+main .table .sub-table .inf-table .table-items .item {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 2fr 1fr 1fr 1.5fr;
+      grid-template-columns: 2fr 2fr 1fr 1fr 1.5fr;
+  color: #000000;
+  font-size: 1.2rem;
+  height: 2rem;
+  font-weight: 500;
 }
 
-main .table .plus {
-  width: 7.3rem;
-  height: 7.3rem;
-  background-color: #00B554;
-  border-radius: 20rem;
-  border: none;
-  position: absolute;
-  top: 39rem;
-  right: -3rem;
-}
-
-main .table .plus figure {
-  height: 4.5rem;
-  width: 4.5rem;
+main .table .sub-table .inf-table .table-items .item span {
+  font-size: 1rem;
+  color: #4b4b4b;
 }
 
 ::-webkit-scrollbar {

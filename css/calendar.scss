@@ -4,12 +4,13 @@
 main {
     min-height: 91vh;
     .calendar {
-        width: 80rem;
-        height: 45rem;
+        width: 100rem;
+        height: 50rem;
         .left {
             width: 20%;
             height: 100%;
-            background-color: $green;
+            background-color: #2dbb70;
+            background-image: linear-gradient(170deg, #2dbb70 15%, #189251 99%);
             box-shadow: 0 0 1em $green;
             .years {
                 height: 8rem;
@@ -26,7 +27,7 @@ main {
             .months {
                 button {
                     color: $white;
-                    background-color: $green;
+                    background-color: transparent;
                     border: none;
                     font-size: 1.2rem;
                     display: flex;
@@ -79,7 +80,8 @@ main {
             .button-add {
                 height: 13%;
                 .add {
-                    background-color: $green;
+                    background-color: #2dbb70;
+                    background-image: linear-gradient(110deg, #2dbb70 1%, #189251 99%);
                     width: 10rem;
                     height: 2.5rem;
                     border: none;

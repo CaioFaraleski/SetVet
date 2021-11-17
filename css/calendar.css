@@ -57,14 +57,15 @@ main {
 }
 
 main .calendar {
-  width: 80rem;
-  height: 45rem;
+  width: 100rem;
+  height: 50rem;
 }
 
 main .calendar .left {
   width: 20%;
   height: 100%;
-  background-color: #00B554;
+  background-color: #2dbb70;
+  background-image: linear-gradient(170deg, #2dbb70 15%, #189251 99%);
   -webkit-box-shadow: 0 0 1em #00B554;
           box-shadow: 0 0 1em #00B554;
 }
@@ -86,7 +87,7 @@ main .calendar .left .years .year {
 
 main .calendar .left .months button {
   color: #ffffff;
-  background-color: #00B554;
+  background-color: transparent;
   border: none;
   font-size: 1.2rem;
   display: -webkit-box;
@@ -172,7 +173,8 @@ main .calendar .mid .button-add {
 }
 
 main .calendar .mid .button-add .add {
-  background-color: #00B554;
+  background-color: #2dbb70;
+  background-image: linear-gradient(110deg, #2dbb70 1%, #189251 99%);
   width: 10rem;
   height: 2.5rem;
   border: none;

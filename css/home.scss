@@ -2,11 +2,10 @@
 @import 'variables.scss';
 
 body {
-    // background-image: url(/assets/img/home/bg-home.png);
+    // background-image: url(../assets/img/home/bg-home.png);
     // background-size: cover;
-    background-color: #c7ffd8;
-background-image: linear-gradient(173deg, #c7ffd8 11%, #2ed389 36%, #23a85f 53%, #1a7142 72%, #115431 91%);
-
+    background-color: #2dbb70;
+    background-image: linear-gradient(170deg, #2dbb70 15%, #11713d 99%);
 
     header {
         background-color: transparent;
@@ -14,7 +13,7 @@ background-image: linear-gradient(173deg, #c7ffd8 11%, #2ed389 36%, #23a85f 53%,
         padding: 0 2rem;
     }
     main {
-        background-image: url(/assets/img/home/dog.svg);
+        background-image: url(../assets/img/home/dog.svg);
         background-position-x: 260px;
         background-position-y: 130px;
         background-repeat: no-repeat;
@@ -67,19 +66,19 @@ background-image: linear-gradient(173deg, #c7ffd8 11%, #2ed389 36%, #23a85f 53%,
     //         }
     //     }
     //     .logo {
-    //         background-image: url(/assets/img/home/bg-home-1.png);
+    //         background-image: url(../assets/img/home/bg-home-1.png);
     //         // background-attachment: fixed;
     //         background-position: top center;
     //         background-size: cover;
     //     }
     //     .catmouse {
-    //         background-image: url(/assets/img/home/bg-home-2.png);
+    //         background-image: url(../assets/img/home/bg-home-2.png);
     //         // background-attachment: fixed;
     //         background-position: top center;
     //         background-size: cover;
     //     }
     //     .doctor {
-    //         background-image: url(/assets/img/home/bg-home-3.png);
+    //         background-image: url(../assets/img/home/bg-home-3.png);
     //         // background-attachment: fixed;
     //         background-position: top center;
     //         background-size: cover;

@@ -11,7 +11,7 @@ body {
 body header {
   max-width: 100vw;
   height: 9vh;
-  background-color: #006e34;
+  background-color: #2dbb70;
 }
 
 body header figure {
@@ -33,7 +33,7 @@ body header h1 {
 }
 
 body header .buttons-home {
-  width: 40rem;
+  width: 65rem;
 }
 
 body header .buttons-home a {
@@ -43,7 +43,7 @@ body header .buttons-home a {
 }
 
 body header .buttons-home a:hover {
-  color: black;
+  color: #007235;
 }
 
 body header .signup a {
@@ -215,6 +215,6 @@ main .calendar .right .appointments div {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #006e34;
+  background-color: #2dbb70;
 }
 /*# sourceMappingURL=calendar.css.map */

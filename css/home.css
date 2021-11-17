@@ -11,7 +11,7 @@ body {
 body header {
   max-width: 100vw;
   height: 9vh;
-  background-color: #006e34;
+  background-color: #2dbb70;
 }
 
 body header figure {
@@ -33,7 +33,7 @@ body header h1 {
 }
 
 body header .buttons-home {
-  width: 40rem;
+  width: 65rem;
 }
 
 body header .buttons-home a {
@@ -43,7 +43,7 @@ body header .buttons-home a {
 }
 
 body header .buttons-home a:hover {
-  color: black;
+  color: #007235;
 }
 
 body header .signup a {
@@ -52,48 +52,55 @@ body header .signup a {
   text-decoration: none;
 }
 
-main {
-  background-size: cover;
+body {
+  background-color: #2dbb70;
+  background-image: linear-gradient(170deg, #2dbb70 15%, #11713d 99%);
 }
 
-main .bg-img {
-  height: 55vh;
+body header {
+  background-color: transparent;
+  height: 12vh;
+  padding: 0 2rem;
 }
 
-main .section-card {
-  height: 45vh;
+body main {
+  background-image: url(/assets/img/home/dog-green.svg);
+  background-position-x: 260px;
+  background-position-y: 130px;
+  background-repeat: no-repeat;
+  background-size: 48rem;
+  min-height: 88vh;
+}
+
+body main div {
+  width: 48rem;
+  height: 23rem;
+  font-size: 2rem;
+  color: #ffffff;
+  margin: 0 0 0 26rem;
+}
+
+body main a {
+  text-decoration: none;
+  margin: 0 0 17rem 15rem;
+  width: 25rem;
+  height: 3rem;
   background-color: #ffffff;
-}
-
-main .section-card .card {
-  width: 22rem;
-  height: 17rem;
-  background-color: #3ad16c;
+  color: #00B554;
+  font-size: 1.4rem;
   border: none;
-  border-radius: 1rem;
+  -webkit-box-shadow: 0 0 0.5em #e2e2e2;
+          box-shadow: 0 0 0.5em #e2e2e2;
+  cursor: pointer;
 }
 
-main .section-card .card figure {
-  width: 5rem;
-  height: 5rem;
+body main a:hover {
+  color: #007235;
 }
 
-main .logo {
-  background-image: url(/assets/img/home/bg-home-1.png);
-  background-position: top center;
-  background-size: cover;
-}
-
-main .catmouse {
-  background-image: url(/assets/img/home/bg-home-2.png);
-  background-position: top center;
-  background-size: cover;
-}
-
-main .doctor {
-  background-image: url(/assets/img/home/bg-home-3.png);
-  background-position: top center;
-  background-size: cover;
+body main a:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 ::-webkit-scrollbar {
@@ -101,6 +108,6 @@ main .doctor {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #006e34;
+  background-color: #2dbb70;
 }
 /*# sourceMappingURL=home.css.map */

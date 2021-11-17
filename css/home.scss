@@ -1,45 +1,89 @@
 @import 'header.scss';
 @import 'variables.scss';
 
-main {
-    background-size: cover;
-    .bg-img {
-        height: 55vh;
+body {
+    // background-image: url(/assets/img/home/bg-home.png);
+    // background-size: cover;
+    background-color: #2dbb70;
+    background-image: linear-gradient(170deg, #2dbb70 15%, #11713d 99%);
+
+    header {
+        background-color: transparent;
+        height: 12vh;
+        padding: 0 2rem;
     }
-    .section-card {
-        height: 45vh;
-        background-color: $white;
-        .card {
-            width: 22rem;
-            height: 17rem;
-            background-color: #3ad16c;
+    main {
+        background-image: url(/assets/img/home/dog-green.svg);
+        background-position-x: 260px;
+        background-position-y: 130px;
+        background-repeat: no-repeat;
+        background-size: 48rem;
+        min-height: 88vh;
+        div {
+            width: 48rem;
+            height: 23rem;
+            font-size: 2rem;
+            color: #ffffff;
+            margin: 0 0 0 26rem;
+        }
+        a {
+            text-decoration: none;
+            margin: 0 0 17rem 15rem;
+            width: 25rem;
+            height: 3rem;
+            background-color: $white;
+            color: $green;
+            font-size: 1.4rem;
             border: none;
-            border-radius: 1rem;
-            figure {
-                width: 5rem;
-                height: 5rem;
+            box-shadow: 0 0 0.5em #e2e2e2;
+            cursor: pointer;
+            &:hover {
+                color: #007235;
+            }
+            &:active {
+                box-shadow: none;
             }
         }
     }
-    .logo {
-        background-image: url(/assets/img/home/bg-home-1.png);
-        // background-attachment: fixed;
-        background-position: top center;
-        background-size: cover;
-    }
-    .catmouse {
-        background-image: url(/assets/img/home/bg-home-2.png);
-        // background-attachment: fixed;
-        background-position: top center;
-        background-size: cover;
-    }
-    .doctor {
-        background-image: url(/assets/img/home/bg-home-3.png);
-        // background-attachment: fixed;
-        background-position: top center;
-        background-size: cover;
-    }
-    
+    // main {
+    //     .bg-img {
+    //         height: 55vh;
+    //     }
+    //     .section-card {
+    //         height: 45vh;
+    //         background-color: $white;
+    //         .card {
+    //             width: 22rem;
+    //             height: 17rem;
+    //             background-color: #3ad16c;
+    //             border: none;
+    //             border-radius: 1rem;
+    //             figure {
+    //                 width: 5rem;
+    //                 height: 5rem;
+    //             }
+    //         }
+    //     }
+    //     .logo {
+    //         background-image: url(/assets/img/home/bg-home-1.png);
+    //         // background-attachment: fixed;
+    //         background-position: top center;
+    //         background-size: cover;
+    //     }
+    //     .catmouse {
+    //         background-image: url(/assets/img/home/bg-home-2.png);
+    //         // background-attachment: fixed;
+    //         background-position: top center;
+    //         background-size: cover;
+    //     }
+    //     .doctor {
+    //         background-image: url(/assets/img/home/bg-home-3.png);
+    //         // background-attachment: fixed;
+    //         background-position: top center;
+    //         background-size: cover;
+    //     }
+        
+    // }
 }
 ::-webkit-scrollbar {
     width: 0.7rem;

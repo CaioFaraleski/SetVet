@@ -42,9 +42,18 @@ main {
                 div {
                     font-size: 1.3rem;
                     color: #9c9898;
-                    height: 3.5rem;
-                    width: 1118px;
+                    width: 100%;
                     border-bottom: solid 1px #9c9898;
+                    .name {
+                        height: 3.5rem;
+                        figure {
+                            width: 1.5rem;
+                            height: 1.5rem;
+                        }
+                    }
+                    .pets {
+                        display: none;
+                    }
                 }
                 &::-webkit-scrollbar {
                     width: 0.9rem;
@@ -72,6 +81,10 @@ main {
             }
         }
     }
+}
+
+.show {
+    display: block;
 }
 
 ::-webkit-scrollbar {

@@ -60,9 +60,57 @@ main .table {
   width: 100rem;
   height: 50rem;
   margin: 0;
+  position: absolute;
+}
+
+main .table .hdn {
+  display: none;
+  position: absolute;
+  width: 50rem;
+  height: 45rem;
+  top: 1rem;
+  right: 20rem;
+  background-color: #ffffff;
+}
+
+main .table .hdn .window-header {
+  background-color: #2dbb70;
+  height: 5rem;
+  font-size: 1.5rem;
+  color: #f1f1f1;
+}
+
+main .table .hdn .window-header .exit {
+  cursor: pointer;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+main .table .hdn form {
+  width: 70%;
+  height: 70%;
+}
+
+main .table .hdn form input {
+  width: 15rem;
+  border: none;
+  border-bottom: 2px solid #000000;
+}
+
+main .table .hdn form input:focus {
+  outline: none;
+}
+
+main .table .hdn form .submit {
+  width: 15rem;
+  height: 2.2rem;
+  border: none;
+  background-color: #189251;
+  color: #ffffff;
 }
 
 main .table .left-infos {
+  border: none;
   color: #ffffff;
   font-size: 1.7rem;
   height: 100%;
@@ -185,6 +233,7 @@ main .table .sub-table .inf-table .table-items .item {
   color: #000000;
   font-size: 1.2rem;
   font-weight: 500;
+  border-bottom: 1px solid #000000;
 }
 
 main .table .sub-table .inf-table .table-items .item figure {

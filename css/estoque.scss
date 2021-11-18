@@ -7,7 +7,48 @@ main {
         width: 100rem;
         height: 50rem;
         margin: 0;
+        position: absolute;
+        .hdn {
+            display: none;
+            position: absolute;
+            width: 50rem;
+            height: 45rem;
+            top: 1rem;
+            right: 20rem;
+            background-color: $white;
+            .window-header {
+                background-color: #2dbb70;
+                height: 5rem;
+                font-size: 1.5rem;
+                color: #f1f1f1;
+                .exit {
+                    cursor: pointer;
+                    height: 1.5rem;
+                    width: 1.5rem;
+                }
+            }
+            form {
+                width: 70%;
+                height: 70%;
+                input {
+                    width: 15rem;
+                    border: none;
+                    border-bottom: 2px solid $black;
+                    &:focus {
+                        outline: none;
+                    }
+                }
+                .submit {
+                    width: 15rem;
+                    height: 2.2rem;
+                    border: none;
+                    background-color: #189251;
+                    color: $white;
+                }
+            }
+        }
         .left-infos {
+            border: none;
             color: $white;
             font-size: 1.7rem;
             height: 100%;
@@ -101,6 +142,7 @@ main {
                         color: $black;
                         font-size: 1.2rem;
                         font-weight: 500;
+                        border-bottom: 1px solid $black;
                         figure {
                             width: 1rem;
                             height: 1rem;

@@ -103,9 +103,21 @@ main .table .table-content .items {
 main .table .table-content .items div {
   font-size: 1.3rem;
   color: #9c9898;
-  height: 3.5rem;
-  width: 1118px;
+  width: 100%;
   border-bottom: solid 1px #9c9898;
+}
+
+main .table .table-content .items div .name {
+  height: 3.5rem;
+}
+
+main .table .table-content .items div .name figure {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+main .table .table-content .items div .pets {
+  display: none;
 }
 
 main .table .table-content .items::-webkit-scrollbar {
@@ -132,6 +144,10 @@ main .table .plus {
 main .table .plus figure {
   height: 4.5rem;
   width: 4.5rem;
+}
+
+.show {
+  display: block;
 }
 
 ::-webkit-scrollbar {

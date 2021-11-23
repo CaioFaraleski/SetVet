@@ -63,7 +63,7 @@ main .table {
   position: absolute;
 }
 
-main .table .hdn {
+main .table .hidden {
   display: none;
   position: absolute;
   width: 50rem;
@@ -73,40 +73,46 @@ main .table .hdn {
   background-color: #ffffff;
 }
 
-main .table .hdn .window-header {
+main .table .hidden .window-header {
   background-color: #2dbb70;
   height: 5rem;
   font-size: 1.5rem;
-  color: #f1f1f1;
+  color: #ffffff;
 }
 
-main .table .hdn .window-header .exit {
+main .table .hidden .window-header .exit {
   cursor: pointer;
   height: 1.5rem;
   width: 1.5rem;
 }
 
-main .table .hdn form {
+main .table .hidden .window-header .exit:hover {
+  opacity: 0.8;
+}
+
+main .table .hidden form {
   width: 70%;
   height: 70%;
 }
 
-main .table .hdn form input {
-  width: 15rem;
+main .table .hidden form input {
+  width: 20rem;
+  height: 3.2rem;
   border: none;
   border-bottom: 2px solid #000000;
+  font-size: 1.1rem;
 }
 
-main .table .hdn form input:focus {
+main .table .hidden form input:focus {
   outline: none;
 }
 
-main .table .hdn form .submit {
-  width: 15rem;
+main .table .hidden form .submit {
   height: 2.2rem;
   border: none;
   background-color: #189251;
   color: #ffffff;
+  font-size: 1.2rem;
 }
 
 main .table .left-infos {
@@ -167,7 +173,7 @@ main .table .sub-table .search-order {
 
 main .table .sub-table .search-order .title {
   font-size: 1.5rem;
-  color: #5e5e5e;
+  color: #000000;
 }
 
 main .table .sub-table .search-order .orderby {
@@ -175,11 +181,39 @@ main .table .sub-table .search-order .orderby {
   font-size: 1.3rem;
   color: #999999;
   margin-bottom: 1px;
+  cursor: pointer;
 }
 
-main .table .sub-table .search-order .orderby figure {
+main .table .sub-table .search-order .orderby .order-text div {
+  width: 75%;
+}
+
+main .table .sub-table .search-order .orderby .order-text figure {
   width: 1rem;
+  height: 1rem;
   margin: 0;
+}
+
+main .table .sub-table .search-order .orderby .order-text:hover {
+  -webkit-filter: brightness(0);
+          filter: brightness(0);
+}
+
+main .table .sub-table .search-order .orderby .order-list {
+  width: 16rem;
+  position: absolute;
+  top: 100px;
+  display: none;
+}
+
+main .table .sub-table .search-order .orderby .order-list div {
+  background-color: #ffffff;
+  height: 3rem;
+  font-size: 1.1rem;
+}
+
+main .table .sub-table .search-order .orderby .order-list div:hover {
+  background-color: #e0e0e0;
 }
 
 main .table .sub-table .search-order .search {
@@ -194,6 +228,7 @@ main .table .sub-table .search-order .search figure {
 main .table .sub-table .search-order .search input {
   border: none;
   border-bottom: 2px solid #999999;
+  font-size: 1.2rem;
 }
 
 main .table .sub-table .search-order .search input:focus {

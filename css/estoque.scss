@@ -11,10 +11,10 @@ main {
         .hidden {
             display: none;
             position: absolute;
-            width: 50rem;
-            height: 45rem;
-            top: 1rem;
-            right: 20rem;
+            width: 45rem;
+            height: 40rem;
+            top: 3rem;
+            right: 25rem;
             background-color: $white;
             .window-header {
                 background-color: #2dbb70;
@@ -44,11 +44,61 @@ main {
                     }
                 }
                 .submit {
-                    height: 2.2rem;
+                    height: 2.5rem;
                     border: none;
                     background-color: #189251;
                     color: $white;
                     font-size: 1.2rem;
+                    &:hover {
+                        background-color: #178048;
+                    }
+                }
+            }
+        }
+        .hidden-edits {
+            position: absolute;
+            width: 60rem;
+            height: 25rem;
+            border: none;
+            background-color: $white;
+            top: 100px;
+            right: 240px;
+            z-index: 10;
+            display: none;
+            .header-edits {
+                background-color: #2dbb70;
+                height: 4rem;
+                font-size: 1.5rem;
+                color: $white;
+                height: 20%;
+                .exit-edits {
+                    cursor: pointer;
+                    height: 2.5rem;
+                    width: 2.5rem;
+                    &:hover {
+                        opacity: 0.8;
+                    }                    
+                }
+            }
+            form {
+                height: 80%;
+                input {
+                    border: none;
+                    border-bottom: 2px solid $black;
+                    &:focus {
+                        outline: none;
+                    }
+                }
+                #att {
+                    width: 15rem;
+                    height: 2.7rem;
+                    background-color: #189251;
+                    border: none;
+                    font-size: 1.2rem;
+                    color: $white;
+                    &:hover {
+                        background-color: #178048;
+                    }
                 }
             }
         }

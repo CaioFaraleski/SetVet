@@ -66,10 +66,10 @@ main .table {
 main .table .hidden {
   display: none;
   position: absolute;
-  width: 50rem;
-  height: 45rem;
-  top: 1rem;
-  right: 20rem;
+  width: 45rem;
+  height: 40rem;
+  top: 3rem;
+  right: 25rem;
   background-color: #ffffff;
 }
 
@@ -108,11 +108,71 @@ main .table .hidden form input:focus {
 }
 
 main .table .hidden form .submit {
-  height: 2.2rem;
+  height: 2.5rem;
   border: none;
   background-color: #189251;
   color: #ffffff;
   font-size: 1.2rem;
+}
+
+main .table .hidden form .submit:hover {
+  background-color: #178048;
+}
+
+main .table .hidden-edits {
+  position: absolute;
+  width: 60rem;
+  height: 25rem;
+  border: none;
+  background-color: #ffffff;
+  top: 100px;
+  right: 240px;
+  z-index: 10;
+  display: none;
+}
+
+main .table .hidden-edits .header-edits {
+  background-color: #2dbb70;
+  height: 4rem;
+  font-size: 1.5rem;
+  color: #ffffff;
+  height: 20%;
+}
+
+main .table .hidden-edits .header-edits .exit-edits {
+  cursor: pointer;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+main .table .hidden-edits .header-edits .exit-edits:hover {
+  opacity: 0.8;
+}
+
+main .table .hidden-edits form {
+  height: 80%;
+}
+
+main .table .hidden-edits form input {
+  border: none;
+  border-bottom: 2px solid #000000;
+}
+
+main .table .hidden-edits form input:focus {
+  outline: none;
+}
+
+main .table .hidden-edits form #att {
+  width: 15rem;
+  height: 2.7rem;
+  background-color: #189251;
+  border: none;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+main .table .hidden-edits form #att:hover {
+  background-color: #178048;
 }
 
 main .table .left-infos {

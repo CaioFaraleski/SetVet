@@ -53,7 +53,7 @@ orderItem.addEventListener("click", function(event) {
         quant = false;
         value = false;
         arrowOrderBy.children[1].style.display = "none";
-        arrowOrderBy.children[0].children[1].children[0].src = "http://127.0.0.1:5500/assets/img/inventory/down-arrow.png";
+        arrowOrderBy.children[0].children[1].children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png";
     }
     else if(item === "Código") {
         names = false;
@@ -61,7 +61,7 @@ orderItem.addEventListener("click", function(event) {
         quant = false;
         value = false;
         arrowOrderBy.children[1].style.display = "none";
-        arrowOrderBy.children[0].children[1].children[0].src = "http://127.0.0.1:5500/assets/img/inventory/down-arrow.png";
+        arrowOrderBy.children[0].children[1].children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png";
     }
     else if(item === "Quantidade") {
         names = false;
@@ -69,7 +69,7 @@ orderItem.addEventListener("click", function(event) {
         quant = true;
         value = false;
         arrowOrderBy.children[1].style.display = "none";
-        arrowOrderBy.children[0].children[1].children[0].src = "http://127.0.0.1:5500/assets/img/inventory/down-arrow.png";
+        arrowOrderBy.children[0].children[1].children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png";
     }
     else if(item === "Valor") {
         names = false;
@@ -77,18 +77,18 @@ orderItem.addEventListener("click", function(event) {
         quant = false;
         value = true;
         arrowOrderBy.children[1].style.display = "none";
-        arrowOrderBy.children[0].children[1].children[0].src = "http://127.0.0.1:5500/assets/img/inventory/down-arrow.png";
+        arrowOrderBy.children[0].children[1].children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png";
     }
 });
 
 
 arrowOrderBy.children[0].addEventListener('click', function () {
-    if(arrowOrderBy.children[0].children[1].children[0].src === "http://127.0.0.1:5500/assets/img/inventory/down-arrow.png") {
-        arrowOrderBy.children[0].children[1].children[0].src = "http://127.0.0.1:5500/assets/img/inventory/up-arrow.png";
+    if(arrowOrderBy.children[0].children[1].children[0].src === "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png") {
+        arrowOrderBy.children[0].children[1].children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/up-arrow.png";
         arrowOrderBy.children[1].style.display = "flex";
     }
-    else if(arrowOrderBy.children[0].children[1].children[0].src === "http://127.0.0.1:5500/assets/img/inventory/up-arrow.png") {
-        arrowOrderBy.children[0].children[1].children[0].src = "http://127.0.0.1:5500/assets/img/inventory/down-arrow.png";
+    else if(arrowOrderBy.children[0].children[1].children[0].src === "https://caiofaraleski.github.io/SetVet/assets/img/inventory/up-arrow.png") {
+        arrowOrderBy.children[0].children[1].children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png";
         arrowOrderBy.children[1].style.display = "none";
     }
 })

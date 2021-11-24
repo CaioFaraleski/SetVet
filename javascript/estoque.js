@@ -21,14 +21,14 @@ edits.forEach(function (item) {
         }
         windEdit.style.display = "block";
         wind.style.display = "none";
+        arrowOrderBy.children[1].style.display = "none";
+        arrowOrderBy.children[0].children[1].children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png";
         windEdit.querySelector("#cod").value = `${items[0]}`;
         windEdit.querySelector("#name").value = `${items[1]}`;
-        windEdit.querySelector("#date").value = `${items[2]}`;
         windEdit.querySelector("#val").value = `${items[3]}`;
         windEdit.querySelector("#quant").value = `${items[4]}`;
-        
-    
-        // editProduct.style.display = "block";
+        windEdit.querySelector("#cod").style.display = "none";
+        windEdit.querySelector(".cod").style.display = "none";
     });
 });
 
@@ -36,9 +36,11 @@ exitEdit.children[0].addEventListener("click", function() {
     windEdit.style.display = "none";
 });
 
-addProduct.addEventListener("click", function() {
+addProduct.querySelector("button").addEventListener("click", function() {
     wind.style.display = "block";
     windEdit.style.display = "none";
+    arrowOrderBy.children[1].style.display = "none";
+    arrowOrderBy.children[0].children[1].children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png";
 });
 
 exit.children[0].addEventListener("click", function() {

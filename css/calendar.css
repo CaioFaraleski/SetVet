@@ -154,15 +154,15 @@ main .calendar .mid .days {
   height: 60%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   justify-items: center;
 }
 
-main .calendar .mid .days div {
-  width: 80.5%;
+main .calendar .mid .days input {
+  width: 67.5%;
   height: 91%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -177,10 +177,16 @@ main .calendar .mid .days div {
   font-size: 1.6rem;
   border-radius: 50rem;
   cursor: pointer;
+  border: none;
+  background-color: transparent;
 }
 
-main .calendar .mid .days div:hover {
+main .calendar .mid .days input:hover {
   background-color: #ededed;
+}
+
+main .calendar .mid .days .input-hidden {
+  display: none;
 }
 
 main .calendar .mid .button-add {

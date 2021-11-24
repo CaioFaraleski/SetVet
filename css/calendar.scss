@@ -71,11 +71,11 @@ main {
             .days {
                 height: 60%;
                 display: grid;
-                grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
                 grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
                 justify-items: center;
-                div {
-                    width: 80.5%;
+                input {
+                    width: 67.5%;
                     height: 91%;
                     display: flex;
                     justify-content: center;
@@ -84,9 +84,14 @@ main {
                     font-size: 1.6rem;
                     border-radius: 50rem; 
                     cursor: pointer;
+                    border: none;
+                    background-color: transparent;
                     &:hover {
                         background-color: #ededed;
                     }
+                }
+                .input-hidden {
+                    display: none;
                 }
             }
             .button-add {

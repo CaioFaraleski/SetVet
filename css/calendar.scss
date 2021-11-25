@@ -6,6 +6,32 @@ main {
     .calendar {
         width: 100rem;
         height: 50rem;
+        .add-hour {
+            position: absolute;
+            width: 60rem;
+            height: 25rem;
+            border: none;
+            background-color: $white;
+            top: 100px;
+            right: 240px;
+            z-index: 10;
+            // display: none;
+            .header-edits {
+                background-color: #2dbb70;
+                height: 4rem;
+                font-size: 1.5rem;
+                color: $white;
+                height: 20%;
+                .exit-edits {
+                    cursor: pointer;
+                    height: 2.5rem;
+                    width: 2.5rem;
+                    &:hover {
+                        opacity: 0.8;
+                    }                    
+                }
+            }
+        }
         .left {
             width: 20%;
             height: 100%;

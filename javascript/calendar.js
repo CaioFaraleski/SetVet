@@ -316,5 +316,110 @@ function squareAlign (mon, year) {
         }
         return [squareFunction, squareFunctionFinal];
     }
+
+    if(numOfMonth > numMonthCore || numOfMonth === numMonthCore) {
+        let squareCoreMutant = squareCore;
+        let squareFunction;
+        let squareFunctionFinal;
+        for (let i = 0; i < ((numMonthCore - daysOfMonth(mon, year)[1]) + year); i++) {
+            squareCoreMutant = 7 - squareCoreMutant;
+            numOfDays = numDays(numMonthSet, numYearSet);
+            if (42 - (squareCoreMutant + numOfDays) > 7) {
+                squareFunctionFinal = 7;
+                squareFunctionFinal += squareCoreMutant;
+                squareFunction = 42 - (squareFunctionFinal + numOfDays);
+                squareCoreMutant = squareFunction;
+                numMonthSet = numMonthSet - 1;
+                if(numMonthSet < 1) {
+                    numMonthSet = numMonthSet + 12;
+                    numYearSet = numYearSet - 1;
+                }
+            }
+            else if (42 - (squareCoreMutant + numOfDays) === 7) {
+                squareFunction = 0;
+                squareCoreMutant = 0;
+                squareFunctionFinal = 42 - numOfDays;
+                numMonthSet = numMonthSet - 1;
+                if(numMonthSet < 1) {
+                    numMonthSet = numMonthSet + 12;
+                    numYearSet = numYearSet - 1;
+                }
+            }
+            else {
+                squareFunctionFinal = squareCoreMutant;
+                squareFunction = 42 - (squareFunctionFinal + numOfDays);
+                squareCoreMutant = squareFunction;
+                numMonthSet = numMonthSet - 1;
+                if(numMonthSet < 1) {
+                    numMonthSet = numMonthSet + 12;
+                    numYearSet = numYearSet - 1;
+                }
+            }
+            
+        }
+        return [squareFunction, squareFunctionFinal];
+    }
+    
+}
+
+function squareAlignFinal (mon, year) {
+    let numOfDays = daysOfMonth(mon, year)[0];
+    let numOfMonth = daysOfMonth(mon, year)[1];
+    let numMonthSet = 11;
+    let numYearSet = 2021;
+    
+    if(numOfMonth === numMonthCore && year === numYearSet) {
+        return [squareCore, squareCoreFinal];
+    }
+
+    year = Number(year) - yearCore;
+    year = year * 12;
+    console.log(year)
+
+    if(numOfMonth < numMonthCore || numOfMonth === numMonthCore) {
+        let squareCoreMutant = squareCoreFinal;
+        let squareFunction;
+        let squareFunctionFinal;
+        console.log("haha")
+        for (let i = 0; i < (year - (numMonthCore - daysOfMonth(mon, year)[1])); i++) {
+            numOfDays = numDays(numMonthSet, numYearSet);
+            console.log(numOfDays)
+            if (squareCoreMutant > 7) {
+                squareCoreMutant = squareCoreMutant - 7;
+                squareCoreMutant = 7 - squareCoreMutant;
+                squareFunction = squareCoreMutant;
+                squareFunctionFinal = 42 - (squareCoreMutant + numOfDays);
+                squareCoreMutant = squareFunctionFinal;
+                numMonthSet++;
+                console.log("oi")
+                if(numMonthSet > 12) {
+                    numMonthSet = 1;
+                    numYearSet = numYearSet + 1;
+                }
+            }
+            else if (42 - (squareCoreMutant + numOfDays) % 7 === 0) {
+                squareFunction = 0;
+                squareFunctionFinal = 42 - (squareCoreMutant + numOfDays);
+                numMonthSet++;
+                console.log("hi")
+                if(numMonthSet > 12) {
+                    numMonthSet = 1;
+                    numYearSet = numYearSet + 1;
+                }
+            }
+            else {
+                squareFunctionFinal = squareCoreMutant;
+                squareFunction = 42 - (squareFunctionFinal + numOfDays);
+                squareCoreMutant = squareFunction;
+                numMonthSet = numMonthSet - 1;
+                if(numMonthSet < 1) {
+                    numMonthSet = numMonthSet + 12;
+                    numYearSet = numYearSet - 1;
+                }
+            }
+            
+        }
+        return [squareFunction, squareFunctionFinal];
+    }
     
 }

@@ -70,6 +70,7 @@ main .calendar .add-hour {
   top: 100px;
   right: 240px;
   z-index: 10;
+  display: none;
 }
 
 main .calendar .add-hour .header-edits {

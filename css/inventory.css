@@ -232,8 +232,9 @@ main .table .sub-table .search-order {
 }
 
 main .table .sub-table .search-order .title {
-  font-size: 1.5rem;
-  color: #000000;
+  color: #585858;
+  font-size: 2rem;
+  font-weight: 500;
 }
 
 main .table .sub-table .search-order .orderby {
@@ -303,7 +304,7 @@ main .table .sub-table .inf-table {
 }
 
 main .table .sub-table .inf-table .table-titles {
-  height: 7%;
+  height: 10%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 2fr 2fr 1fr 1fr 1.5fr 0.2fr 0.2fr;
@@ -311,12 +312,12 @@ main .table .sub-table .inf-table .table-titles {
 }
 
 main .table .sub-table .inf-table .table-titles div {
-  color: #999999;
-  font-size: 1.3rem;
+  color: #383838;
+  font-size: 1.5rem;
 }
 
 main .table .sub-table .inf-table .table-items {
-  height: 92%;
+  height: 87%;
   overflow: auto;
 }
 
@@ -328,7 +329,11 @@ main .table .sub-table .inf-table .table-items .item {
   color: #000000;
   font-size: 1.2rem;
   font-weight: 500;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid #707070;
+}
+
+main .table .sub-table .inf-table .table-items .item div {
+  color: #707070;
 }
 
 main .table .sub-table .inf-table .table-items .item figure {
@@ -357,4 +362,4 @@ main .table .sub-table .inf-table .table-items .item span {
 ::-webkit-scrollbar-thumb {
   background-color: #999999;
 }
-/*# sourceMappingURL=estoque.css.map */
+/*# sourceMappingURL=inventory.css.map */

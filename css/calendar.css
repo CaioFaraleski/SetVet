@@ -211,7 +211,7 @@ main .calendar .mid .days input {
   background-color: transparent;
 }
 
-main .calendar .mid .days input:hover {
+main .calendar .mid .days .hidden-submit:hover {
   background-color: #ededed;
 }
 

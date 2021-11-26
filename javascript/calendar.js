@@ -12,37 +12,48 @@ let numMonthCore = 12;
 let yearCore = "2021";
 let squareCore = 3;
 let squareCoreFinal = 8;
+let inputOne = hiddenInput[0];
+let InputTwo = hiddenInput[1];
+let InputThree = hiddenInput[2];
+
+// function und () {
+//     if (localStorage.year) {
+
+//     }
+// }
 
 function setYear () {
     if(localStorage.year !== undefined) {
         document.querySelector(".year").innerText = localStorage.year;
+        
     }
     else {
-        localStorage.setItem("year", Number(yearCore));
-    }
-}
-
-function setDay () {
-    if(localStorage.day !== undefined) {
-        document.querySelector(".theday").querySelector("span").innerText = localStorage.day;
-    }
-    else {
-        localStorage.setItem("day", "1");
+        localStorage.setItem("year", `${yearPhp}`);
     }
 }
 
 function setMonth () {
-    if(localStorage.month !== undefined) {
+    if (localStorage.month !== undefined){
         document.querySelector(".month").innerText = localStorage.month;
     }
     else {
-        localStorage.setItem("month", monthCore);
+        localStorage.setItem("month", `${monthPhp}`);
     }
-}    
+}
+
+function setDay () {
+    if (localStorage.day !== undefined){
+        document.querySelector(".theday").querySelector("span").innerText = localStorage.day;
+    }
+    else {
+        localStorage.setItem("day", `${dayPhp}`);
+    }
+}
 setYear();
 setMonth();
 setDay();
 createNumbers(squareAlign(localStorage.month, Number(localStorage.year)));
+
 
 leftArrow.addEventListener("click", function () {
     let year = document.querySelector(".year");
@@ -50,7 +61,9 @@ leftArrow.addEventListener("click", function () {
     year.innerText = yearNumber;
     yearPhp = yearNumber;
     localStorage.setItem("year", `${yearPhp}`);
-    console.log(squareAlign(localStorage.month, Number(localStorage.year)));
+    inputOne.value = localStorage.year;
+    InputTwo.value = localStorage.month;
+    InputThree.value = localStorage.day;
     createNumbers(squareAlign(localStorage.month, Number(localStorage.year)));
 });
 
@@ -60,6 +73,9 @@ rightArrow.addEventListener("click", function () {
     year.innerText = yearNumber;
     yearPhp = yearNumber;
     localStorage.setItem("year", `${yearPhp}`);
+    inputOne.value = localStorage.year;
+    InputTwo.value = localStorage.month;
+    InputThree.value = localStorage.day;
     createNumbers(squareAlign(localStorage.month, Number(localStorage.year)));
 });
 
@@ -69,6 +85,9 @@ month.forEach(function (theMonth) {
         document.querySelector(".month").innerText = `${named}`;
         monthPhp = named;
         localStorage.setItem("month", `${named}`);
+        inputOne.value = localStorage.year;
+        InputTwo.value = localStorage.month;
+        InputThree.value = localStorage.day;
         createNumbers(squareAlign(localStorage.month, Number(localStorage.year)));
     });
 });
@@ -80,13 +99,12 @@ days.forEach(function (theDay) {
             return;
         }
         else {
-            let inputOne = hiddenInput[0];
-            let InputTwo = hiddenInput[1];
             document.querySelector(".theday").querySelector("span").innerText = `${named}`;
             dayPhp = named;
             localStorage.setItem("day", `${named}`);
-            inputOne.value = yearPhp;
-            InputTwo.value = monthPhp;
+            inputOne.value = localStorage.year;
+            InputTwo.value = localStorage.month;
+            InputThree.value = localStorage.day;
             createNumbers(squareAlign(localStorage.month, Number(localStorage.year)));
         }
     });
@@ -276,7 +294,7 @@ function squareAlign (mon, year) {
         numMonthSet = 11;
         numYearSet = 2021;
         if(numOfMonth === numMonthCore && year === numYearSet) {
-            return [squareCore, squareCoreFinal, numDays(numMonthSet, numYearSet)];
+            return [squareCore, squareCoreFinal, (numDays(numMonthSet, numYearSet) + 1)];
         }
 
         year = yearCore - Number(year);
@@ -390,77 +408,23 @@ function createNumbers (array) {
     let inputs = 1;
     for (let i = 1; i <= start; i++) {
         document.querySelector(".days").querySelectorAll("input")[i - 1].value = "";
+        document.querySelector(".days").querySelectorAll("input")[i - 1].style.cursor = "default"
+        document.querySelector(".days").querySelectorAll("input")[i - 1].addEventListener("click", function(event) {
+            event.preventDefault();
+        });
         inputs++;
     }
     for (let i = 1; i <= days; i++) {
         document.querySelector(".days").querySelectorAll("input")[inputs - 1].value = `${i}`;
+        document.querySelector(".days").querySelectorAll("input")[inputs - 1].className = "hidden-submit";
         inputs++;
     }
     for (let i = 1; i <= end; i++) {
         document.querySelector(".days").querySelectorAll("input")[inputs - 1].value = "";
+        document.querySelector(".days").querySelectorAll("input")[inputs - 1].style.cursor = "default";
+        document.querySelector(".days").querySelectorAll("input")[inputs - 1].addEventListener("click", function(event) {
+            event.preventDefault();
+        });
         inputs++;
     }
 }
-
-// function squareAlignFinal (mon, year) {
-//     let numOfDays = daysOfMonth(mon, year)[0];
-//     let numOfMonth = daysOfMonth(mon, year)[1];
-//     let numMonthSet = 1;
-//     let numYearSet = 2022;
-    
-//     if(numOfMonth === numMonthCore && year === Number(yearCore)) {
-//         return [squareCore, squareCoreFinal];
-//     }
-
-//     year = Number(year) - yearCore;
-//     year = year * 12;
-
-//     if(numOfMonth < numMonthCore || numOfMonth === numMonthCore) {
-//         let squareCoreMutant = squareCoreFinal;
-//         let squareFunction;
-//         let squareFunctionFinal;
-//         for (let i = 0; i < (year - (numMonthCore - daysOfMonth(mon, year)[1])); i++) {
-//             numOfDays = numDays(numMonthSet, numYearSet);
-//             console.log(numOfDays)
-//             if(squareCoreMutant % 7 === 0) {
-//                 squareFunction = 0;
-//                 squareFunctionFinal = 42 - (numOfDays - squareFunction);
-//                 squareCoreMutant = squareFunctionFinal;
-//                 numMonthSet++;
-//                 if(numMonthSet < 1) {
-//                     numMonthSet = 1;
-//                     numYearSet = numYearSet + 1;
-//                 }
-//             }
-//             else if (squareCoreMutant > 7) {
-//                 squareCoreMutant = squareCoreMutant - 7;
-//                 squareCoreMutant = 7 - squareCoreMutant;
-//                 squareFunction = squareCoreMutant;
-//                 squareFunctionFinal = 42 - (squareCoreMutant + numOfDays);
-//                 squareCoreMutant = squareFunctionFinal;
-//                 numMonthSet++;
-//                 console.log("oi")
-//                 if(numMonthSet > 12) {
-//                     numMonthSet = 1;
-//                     numYearSet = numYearSet + 1;
-//                 }
-//             }
-//             else if (squareCoreMutant < 7) {
-//                 squareCoreMutant = 7 - squareCoreMutant;
-//                 squareFunction = squareCoreMutant;
-//                 squareFunctionFinal = 42 - (squareCoreMutant + numOfDays);
-//                 squareCoreMutant = squareFunctionFinal;
-//                 numMonthSet++;
-//                 console.log("oi")
-//                 if(numMonthSet > 12) {
-//                     numMonthSet = 1;
-//                     numYearSet = numYearSet + 1;
-//                 }
-//             }
-            
-//         }
-//         return [squareFunction, squareFunctionFinal];
-//     }
-    
-// }
-

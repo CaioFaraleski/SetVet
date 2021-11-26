@@ -112,6 +112,8 @@ main {
                     cursor: pointer;
                     border: none;
                     background-color: transparent;
+                }
+                .hidden-submit {
                     &:hover {
                         background-color: #ededed;
                     }

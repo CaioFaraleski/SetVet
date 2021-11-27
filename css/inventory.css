@@ -119,6 +119,137 @@ main .table .hidden form .submit:hover {
   background-color: #178048;
 }
 
+main .table .hidden-moreorless {
+  display: none;
+  position: absolute;
+  width: 45rem;
+  height: 40rem;
+  top: 3rem;
+  right: 25rem;
+  background-color: #ffffff;
+  border: none;
+}
+
+main .table .hidden-moreorless .window-header {
+  background-color: #2dbb70;
+  height: 5rem;
+  font-size: 1.5rem;
+  color: #ffffff;
+  height: 15%;
+}
+
+main .table .hidden-moreorless .window-header .exit-more {
+  cursor: pointer;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+main .table .hidden-moreorless .window-header .exit-more:hover {
+  opacity: 0.8;
+}
+
+main .table .hidden-moreorless form {
+  width: 70%;
+  height: 85%;
+}
+
+main .table .hidden-moreorless form div {
+  width: 10rem;
+}
+
+main .table .hidden-moreorless form div div {
+  width: 5rem;
+  font-size: 1.3rem;
+  color: red;
+}
+
+main .table .hidden-moreorless form .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+main .table .hidden-moreorless form .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+main .table .hidden-moreorless form .switch input:checked + .slider {
+  background-color: #2dbb70;
+}
+
+main .table .hidden-moreorless form .switch input:focus + .slider {
+  -webkit-box-shadow: 0 0 1px #2dbb70;
+          box-shadow: 0 0 1px #2dbb70;
+}
+
+main .table .hidden-moreorless form .switch input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+main .table .hidden-moreorless form .switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: red;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+main .table .hidden-moreorless form .switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+main .table .hidden-moreorless form .switch .round {
+  border-radius: 34px;
+}
+
+main .table .hidden-moreorless form .switch .round:before {
+  border-radius: 50%;
+}
+
+main .table .hidden-moreorless form .hidden-cod {
+  display: none;
+}
+
+main .table .hidden-moreorless form input {
+  width: 20rem;
+  height: 3.2rem;
+  border: none;
+  border-bottom: 2px solid #000000;
+  font-size: 1.1rem;
+}
+
+main .table .hidden-moreorless form input:focus {
+  outline: none;
+}
+
+main .table .hidden-moreorless form .submit {
+  height: 2.5rem;
+  border: none;
+  background-color: #189251;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+main .table .hidden-moreorless form .submit:hover {
+  background-color: #178048;
+}
+
 main .table .hidden-edits {
   position: absolute;
   width: 60rem;
@@ -324,8 +455,8 @@ main .table .sub-table .inf-table .table-items {
 main .table .sub-table .inf-table .table-items .item {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 2fr 2fr 1fr 1fr 1.5fr 0.2fr 0.2fr;
-      grid-template-columns: 2fr 2fr 1fr 1fr 1.5fr 0.2fr 0.2fr;
+  -ms-grid-columns: 2fr 2fr 1fr 1fr 1.3fr 0.2fr 0.2fr 0.2fr;
+      grid-template-columns: 2fr 2fr 1fr 1fr 1.3fr 0.2fr 0.2fr 0.2fr;
   color: #000000;
   font-size: 1.2rem;
   font-weight: 500;

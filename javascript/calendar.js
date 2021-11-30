@@ -409,6 +409,7 @@ function createNumbers (array) {
     for (let i = 1; i <= start; i++) {
         document.querySelector(".days").querySelectorAll("input")[i - 1].value = "";
         document.querySelector(".days").querySelectorAll("input")[i - 1].style.cursor = "default"
+        document.querySelector(".days").querySelectorAll("input")[inputs - 1].className = "";
         document.querySelector(".days").querySelectorAll("input")[i - 1].addEventListener("click", function(event) {
             event.preventDefault();
         });
@@ -422,6 +423,7 @@ function createNumbers (array) {
     for (let i = 1; i <= end; i++) {
         document.querySelector(".days").querySelectorAll("input")[inputs - 1].value = "";
         document.querySelector(".days").querySelectorAll("input")[inputs - 1].style.cursor = "default";
+        document.querySelector(".days").querySelectorAll("input")[inputs - 1].className = "";
         document.querySelector(".days").querySelectorAll("input")[inputs - 1].addEventListener("click", function(event) {
             event.preventDefault();
         });

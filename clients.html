@@ -40,41 +40,95 @@
         </div>
     </header>
     <main class="d-flex justify-content-center align-items-center">
-        <div class="table d-flex align-items-center flex-wrap">
-            <div class="table-header w-100 d-flex">
-                <div class="orderby d-flex align-items-center justify-content-between">
-                    <div class="ms-2">Ordenar por:</div>
-                    <figure>
-                        <img src="./assets/img/inventory/down-arrow.png" class="w-100 h-100">
-                    </figure>
-                </div>
-                <div class="search d-flex align-items-center justify-content-between">
-                    <figure class="ms-4">
-                        <img src="./assets/img/inventory/magnifier.png" class="w-100 h-100">
-                    </figure>
-                    <form action="POST">
-                        <input type="text" name="" id="" placeholder="Pesquisar">
-                    </form>
-                </div>
-            </div>
-            <div class="table-content w-100">
-                <div class="d-flex flex-wrap">
-                    <div class="table-titles w-100 d-flex justify-content-center align-items-center border-start-0">Clientes e Pets</div>
-                    <div class="items">
-                        <div class="w-100 d-flex flex-column justify-content-start align-items-center"><div class="name d-flex justify-content-between">Gabriel Robersvaldo <figure><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFB0jsrUO9DnujP8Tjdm3NBzQ3ax6rF_bEVg&usqp=CAU" onclick="myFunction()" class="arrow w-100 h-100"></figure></div>
-                        <div class="pets">
-                            <div class="pet ps-5">Aracuca</div>
-                            <div class="pet ps-5">Sonim</div>
-                        </div>
-                        </div>
-                        
+        <div class="table-clients d-flex justify-content-between">
+            <div class="left">
+                <div class="profile-client">
+                    <div class="photo-profile-client">
+
+                    </div>
+                    <div class="name-client">
+                        Robersvaldilson
+                    </div>
+                    <div class="infos-client">
+
                     </div>
                 </div>
-                <button class="plus d-flex justify-content-center align-items-center pt-3 ps-2">
-                    <figure>
-                        <img src="./assets/img/inventory/plus.png" class="w-100 h-100">
-                    </figure>
-                </button>
+                <div class="profile-pet">
+                    <div class="photo-profile-pet">
+
+                    </div>
+                    <div class="name-pet">
+                        Junin
+                    </div>
+                    <div class="infos-pet">
+
+                    </div>
+                </div>
+            </div>
+            <div class="right h-100 d-flex align-items-start flex-column flex-wrap">
+                <div class="sup d-flex justify-content-between flex-wrap w-100 h-25">
+                    <div class="title-table d-flex align-items-end pb-2 w-100 h-50">
+                        Clientes e Pets
+                    </div>
+                    <div class="d-flex justify-content-center align-items-end h-50">
+                        <div class="orderby d-flex align-items-center flex-wrap mb-2">
+                            <div class="order-text d-flex w-100">
+                                <div>Ordenar por</div>
+                                <figure class="ms-2">
+                                    <img src="https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png" class="w-100 h-100">
+                                </figure>
+                            </div>
+                            <div class="order-list flex-column">
+                                <div class="w-100 d-flex justify-content-start align-items-center ps-3">
+                                    Nome
+                                </div>
+                                <div class="w-100 d-flex justify-content-start align-items-center ps-3">
+                                    Código
+                                </div>
+                                <div class="w-100 d-flex justify-content-start align-items-center ps-3">
+                                    Valor
+                                </div>
+                                <div class="w-100 d-flex justify-content-start align-items-center ps-3">
+                                    Quantidade
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search d-flex mb-2">
+                            <figure class="me-2">
+                                <img src="./assets/img/inventory/magnifier.png" class="w-100 h-100">
+                            </figure>
+                            <form action="POST">
+                                <input type="text" placeholder="Pesquisar produtos">
+                            </form>
+                        </div>
+                    </div>
+                    <button class="me-5">
+                        Adicionar
+                    </button>
+                </div>
+                <div class="clients-list h-75 w-100">
+                    <div class="client-pet w-100 h-100 d-flex flex-column align-items-start">
+                        <div class="client-list-name d-flex align-items-center ps-3">
+                            Robersvaldilson Acriliconson Sabuflinstons
+                            <figure>
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCazkdrtI8o2_oP3fow482CA1XPvz4qEYr_QkmuVuQstWKJBwuzozJujv2yllsvppLhlg&usqp=CAU" class="w-100 h-100">
+                            </figure>
+                        </div>
+                        <div class="pet-list">
+                            <div class="pets-list-photo">
+                                <figure>
+                                    <img src="" alt="">
+                                </figure>
+                            </div>
+                            <div class="pets-list-name">
+                                Junin
+                            </div>
+                            <div class="pets-list-breed">
+                                Buldog
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -82,5 +136,5 @@
         
     </footer>
 </body>
-<script src="/javascript/pets.js"></script>
+<script src="/javascript/clients.js"></script>
 </html>

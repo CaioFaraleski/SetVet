@@ -5,86 +5,104 @@
 
 
 main {
-    min-height: 91vh;
-    margin: 0;
-    .table {
-        width: 75rem;
-        height: 45rem;
-        position: relative;
-        .table-header {
-            height: 15%;
-            font-size: 1.5rem;
-            input {
-                border: none;
-                border-bottom: solid 1px $black;
-                &:focus {
-                    outline: none;
+    height: 91vh;
+    .table-clients {
+        width: 100rem;
+        height: 50rem;
+        border: 3px solid $black;
+        .left {
+            height: 100%;
+            width: 25%;
+            background-color: #2dbb70;
+            background-image: linear-gradient(170deg, #2dbb70 15%, #189251 99%);
+            .profile-client {
+                display: none;
+            }
+            .profile-pet {
+                display: none;
+            }
+        }
+        .right {
+            width: 65%;
+            .sup {
+                height: 25%;
+                .title-table {
+                    height: 25%;
+                    font-size: 2rem;
+                    color: #585858;
+                    font-weight: 500;
                 }
-            }
-        }
-        figure {
-            width: 2.5rem;
-            height: 2.5rem;
-        }
-        .table-content {
-            height: 85%;
-            border: 6px solid $green;
-            .table-titles {
-                font-size: 1.4rem;
-                color: $white;
-                background-color: $green;
-            }
-            .items {
-                color: $green;
-                overflow: auto;
-                width: 100%;
-                height: 34.5rem;
-                div {
+                .orderby {
+                    width: 10.5rem;
                     font-size: 1.3rem;
-                    color: #9c9898;
-                    width: 100%;
-                    border-bottom: solid 1px #9c9898;
-                    .name {
-                        height: 3.5rem;
+                    color: #999999;
+                    cursor: pointer;
+                    .order-text {
+                        margin-bottom: 1rem;
                         figure {
-                            width: 1.5rem;
-                            height: 1.5rem;
+                            width: 1rem;
+                            height: 1rem;
+                            margin: 0;
+                        }
+                        &:hover {
+                            filter: brightness(0);
                         }
                     }
-                    .pets {
+                    .order-list {
+                        width: 16rem;
+                        position: absolute;
+                        top: 100px;
                         display: none;
+                        div {
+                            background-color: $white;
+                            height: 3rem;
+                            font-size: 1.1rem;
+                            &:hover {
+                                background-color: #e0e0e0;
+                            }
+                        }
                     }
                 }
-                &::-webkit-scrollbar {
-                    width: 0.9rem;
+                .search {
+                    height: 3rem;
+                    figure {
+                        width: 2rem;
+                        height: 2rem;
+                    }
+                    input {
+                        border: none;
+                        border-bottom: 2px solid #999999;
+                        font-size: 1.2rem;
+                        &:focus {
+                            outline: none;
+                        }
+                    }
                 }
-                &::-webkit-scrollbar-thumb {
-                    background-color: $green;
-                    border-radius: 20px;
-                    border: 1px solid $white;
+                button {
+                    height: 3.5rem;
+                    width: 10rem;
+                    border: none;
+                    background-color: #2dbb70;
+                    color: rgb(255, 255, 255);
+                    font-size: 1.3rem;
                 }
-
             }
-        }
-        .plus {
-            width: 7.3rem;
-            height: 7.3rem;
-            background-color: $green;
-            border-radius: 20rem;
-            border: none;
-            position: absolute;
-            top: 39rem;
-            right: -3rem;
-            figure {
-                height: 4.5rem;
-                width: 4.5rem;
+            .clients-list {
+                .client-pet {
+                    .client-list-name {
+                        width: 95.4%;
+                        height: 5rem;
+                        color: #7c7c7c;
+                        background-color: #f3f3f3;
+                        font-size: 1.4rem;
+                        figure {
+                            width: 2rem;
+                        }
+                    }
+                }
             }
         }
     }
-}
-
-.show {
-    display: block;
 }
 
 ::-webkit-scrollbar {

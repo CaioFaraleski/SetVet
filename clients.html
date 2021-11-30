@@ -40,28 +40,84 @@
         </div>
     </header>
     <main class="d-flex justify-content-center align-items-center">
+        <div class="hidden-add">
+            <div class="w-100 h-100 d-flex flex-column justify-content-between align-items-center">
+                <div class="window-header d-flex justify-content-between align-items-center px-3 w-100">
+                    Adicionar cliente ou pet
+                    <figure class="exit-more">
+                        <img src="./assets/img/inventory/exit.png" class="w-100 h-100">
+                    </figure>
+                </div>
+                <form action="" class="d-flex flex-column justify-content-center align-items-center">
+                    <input type="text" class="hidden-cod">
+                    <div class="d-flex justify-content-between">
+                        <figure><img src="/assets/img/clients/animal.png" class="w-100 h-100"></figure>
+                        <label class="switch">
+                            <input type="checkbox" class="adicionar" value="adicionar">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <input type="text" class="input-pet mt-4" placeholder="Nome">
+                    <input type="text" class="input-pet mt-4" placeholder="Animal">
+                    <input type="text" class="input-pet mt-4" placeholder="Idade">
+                    <input type="text" class="input-pet mt-4" placeholder="Dono">
+                    <!-- <input type="text" class="input-client mt-4" placeholder="Nome">
+                    <input type="text" class="input-client mt-4" placeholder="Cpf">
+                    <input type="text" class="input-client mt-4" placeholder="Número de Celular">
+                    <input type="text" class="input-client mt-4" placeholder="Cep">
+                    <input type="text" class="input-client mt-4" placeholder="Rua">
+                    <input type="text" class="input-client mt-4" placeholder="Bairro">
+                    <input type="text" class="input-client mt-4" placeholder="Estado">
+                    <input type="text" class="input-client mt-4" placeholder="N°"> -->
+                    <input type="submit" class="my-5 submit">
+                </form>
+            </div>
+        </div>
         <div class="table-clients d-flex justify-content-between">
             <div class="left">
-                <div class="profile-client">
-                    <div class="photo-profile-client">
-
+                <div class="profile client-prof flex-column align-items-center">
+                    <div class="photo-profile d-flex justify-content-end align-items-center flex-column mb-2">
+                        <figure>
+                            
+                        </figure>
+                        <div class="name">
+                            Robersvaldilson
+                        </div>
                     </div>
-                    <div class="name-client">
-                        Robersvaldilson
-                    </div>
-                    <div class="infos-client">
-
+                    <div class="infos">
+                        <div class="infos-name">
+                            <span>Nome:</span> Robersvaldilson Acriliconson Sabuflinstons
+                        </div>
+                        <div class="infos-cpf">
+                            <span>Cpf:</span> 87663376923
+                        </div>
+                        <div class="infos-cep">
+                            <span>Cep:</span> 09734-237
+                        </div>
+                        <div class="infos-cep">
+                            <span>Endereço:</span> Rua puta que pariu, Bairro fodase seu merda, 666
+                        </div>
+                        <div class="infos-telphone">
+                           <span>Número de Celular:</span><br> (11)66666-6666
+                        </div>
                     </div>
                 </div>
-                <div class="profile-pet">
-                    <div class="photo-profile-pet">
-
+                <div class="profile pet-prof flex-column align-items-center">
+                    <div class="photo-profile d-flex justify-content-end align-items-center flex-column mb-2">
+                        <figure>
+                            
+                        </figure>
+                        <div class="name">
+                            Thor
+                        </div>
                     </div>
-                    <div class="name-pet">
-                        Junin
-                    </div>
-                    <div class="infos-pet">
-
+                    <div class="infos">
+                        <div class="infos-name">
+                            <span>Nome:</span> Thor
+                        </div>
+                        <div class="infos-cpf">
+                            <span>Animal:</span> Iguana
+                        </div>
                     </div>
                 </div>
             </div>
@@ -106,25 +162,27 @@
                         Adicionar
                     </button>
                 </div>
-                <div class="clients-list h-75 w-100">
-                    <div class="client-pet w-100 h-100 d-flex flex-column align-items-start">
-                        <div class="client-list-name d-flex align-items-center ps-3">
+                <div class="clients-list w-100">
+                    <div class="client-pet w-100 d-flex flex-column align-items-start mt-4">
+                        <div class="client-list-name d-flex align-items-center justify-content-between ps-3 pe-3 mb-3">
                             Robersvaldilson Acriliconson Sabuflinstons
-                            <figure>
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCazkdrtI8o2_oP3fow482CA1XPvz4qEYr_QkmuVuQstWKJBwuzozJujv2yllsvppLhlg&usqp=CAU" class="w-100 h-100">
+                            <figure class="pt-3">
+                                <img src="https://caiofaraleski.github.io/SetVet/assets/img/clients/down-arrow.png" class="w-100 h-100">
                             </figure>
+                            <div class="irrelevantes"></div>
                         </div>
-                        <div class="pet-list">
-                            <div class="pets-list-photo">
-                                <figure>
-                                    <img src="" alt="">
-                                </figure>
-                            </div>
-                            <div class="pets-list-name">
-                                Junin
+                        <div class="pet-list mb-1 d-flex align-items-center">
+                            <div class="pets-list-name me-5 ms-3">
+                                <span>
+                                    Nome:
+                                </span>
+                                Thor
                             </div>
                             <div class="pets-list-breed">
-                                Buldog
+                                <span>
+                                    Animal:
+                                </span>
+                                Iguana
                             </div>
                         </div>
                     </div>

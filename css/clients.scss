@@ -6,24 +6,171 @@
 
 main {
     height: 91vh;
+    .hidden-add {
+        display: none;
+        position: absolute;
+        width: 45rem;
+        height: 48rem;
+        top: 9rem;
+        right: 37rem;
+        background-color: $white;
+        border: none;
+        .window-header {
+            background-color: #2dbb70;
+            font-size: 1.5rem;
+            color: $white;
+            height: 11%;
+            .exit-more {
+                cursor: pointer;
+                height: 1.5rem;
+                width: 1.5rem;
+                &:hover {
+                    opacity: 0.8;
+                }                    
+            }
+        }
+        form {
+            width: 70%;
+            height: 90%;
+            div {
+                figure {
+                    width: 2.5rem;
+                    height: 2.5rem;
+                }
+                width: 7rem;
+            }
+            .switch {
+                position: relative;
+                display: inline-block;
+                width: 60px;
+                height: 34px;
+                input {
+                    opacity: 0;
+                    width: 0;
+                    height: 0;
+                    &:checked + .slider {
+                        background-color: #2dbb70;
+                    }
+                    &:focus + .slider {
+                        box-shadow: 0 0 1px #2dbb70;
+                    }
+                    &:checked + .slider:before {
+                        -webkit-transform: translateX(26px);
+                        -ms-transform: translateX(26px);
+                        transform: translateX(26px);
+                      }
+                }
+                .slider {
+                    position: absolute;
+                    cursor: pointer;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: red;
+                    -webkit-transition: .4s;
+                    transition: .4s;
+                    &:before {
+                        position: absolute;
+                        content: "";
+                        height: 26px;
+                        width: 26px;
+                        left: 4px;
+                        bottom: 4px;
+                        background-color: white;
+                        -webkit-transition: .4s;
+                        transition: .4s;
+                    }
+                }
+                .round {
+                    border-radius: 34px;
+                    &:before {
+                        border-radius: 50%;
+                    }
+                }
+              }
+            .hidden-cod {
+                display: none;
+            }
+            input {
+                width: 20rem;
+                height: 3.2rem;
+                border: none;
+                border-bottom: 2px solid $black;
+                font-size: 1.1rem;
+                &:focus {
+                    outline: none;
+                }
+            }
+            .submit {
+                height: 2.5rem;
+                border: none;
+                background-color: #189251;
+                color: $white;
+                font-size: 1.2rem;
+                &:hover {
+                    background-color: #178048;
+                }
+            }
+        }
+    }
     .table-clients {
         width: 100rem;
         height: 50rem;
-        border: 3px solid $black;
         .left {
             height: 100%;
             width: 25%;
             background-color: #2dbb70;
             background-image: linear-gradient(170deg, #2dbb70 15%, #189251 99%);
-            .profile-client {
+            .client-prof {
+                display: flex;
+                .photo-profile {
+                    figure {
+                        background-color: #ffffff;
+                        background-image: url(/assets/img/clients/person-icon.png);
+                        background-size: 97%;
+                        background-position-y: 22px;
+                        background-position-x: 5px;
+                        background-repeat: no-repeat;
+                    }
+                }
+            }
+            .pet-prof {
                 display: none;
+            }
+            .profile {
+                .photo-profile {
+                    width: 15rem;
+                    height: 20rem;
+                    font-size: 1.7rem;
+                    color: $white;
+                    figure {
+                        width: 11rem;
+                        height: 11rem;
+                        border-radius: 50rem;
+                    }
+                }
+                .infos {
+                    width: 20rem;
+                    height: 28rem;
+                    color: #ffffff;
+                    font-size: 1.3rem;
+                    div {
+                        margin-top: 1.2rem;
+                        span {
+                            color: #dddddd;
+                            font-size: 1.4rem;
+                            font-weight: 500;
+                        }
+                    }
+                }
             }
             .profile-pet {
                 display: none;
             }
         }
         .right {
-            width: 65%;
+            width: 68%;
             .sup {
                 height: 25%;
                 .title-table {
@@ -88,6 +235,14 @@ main {
                 }
             }
             .clients-list {
+                overflow: auto;
+                height: 73%;
+                &::-webkit-scrollbar {
+                    width: 0.7rem;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background-color: #999999;
+                }
                 .client-pet {
                     .client-list-name {
                         width: 95.4%;
@@ -95,8 +250,25 @@ main {
                         color: #7c7c7c;
                         background-color: #f3f3f3;
                         font-size: 1.4rem;
+                        cursor: pointer;
                         figure {
-                            width: 2rem;
+                            width: 1.7rem;
+                            opacity: 0.5;
+                        }
+                        .irrelevantes {
+                            display: none;
+                        }
+                    }
+                    .pet-list {
+                        width: 95.4%;
+                        height: 5rem;
+                        color: #7a7a7a;
+                        background-color: #e6e6e6;
+                        font-size: 1.4rem;
+                        cursor: pointer;
+                        span {
+                            font-size: 1.2rem;
+                            color: #8f8f8f;
                         }
                     }
                 }
@@ -111,3 +283,4 @@ main {
 ::-webkit-scrollbar-thumb {
     background-color: $dark-green;
 }
+// /focus:       border: 1px solid #d5d5d5;

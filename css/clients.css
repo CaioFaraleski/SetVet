@@ -56,10 +56,138 @@ main {
   height: 91vh;
 }
 
+main .hidden-add {
+  display: none;
+  position: absolute;
+  width: 45rem;
+  height: 48rem;
+  top: 9rem;
+  right: 37rem;
+  background-color: #ffffff;
+  border: none;
+}
+
+main .hidden-add .window-header {
+  background-color: #2dbb70;
+  font-size: 1.5rem;
+  color: #ffffff;
+  height: 11%;
+}
+
+main .hidden-add .window-header .exit-more {
+  cursor: pointer;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+main .hidden-add .window-header .exit-more:hover {
+  opacity: 0.8;
+}
+
+main .hidden-add form {
+  width: 70%;
+  height: 90%;
+}
+
+main .hidden-add form div {
+  width: 7rem;
+}
+
+main .hidden-add form div figure {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+main .hidden-add form .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+main .hidden-add form .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+main .hidden-add form .switch input:checked + .slider {
+  background-color: #2dbb70;
+}
+
+main .hidden-add form .switch input:focus + .slider {
+  -webkit-box-shadow: 0 0 1px #2dbb70;
+          box-shadow: 0 0 1px #2dbb70;
+}
+
+main .hidden-add form .switch input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+main .hidden-add form .switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: red;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+main .hidden-add form .switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+main .hidden-add form .switch .round {
+  border-radius: 34px;
+}
+
+main .hidden-add form .switch .round:before {
+  border-radius: 50%;
+}
+
+main .hidden-add form .hidden-cod {
+  display: none;
+}
+
+main .hidden-add form input {
+  width: 20rem;
+  height: 3.2rem;
+  border: none;
+  border-bottom: 2px solid #000000;
+  font-size: 1.1rem;
+}
+
+main .hidden-add form input:focus {
+  outline: none;
+}
+
+main .hidden-add form .submit {
+  height: 2.5rem;
+  border: none;
+  background-color: #189251;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+main .hidden-add form .submit:hover {
+  background-color: #178048;
+}
+
 main .table-clients {
   width: 100rem;
   height: 50rem;
-  border: 3px solid #000000;
 }
 
 main .table-clients .left {
@@ -69,8 +197,53 @@ main .table-clients .left {
   background-image: linear-gradient(170deg, #2dbb70 15%, #189251 99%);
 }
 
-main .table-clients .left .profile-client {
+main .table-clients .left .client-prof {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .table-clients .left .client-prof .photo-profile figure {
+  background-color: #ffffff;
+  background-image: url(/assets/img/clients/person-icon.png);
+  background-size: 97%;
+  background-position-y: 22px;
+  background-position-x: 5px;
+  background-repeat: no-repeat;
+}
+
+main .table-clients .left .pet-prof {
   display: none;
+}
+
+main .table-clients .left .profile .photo-profile {
+  width: 15rem;
+  height: 20rem;
+  font-size: 1.7rem;
+  color: #ffffff;
+}
+
+main .table-clients .left .profile .photo-profile figure {
+  width: 11rem;
+  height: 11rem;
+  border-radius: 50rem;
+}
+
+main .table-clients .left .profile .infos {
+  width: 20rem;
+  height: 28rem;
+  color: #ffffff;
+  font-size: 1.3rem;
+}
+
+main .table-clients .left .profile .infos div {
+  margin-top: 1.2rem;
+}
+
+main .table-clients .left .profile .infos div span {
+  color: #dddddd;
+  font-size: 1.4rem;
+  font-weight: 500;
 }
 
 main .table-clients .left .profile-pet {
@@ -78,7 +251,7 @@ main .table-clients .left .profile-pet {
 }
 
 main .table-clients .right {
-  width: 65%;
+  width: 68%;
 }
 
 main .table-clients .right .sup {
@@ -159,16 +332,49 @@ main .table-clients .right .sup button {
   font-size: 1.3rem;
 }
 
+main .table-clients .right .clients-list {
+  overflow: auto;
+  height: 73%;
+}
+
+main .table-clients .right .clients-list::-webkit-scrollbar {
+  width: 0.7rem;
+}
+
+main .table-clients .right .clients-list::-webkit-scrollbar-thumb {
+  background-color: #999999;
+}
+
 main .table-clients .right .clients-list .client-pet .client-list-name {
   width: 95.4%;
   height: 5rem;
   color: #7c7c7c;
   background-color: #f3f3f3;
   font-size: 1.4rem;
+  cursor: pointer;
 }
 
 main .table-clients .right .clients-list .client-pet .client-list-name figure {
-  width: 2rem;
+  width: 1.7rem;
+  opacity: 0.5;
+}
+
+main .table-clients .right .clients-list .client-pet .client-list-name .irrelevantes {
+  display: none;
+}
+
+main .table-clients .right .clients-list .client-pet .pet-list {
+  width: 95.4%;
+  height: 5rem;
+  color: #7a7a7a;
+  background-color: #e6e6e6;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+main .table-clients .right .clients-list .client-pet .pet-list span {
+  font-size: 1.2rem;
+  color: #8f8f8f;
 }
 
 ::-webkit-scrollbar {

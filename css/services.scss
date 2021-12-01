@@ -1,0 +1,11 @@
+@import 'header.scss';
+@import 'variables.scss';
+
+main {
+    min-height: 91vh;
+    .table-services {
+        width: 100rem;
+        height: 50rem;
+        border: 1px solid black;
+    }
+}

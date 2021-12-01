@@ -16,7 +16,6 @@
     <link rel="shortcut icon" href="./assets/img/home/header-logo.png" type="image/x-icon">
 </head>
 <body>
-    <header>
         <header class="d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center">
                 <figure>
@@ -42,37 +41,54 @@
         </header>
     </header>
     <main class="d-flex justify-content-center align-items-center">
-        <div class="calendar d-flex">
+        <forms class="calendar d-flex">
+            <div class="add-hour">
+                <div class="header-edits d-flex justify-content-between align-items-center px-3">
+                    Adicionar Horário
+                        <figure class="exit-edits">
+                            <img src="./assets/img/inventory/exit.png" class="w-100 h-100">
+                        </figure>
+                </div>
+                <form action="" class="d-flex align-items-center justify-content-around flex-wrap">
+                    <label for="input-year">Ano<input class="ms-2" type="text" id="cod" name="cod"></label>
+                    <label for="inpu-month">Mês<input class="ms-2" type="text" id="name" name="name"></label>
+                    <label for="input-day">Dia<input class="ms-2" type="text" id="val" name="val"></label>
+                    <label for="input-time">Horário<input class="ms-2" type="text" id="quant" name="quant"></label>
+                    <label for="input-service">Serviço<input class="ms-2" type="text" id="quant" name="quant"></label>
+                    <label for="input-animal">Animal<input class="ms-2" type="text" id="quant" name="quant"></label>
+                    <div class="w-100 d-flex justify-content-center"><input type="submit" id="att" value="Adicionar"></div>
+                </form>
+            </div>
             <div class="left d-flex flex-column">
                 <div class="years d-flex justify-content-center align-items-center">
-                    <button class="me-4">
+                    <button class="left-arr me-4">
                         <img src="./assets/img/calendar/left-arrow.png" class="h-100 w-100">
                     </button>
                     <div class="year">
-                        2018
+                        2021
                     </div>
-                    <button class="ms-4">
+                    <button class="right-arr ms-4">
                         <img src="./assets/img/calendar/right-arrow.png" class="h-100 w-100">
                     </button>
                 </div>
                 <div class="months d-flex flex-column">
-                    <button class="january">Janeiro</button>
-                    <button class="february">Fevereiro</button>
-                    <button class="march">Março</button>
-                    <button class="april">Abril</button>
-                    <button class="may">Maio</button>
-                    <button class="june">Junho</button>
-                    <button class="july">Julho</button>
-                    <button class="august">Agosto</button>
-                    <button class="september">Setembro</button>
-                    <button class="october">Outubro</button>
-                    <button class="november">Novembro</button>
-                    <button class="december">Dezembro</button>
+                    <button class="named january">Janeiro</button>
+                    <button class="named february">Fevereiro</button>
+                    <button class="named march">Março</button>
+                    <button class="named april">Abril</button>
+                    <button class="named may">Maio</button>
+                    <button class="named june">Junho</button>
+                    <button class="named july">Julho</button>
+                    <button class="named august">Agosto</button>
+                    <button class="named september">Setembro</button>
+                    <button class="named october">Outubro</button>
+                    <button class="named november">Novembro</button>
+                    <button class="named december">Dezembro</button>
                 </div>
             </div>
             <div class="mid d-flex flex-column justify-content-center">
                 <div class="month d-flex justify-content-center align-items-end pb-1" id="">
-                    Junho
+                    Dezembro
                 </div>
                 <div class="week-days">
                     <div class="sun">Dom</div>
@@ -83,39 +99,53 @@
                     <div class="fri">Sex</div>
                     <div class="sat">Sab</div>
                 </div>
-                <div class="days">
-                    <div>1</div>
-                    <div>2</div>
-                    <div>3</div>
-                    <div>4</div>
-                    <div>5</div>
-                    <div>6</div>
-                    <div>7</div>
-                    <div>8</div>
-                    <div>9</div>
-                    <div>10</div>
-                    <div>11</div>
-                    <div>12</div>
-                    <div>13</div>
-                    <div>14</div>
-                    <div>15</div>
-                    <div>16</div>
-                    <div>17</div>
-                    <div>18</div>
-                    <div>19</div>
-                    <div>20</div>
-                    <div>21</div>
-                    <div>22</div>
-                    <div>23</div>
-                    <div>24</div>
-                    <div>25</div>
-                    <div>26</div>
-                    <div>27</div>
-                    <div>28</div>
-                    <div>29</div>
-                    <div>30</div>
-                    <div>31</div>
-                </div>
+                <form class="days">
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value=""> 
+                    <input type="button" value="">
+                    <input type="button" value="">
+                    <input type="button" value="">
+                    <input type="button" value="">
+                    <input type="button" value="">
+                    <input type="button" value="">
+                    <input type="button" value="">
+                    <input type="button" value="">
+                    <input type="button" value="">
+                    <input type="button" value="">
+                    <input type="button" value="">
+                    <input type="button" value="">
+                    <input type="text" class="input-hidden">
+                    <input type="text" class="input-hidden">
+                    <input type="text" class="input-hidden">
+                </form>
                 <div class="button-add d-flex justify-content-center">
                     <button class="add d-flex justify-content-center align-items-center">
                         <figure>
@@ -126,21 +156,19 @@
             </div>
             <div class="right d-flex flex-column">
                 <div class="theday d-flex justify-content-center align-items-end pb-5">
-                    Dia 7
+                    Dia <span class="ps-2">8</span>
                 </div>
                 <div class="appointments d-flex flex-column justify-content-around align-items-start ms-5">
-                    <div>12:30</div>
-                    <div>13:00</div>
-                    <div>14:00</div>
-                    <div>15:00</div>
-                    <div>15:30</div>
-                    <div>17:00</div>
+                    <div>10:30 Tosa mel</div>
+                    <div>12:00 Banho thor</div>
+                    <div>16:00 Vacina teo</div>
                 </div>
             </div>
-        </div>
+        </forms>
     </main>
     <footer>
 
     </footer>
+    <script src="./javascript/vaccine.js"></script>
 </body>
 </html>

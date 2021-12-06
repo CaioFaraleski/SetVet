@@ -3,9 +3,110 @@
 
 main {
     min-height: 91vh;
+    .hidden {
+        display: none;
+        position: absolute;
+        width: 45rem;
+        height: 40rem;
+        top: 8rem;
+        right: 41rem;
+        background-color: $white;
+        .window-header {
+            background-color: #2dbb70;
+            height: 5rem;
+            font-size: 1.5rem;
+            color: $white;
+            .exit {
+                cursor: pointer;
+                height: 1.5rem;
+                width: 1.5rem;
+                &:hover {
+                    opacity: 0.8;
+                }                    
+            }
+        }
+        form {
+            width: 70%;
+            height: 70%;
+            input {
+                width: 20rem;
+                height: 3.2rem;
+                border: none;
+                border-bottom: 2px solid $black;
+                font-size: 1.1rem;
+                &:focus {
+                    outline: none;
+                }
+            }
+            .submit {
+                height: 2.5rem;
+                border: none;
+                background-color: #189251;
+                color: $white;
+                font-size: 1.2rem;
+                &:hover {
+                    background-color: #178048;
+                }
+            }
+        }
+    }
     .table-services {
         width: 100rem;
         height: 50rem;
-        border: 1px solid black;
+        .table-header {
+            height: 20%;
+            font-size: 2.6rem;
+            color: #585858;
+            font-weight: 500;
+            padding: 0 7rem;
+            button {
+                font-size: 1.3rem;
+                width: 10rem;
+                height: 3.5rem;
+                color: $white;
+                font-weight: 400;
+                background-color: #2dbb70;
+                border: none;
+            }
+        }
+        .right {
+            width: 100%;
+            height: 80%;
+            .sub-table {
+                height: 95%;
+                overflow: auto;
+                .card-service {
+                    width: 18.7rem;
+                    height: 18.7rem;
+                    .inside {
+                        background-color: #b7b7b7;
+                        border-radius: 1.2rem;
+                        cursor: pointer;
+                        color: $white;
+                        font-size: 1.2rem;
+                        font-weight: 500;
+                        align-items: center;
+                        width: 12.5rem;
+                        height: 12.5rem;
+                        padding: 0 2rem;
+                        figure {
+                            width: 3rem;
+                        }
+                        .hdn {
+                            margin-top: 1rem;
+                            width: 90%;
+                            font-size: 1rem;
+                            display: none;
+                        }
+                    }
+                }
+                &::-webkit-scrollbar {
+                    width: 0.4rem;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background-color: #c3c3c3;
+                }
+            }
+        }
     }
 }

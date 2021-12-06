@@ -33,7 +33,7 @@ body header h1 {
 }
 
 body header .buttons-home {
-  width: 65rem;
+  width: 53rem;
 }
 
 body header .buttons-home a {
@@ -56,9 +56,131 @@ main {
   min-height: 91vh;
 }
 
+main .hidden {
+  display: none;
+  position: absolute;
+  width: 45rem;
+  height: 40rem;
+  top: 8rem;
+  right: 41rem;
+  background-color: #ffffff;
+}
+
+main .hidden .window-header {
+  background-color: #2dbb70;
+  height: 5rem;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+main .hidden .window-header .exit {
+  cursor: pointer;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+main .hidden .window-header .exit:hover {
+  opacity: 0.8;
+}
+
+main .hidden form {
+  width: 70%;
+  height: 70%;
+}
+
+main .hidden form input {
+  width: 20rem;
+  height: 3.2rem;
+  border: none;
+  border-bottom: 2px solid #000000;
+  font-size: 1.1rem;
+}
+
+main .hidden form input:focus {
+  outline: none;
+}
+
+main .hidden form .submit {
+  height: 2.5rem;
+  border: none;
+  background-color: #189251;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+main .hidden form .submit:hover {
+  background-color: #178048;
+}
+
 main .table-services {
   width: 100rem;
   height: 50rem;
-  border: 1px solid black;
+}
+
+main .table-services .table-header {
+  height: 20%;
+  font-size: 2.6rem;
+  color: #585858;
+  font-weight: 500;
+  padding: 0 7rem;
+}
+
+main .table-services .table-header button {
+  font-size: 1.3rem;
+  width: 10rem;
+  height: 3.5rem;
+  color: #ffffff;
+  font-weight: 400;
+  background-color: #2dbb70;
+  border: none;
+}
+
+main .table-services .right {
+  width: 100%;
+  height: 80%;
+}
+
+main .table-services .right .sub-table {
+  height: 95%;
+  overflow: auto;
+}
+
+main .table-services .right .sub-table .card-service {
+  width: 18.7rem;
+  height: 18.7rem;
+}
+
+main .table-services .right .sub-table .card-service .inside {
+  background-color: #b7b7b7;
+  border-radius: 1.2rem;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 12.5rem;
+  height: 12.5rem;
+  padding: 0 2rem;
+}
+
+main .table-services .right .sub-table .card-service .inside figure {
+  width: 3rem;
+}
+
+main .table-services .right .sub-table .card-service .inside .hdn {
+  margin-top: 1rem;
+  width: 90%;
+  font-size: 1rem;
+  display: none;
+}
+
+main .table-services .right .sub-table::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+main .table-services .right .sub-table::-webkit-scrollbar-thumb {
+  background-color: #c3c3c3;
 }
 /*# sourceMappingURL=services.css.map */

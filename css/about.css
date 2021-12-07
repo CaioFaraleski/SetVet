@@ -52,10 +52,82 @@ body header .signup a {
   text-decoration: none;
 }
 
-body {
-  background-color: #c7ffd8;
-  background-image: linear-gradient(173deg, #c7ffd8 11%, #2cff8e 29%, #2ddc8c 45%, #23a85f 62%, #1a7142 80%, #115431 100%);
-  height: 400vh;
+main {
+  min-height: 91vh;
+}
+
+main section {
+  height: 91vh;
+}
+
+main section figure {
+  width: auto;
+  height: 25rem;
+  display: none;
+}
+
+main section .box {
+  width: 45rem;
+}
+
+main section .box .title {
+  display: none;
+  font-size: 4rem;
+  letter-spacing: 0.8rem;
+  font-weight: 700;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#60dd8e), to(#188a8d));
+  background-image: linear-gradient(to bottom, #60dd8e, #188a8d);
+  color: black;
+  background-clip: text;
+  -webkit-background-clip: text;
+  /* Adicionado: */
+  -webkit-text-fill-color: transparent;
+}
+
+main section .box .right {
+  text-align: right;
+}
+
+main section .box .text {
+  display: none;
+  color: #228754;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+main section .box a {
+  display: none;
+  width: 18rem;
+  height: 3.6rem;
+  border: none;
+  background-color: #22b16f;
+  font-size: 1.6rem;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+main section .box a:hover {
+  background-color: #1e9b60;
+}
+
+main .schedule {
+  background-color: #ffffff;
+}
+
+main .clients {
+  background-color: #f7f7f7;
+  height: 100vh;
+}
+
+main .services {
+  background-color: #ffffff;
+  height: 100vh;
+}
+
+main .inventory {
+  background-color: #f7f7f7;
+  height: 100vh;
 }
 
 ::-webkit-scrollbar {

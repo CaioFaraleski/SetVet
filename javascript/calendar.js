@@ -3,9 +3,10 @@ let rightArrow = document.querySelector(".right-arr");
 let months = document.querySelector(".months");
 let month = document.querySelectorAll(".named");
 let days = document.querySelector(".days").querySelectorAll("input");
-let monthPhp = month[11].innerText;
-let yearPhp = document.querySelector(".year").innerText;
-let dayPhp = document.querySelector(".theday").querySelector("span").innerText;
+let now = new Date();
+let monthPhp = month[now.getMonth()].innerText;
+let yearPhp = `${now.getFullYear()}`;
+let dayPhp = `${now.getDate()}`;
 let hiddenInput = document.querySelectorAll(".input-hidden");
 let monthCore = "Dezembro";
 let numMonthCore = 12;
@@ -15,11 +16,13 @@ let squareCoreFinal = 8;
 let inputOne = hiddenInput[0];
 let InputTwo = hiddenInput[1];
 let InputThree = hiddenInput[2];
+let check = document.querySelector(".adicionar");
+
 
 // function und () {
 //     if (localStorage.year) {
 
-//     }
+    //     }
 // }
 
 function setYear () {
@@ -29,6 +32,7 @@ function setYear () {
     }
     else {
         localStorage.setItem("year", `${yearPhp}`);
+        document.querySelector(".year").innerText = localStorage.year;
     }
 }
 
@@ -38,6 +42,7 @@ function setMonth () {
     }
     else {
         localStorage.setItem("month", `${monthPhp}`);
+        document.querySelector(".month").innerText = localStorage.month;
     }
 }
 
@@ -47,6 +52,7 @@ function setDay () {
     }
     else {
         localStorage.setItem("day", `${dayPhp}`);
+        document.querySelector(".theday").querySelector("span").innerText = localStorage.day;
     }
 }
 setYear();
@@ -54,6 +60,19 @@ setMonth();
 setDay();
 createNumbers(squareAlign(localStorage.month, Number(localStorage.year)));
 
+
+check.addEventListener("click", function() {
+    if(check.checked) {
+        document.querySelector(".calendar").style.display = "none";
+        document.querySelector(".vaccine").style.display = "flex";
+        document.querySelector(".check").children[0].children[0].innerText = "Agenda de Vacinação"
+    }
+    else {
+        document.querySelector(".calendar").style.display = "flex";
+        document.querySelector(".vaccine").style.display = "none";
+        document.querySelector(".check").children[0].children[0].innerText = "Agenda Geral"
+    }
+});
 
 leftArrow.addEventListener("click", function () {
     let year = document.querySelector(".year");

@@ -132,4 +132,47 @@ arrowOrderBy.children[0].addEventListener('click', function () {
         arrowOrderBy.children[0].children[1].children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png";
         arrowOrderBy.children[1].style.display = "none";
     }
-})
+});
+
+
+function products () {
+    document.querySelector(".products").querySelector("span").innerText = `${document.querySelectorAll(".item").length}`;
+}
+
+function sell () {
+    let totalnumber = 0;
+    for (let i = 0; i < document.querySelectorAll(".item").length; i++) {
+        let array = document.querySelectorAll(".item")[i].querySelector(".amount").innerText.split("/");
+        let now = Number(array[0]);
+        let total = Number(array[1]);
+
+        totalnumber += total - now;
+        
+    }
+    document.querySelector(".sold").children[0].innerText = `${totalnumber}`;
+    
+}
+
+function getMaxOfArray(numArray) {
+    return Math.max.apply(null, numArray);
+}
+
+function bestSeller () {
+    let totalnumber = [];
+    for (let i = 0; i < document.querySelectorAll(".item").length; i++) {
+        let array = document.querySelectorAll(".item")[i].querySelector(".amount").innerText.split("/");
+        let now = Number(array[0]);
+        let total = Number(array[1]);
+
+        totalnumber.push(total - now);
+        
+    }
+    let num = getMaxOfArray(totalnumber);
+    let prodName = document.querySelectorAll(".item")[totalnumber.indexOf(num)].querySelector(".product").innerText;
+    document.querySelector(".best-seller").querySelector("span").innerText = `${prodName}`;
+    
+}
+
+bestSeller();
+sell();
+products();

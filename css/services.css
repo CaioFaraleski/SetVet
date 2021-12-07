@@ -88,7 +88,11 @@ main .hidden form {
   height: 70%;
 }
 
-main .hidden form input {
+main .hidden form .hdn {
+  display: none;
+}
+
+main .hidden form input, main .hidden form div {
   width: 20rem;
   height: 3.2rem;
   border: none;
@@ -96,8 +100,67 @@ main .hidden form input {
   font-size: 1.1rem;
 }
 
-main .hidden form input:focus {
+main .hidden form input:focus, main .hidden form div:focus {
   outline: none;
+}
+
+main .hidden form div {
+  border: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+main .hidden form div figure {
+  height: 100%;
+  width: 51px;
+}
+
+main .hidden form div figure img {
+  -webkit-filter: brightness(0);
+          filter: brightness(0);
+}
+
+main .hidden form div .down {
+  width: 1rem;
+  height: 1rem;
+}
+
+main .hidden form div .imgs {
+  position: absolute;
+  border: solid black 1px;
+  width: 20rem;
+  height: 20rem;
+  top: 26rem;
+  background-color: #ffffff;
+  display: none;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+main .hidden form div .imgs figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+main .hidden form div .imgs figure:hover {
+  background-color: #bbbbbb;
+}
+
+main .hidden form div .imgs figure img {
+  -webkit-filter: brightness(0);
+          filter: brightness(0);
 }
 
 main .hidden form .submit {

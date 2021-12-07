@@ -2,7 +2,29 @@ let card = document.querySelectorAll(".card-service");
 let addProduct = document.querySelector(".add-service");
 let exit = document.querySelector(".exit");
 let wind = document.querySelector(".hidden");
+let divInput = document.querySelector(".input");
+let imgs = document.querySelectorAll(".img");
 
+
+
+divInput.addEventListener("click", function () {
+    if (document.querySelector(".down").children[0].src === "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png") {
+        document.querySelector(".imgs").style.display = "grid";
+        document.querySelector(".down").children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/up-arrow.png"
+    }
+    else if (document.querySelector(".down").children[0].src === "https://caiofaraleski.github.io/SetVet/assets/img/inventory/up-arrow.png") {
+        document.querySelector(".imgs").style.display = "none"
+        document.querySelector(".down").children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png"
+    }
+});
+
+imgs.forEach(function (img) {
+    img.addEventListener("click", function(event) {
+        let src = img.src;
+        console.log(img)
+        document.querySelector(".hdn").value = src;
+    });
+});
 
 card.forEach(function (div) {
     div.children[0].addEventListener("mouseover", function(event) {

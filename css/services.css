@@ -128,7 +128,7 @@ main .hidden form div .down {
 
 main .hidden form div .imgs {
   position: absolute;
-  border: solid black 1px;
+  border: solid black 3px;
   width: 20rem;
   height: 20rem;
   top: 26rem;

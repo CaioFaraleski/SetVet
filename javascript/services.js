@@ -23,6 +23,7 @@ imgs.forEach(function (img) {
         let src = img.src;
         console.log(img)
         document.querySelector(".hdn").value = src;
+        document.querySelector(".default").src = src;
     });
 });
 

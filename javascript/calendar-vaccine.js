@@ -16,12 +16,6 @@ let inputOneVaccine = hiddenInputVaccine[0];
 let InputTwoVaccine = hiddenInputVaccine[1];
 let InputThreeVaccine = hiddenInputVaccine[2];
 
-// function und () {
-//     if (localStorage.year) {
-
-//     }
-// }
-
 function setYearVaccine () {
     if(localStorage.yearVaccine !== undefined) {
         document.querySelector(".year-vaccine").innerText = localStorage.yearVaccine;

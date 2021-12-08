@@ -245,6 +245,11 @@ main {
                 color: $light-gray;
                 div {
                     height: 2.4rem;
+                    figure {
+                        filter: invert(0.6);
+                        width: 1rem;
+                        height: 1rem;
+                    }
                 }
             }
         }
@@ -376,6 +381,11 @@ main {
                 color: $light-gray;
                 div {
                     height: 2.4rem;
+                    figure {
+                        filter: invert(0.6);
+                        width: 1rem;
+                        height: 1rem;
+                    }
                 }
             }
         }

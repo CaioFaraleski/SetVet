@@ -133,8 +133,16 @@ main {
                         width: 12.5rem;
                         height: 12.5rem;
                         padding: 0 2rem;
+                        .delete {
+                            display: none;
+                            height: 1.4rem;
+                            filter: invert(1);
+                        }
                         figure {
                             width: 3rem;
+                            img {
+                                filter: brightness(1);
+                            }
                         }
                         .hdn {
                             margin-top: 1rem;

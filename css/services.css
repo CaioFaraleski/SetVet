@@ -228,8 +228,20 @@ main .table-services .right .sub-table .card-service .inside {
   padding: 0 2rem;
 }
 
+main .table-services .right .sub-table .card-service .inside .delete {
+  display: none;
+  height: 1.4rem;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
 main .table-services .right .sub-table .card-service .inside figure {
   width: 3rem;
+}
+
+main .table-services .right .sub-table .card-service .inside figure img {
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
 }
 
 main .table-services .right .sub-table .card-service .inside .hdn {

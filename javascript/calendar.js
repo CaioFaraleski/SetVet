@@ -19,12 +19,6 @@ let InputThree = hiddenInput[2];
 let check = document.querySelector(".adicionar");
 
 
-// function und () {
-//     if (localStorage.year) {
-
-    //     }
-// }
-
 function setYear () {
     if(localStorage.year !== undefined) {
         document.querySelector(".year").innerText = localStorage.year;

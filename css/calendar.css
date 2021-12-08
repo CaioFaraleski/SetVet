@@ -373,6 +373,13 @@ main .calendar .right .appointments div {
   height: 2.4rem;
 }
 
+main .calendar .right .appointments div figure {
+  -webkit-filter: invert(0.6);
+          filter: invert(0.6);
+  width: 1rem;
+  height: 1rem;
+}
+
 main .vaccine {
   width: 100rem;
   height: 50rem;
@@ -548,6 +555,13 @@ main .vaccine .right-vaccine .appointments-vaccine {
 
 main .vaccine .right-vaccine .appointments-vaccine div {
   height: 2.4rem;
+}
+
+main .vaccine .right-vaccine .appointments-vaccine div figure {
+  -webkit-filter: invert(0.6);
+          filter: invert(0.6);
+  width: 1rem;
+  height: 1rem;
 }
 
 ::-webkit-scrollbar {

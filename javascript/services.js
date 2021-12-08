@@ -38,6 +38,7 @@ card.forEach(function (div) {
         div.children[0].querySelector("figure").style.width = "4rem";
         div.children[0].querySelector("figure").style.marginLeft = "5rem";
         div.children[0].querySelector(".hdn").style.display = "block";
+        div.children[0].children[0].style.display = "flex";
     });
 });
 
@@ -52,6 +53,7 @@ card.forEach(function (div) {
         div.children[0].querySelector("figure").style.width = "3rem";
         div.children[0].querySelector("figure").style.marginLeft = "0";
         div.children[0].querySelector(".hdn").style.display = "none";
+        div.children[0].children[0].style.display = "none";
     });
 });
 

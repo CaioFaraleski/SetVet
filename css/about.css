@@ -52,6 +52,20 @@ body header .signup a {
   text-decoration: none;
 }
 
+header .buttons-home {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header .buttons-home a {
+  margin-left: 5rem;
+}
+
+header .buttons-home .dnone {
+  display: none;
+}
+
 main {
   min-height: 91vh;
 }

@@ -1,6 +1,19 @@
 @import 'header.scss';
 @import 'variables.scss';
 
+
+header {
+    .buttons-home {
+        justify-content: center;
+        a {
+            margin-left: 5rem;
+        }
+        .dnone {
+            display: none;
+        }
+    }
+}
+
 main {
     min-height: 91vh;
     section {

@@ -63,6 +63,20 @@ body header {
   padding: 0 2rem;
 }
 
+body header .buttons-home {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body header .buttons-home a {
+  margin-left: 5rem;
+}
+
+body header .buttons-home .dnone {
+  display: none;
+}
+
 body main {
   background-image: url(../assets/img/home/dog.svg);
   background-position-x: 260px;

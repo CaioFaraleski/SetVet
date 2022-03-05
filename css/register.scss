@@ -1,0 +1,148 @@
+@import 'variables.scss';
+
+
+a {
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background-image: url(/assets/img/uau.png);
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: right;
+    figure {
+        width: 2.5rem;
+        height: 2.5rem;
+        #back-to-home {
+            cursor: pointer;
+            &:hover {
+                filter: contrast(0.6);
+            }
+        }
+    }
+    div {
+        display: flex;
+        align-items: center;
+        #registerForm {
+            display: none;
+        }
+
+        #loginForm {
+            display: flex;
+        }
+        
+        form {
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            flex-direction: column;
+            margin-left: 27rem;
+            align-self: center;
+
+            figure {
+                width: 7rem;
+                height: 7rem;
+            }
+            h1 {
+                font-size: 1.7rem;
+            }
+
+            .logins {
+                margin-top: 2.5rem;
+                width: 20rem;
+                height: 3.2rem;
+                display: flex;
+                justify-content: space-around;
+                button {
+                    height: 100%;
+                    width: 3.8rem;
+                    border: none;
+                    border-radius: 100rem;
+                    background-color: transparent;
+                }
+            }
+
+            .submit {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                color: #fff;
+                background-color: $green;
+            }
+
+            input {
+                border: none;
+                border-bottom: 2px solid #000;
+                width: 20rem;
+                height: 2.4rem;
+                background-color: transparent;
+                margin-top: 2rem;
+                outline: 0;
+            }
+        }
+        #checkEmail {
+            display: none;
+            margin-left: 15rem;
+            p {
+                text-align: center;
+                font-size: 2rem;
+                width: 32rem;
+            }
+
+            button {
+                width: 15rem;
+                height: 2.5rem;
+                border-radius: 2rem;
+                border: none;
+                background-color: $green;
+                color: #fff;
+            }
+        }
+        #checked {
+            display: none;
+            margin-left: 15rem;
+            p {
+                text-align: center;
+                font-size: 2rem;
+                width: 32rem;
+            }
+
+            button {
+                width: 15rem;
+                height: 2.5rem;
+                border-radius: 2rem;
+                border: none;
+                background-color: $green;
+                a {
+                    color: #fff;
+                }
+            }
+        }
+    }
+    #loginOrRegister {
+        margin: 5rem 0 0 28rem;
+        h2 {
+            color: #fff;
+            text-align: center;
+            span {
+                font-size: 2.5rem;
+                font-weight: 700;
+            }
+        }
+        button {
+            background-color: #fff;
+            color: $green;
+            border: none;
+            width: 15rem;
+            height: 2.5rem;
+            margin-top: 3rem;
+            border-radius: 0.6rem;
+        }
+    }
+}

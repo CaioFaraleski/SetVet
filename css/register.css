@@ -1,0 +1,189 @@
+a {
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-image: url(/assets/img/uau.png);
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: right;
+}
+
+body figure {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+body figure #back-to-home {
+  cursor: pointer;
+}
+
+body figure #back-to-home:hover {
+  -webkit-filter: contrast(0.6);
+          filter: contrast(0.6);
+}
+
+body div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body div #registerForm {
+  display: none;
+}
+
+body div #loginForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body div form {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: transparent;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 27rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+body div form figure {
+  width: 7rem;
+  height: 7rem;
+}
+
+body div form h1 {
+  font-size: 1.7rem;
+}
+
+body div form .logins {
+  margin-top: 2.5rem;
+  width: 20rem;
+  height: 3.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+body div form .logins button {
+  height: 100%;
+  width: 3.8rem;
+  border: none;
+  border-radius: 100rem;
+  background-color: transparent;
+}
+
+body div form .submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: none;
+  color: #fff;
+  background-color: #00B554;
+}
+
+body div form input {
+  border: none;
+  border-bottom: 2px solid #000;
+  width: 20rem;
+  height: 2.4rem;
+  background-color: transparent;
+  margin-top: 2rem;
+  outline: 0;
+}
+
+body div #checkEmail {
+  display: none;
+  margin-left: 15rem;
+}
+
+body div #checkEmail p {
+  text-align: center;
+  font-size: 2rem;
+  width: 32rem;
+}
+
+body div #checkEmail button {
+  width: 15rem;
+  height: 2.5rem;
+  border-radius: 2rem;
+  border: none;
+  background-color: #00B554;
+  color: #fff;
+}
+
+body div #checked {
+  display: none;
+  margin-left: 15rem;
+}
+
+body div #checked p {
+  text-align: center;
+  font-size: 2rem;
+  width: 32rem;
+}
+
+body div #checked button {
+  width: 15rem;
+  height: 2.5rem;
+  border-radius: 2rem;
+  border: none;
+  background-color: #00B554;
+}
+
+body div #checked button a {
+  color: #fff;
+}
+
+body #loginOrRegister {
+  margin: 5rem 0 0 28rem;
+}
+
+body #loginOrRegister h2 {
+  color: #fff;
+  text-align: center;
+}
+
+body #loginOrRegister h2 span {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+body #loginOrRegister button {
+  background-color: #fff;
+  color: #00B554;
+  border: none;
+  width: 15rem;
+  height: 2.5rem;
+  margin-top: 3rem;
+  border-radius: 0.6rem;
+}
+/*# sourceMappingURL=register.css.map */

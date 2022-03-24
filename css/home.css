@@ -33,10 +33,14 @@ body header h1 {
 }
 
 body header .buttons-home {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 53rem;
 }
 
 body header .buttons-home a {
+  margin-left: 5rem;
   color: #ffffff;
   font-size: 1.3rem;
   text-decoration: none;
@@ -46,10 +50,18 @@ body header .buttons-home a:hover {
   color: #007235;
 }
 
+body header .buttons-home .dnone {
+  display: none;
+}
+
 body header .signup a {
   color: #ffffff;
   font-size: 1.5rem;
   text-decoration: none;
+}
+
+body header .signup #logout {
+  display: none;
 }
 
 body {
@@ -61,20 +73,6 @@ body header {
   background-color: transparent;
   height: 12vh;
   padding: 0 2rem;
-}
-
-body header .buttons-home {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-body header .buttons-home a {
-  margin-left: 5rem;
-}
-
-body header .buttons-home .dnone {
-  display: none;
 }
 
 body main {

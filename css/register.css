@@ -10,7 +10,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-image: url(/assets/img/uau.png);
+  background-image: url(../assets/img/uau.png);
   background-repeat: no-repeat;
   background-size: 70%;
   background-position: right;

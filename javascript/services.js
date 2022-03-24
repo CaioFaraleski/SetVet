@@ -5,7 +5,7 @@ let wind = document.querySelector(".hidden");
 let divInput = document.querySelector(".input");
 let imgs = document.querySelectorAll(".img");
 
-
+ifLoged(redirectTo);
 
 divInput.addEventListener("click", function () {
     if (document.querySelector(".down").children[0].src === "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png") {

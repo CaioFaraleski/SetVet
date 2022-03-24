@@ -1,6 +1,8 @@
 let img = document.querySelector('.arrow');
 let div = document.querySelector('.pets');
 
+ifLoged(redirectTo);
+
 function myFunction() {
     if(img.src === "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFB0jsrUO9DnujP8Tjdm3NBzQ3ax6rF_bEVg&usqp=CAU") {
         div.style.display = "block";

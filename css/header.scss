@@ -29,8 +29,10 @@ body {
             color: $white;
         }
         .buttons-home {
-            width: 53rem; //65
+            justify-content: center;
+            width: 53rem;
             a {
+                margin-left: 5rem;
                 color: $white;
                 font-size: 1.3rem;
                 text-decoration: none;
@@ -38,12 +40,18 @@ body {
                     color: #007235;
                 }
             }
+            .dnone {
+                display: none;
+            }
         }
         .signup {
             a {
                 color: $white;
                 font-size: 1.5rem;
                 text-decoration: none;
+            }
+            #logout {
+                display: none;
             }
         }
     }

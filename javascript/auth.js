@@ -1,10 +1,8 @@
-let dataa = {
-  name: "caio"
-}
-
 loginForm.onsubmit = function (event) {
   event.preventDefault();
-  firebase.auth().signInWithEmailAndPassword(loginForm.email.value, loginForm.password.value).catch(function (error) {
+  firebase.auth().signInWithEmailAndPassword(loginForm.email.value, loginForm.password.value).then(function (user) {
+    console.log("foi", user)
+  }).catch(function (error) {
     console.log(error)
   });
 }
@@ -16,13 +14,21 @@ registerForm.onsubmit = function (event) {
   }
   else {
     if (passwordr.value === checkpass.value) {
-      firebase.auth().createUserWithEmailAndPassword(registerForm.emailr.value, registerForm.passwordr.value).catch(function (error) {
-        console.log(error)
+      let nameAc = {
+        nameAccount: registerForm.namer.value
+      }
+
+      firebase.auth().createUserWithEmailAndPassword(registerForm.emailr.value, registerForm.passwordr.value).then(function () {
+        firebase.database().ref('users').child(firebase.auth().currentUser.uid).push(nameAc).then(function () {
+          console.log("ocorreu tudo bem2");
+        }).catch(function (error) {
+          console.log(error);
+        });
+      }).catch(function (error) {
+        console.log(error);
       });
   
-      firebase.database().ref('users').child(firebase.auth().currentUser.uid).push({nameAccount: registerForm.namer.value}).catch(function (error) {
-        console.log(error)
-      })
+      
     }
     else {
       console.log('as senhas nao estão iguais')
@@ -30,20 +36,6 @@ registerForm.onsubmit = function (event) {
   }
   
 }
-
-firebase.auth().onAuthStateChanged(function (user) {
-  if (user) {
-    loginForm.style.display = "none";
-    if (firebase.auth().currentUser.emailVerified) {
-      checked.style.display = "flex";
-    }
-    else {
-      checkEmail.style.display = "flex"
-    }
-  } else {
-    console.log("nao logado")
-  }
-});
 
 checkEmail.children[1].addEventListener('click', function () {
   firebase.auth().currentUser.sendEmailVerification().then(function () {

@@ -17,7 +17,9 @@ let inputOne = hiddenInput[0];
 let InputTwo = hiddenInput[1];
 let InputThree = hiddenInput[2];
 let check = document.querySelector(".adicionar");
+let buttonAdd = document.querySelector(".button-add")
 
+ifLoged(redirectTo);
 
 function setYear () {
     if(localStorage.year !== undefined) {
@@ -68,7 +70,8 @@ check.addEventListener("click", function() {
     }
 });
 
-leftArrow.addEventListener("click", function () {
+leftArrow.addEventListener("click", function (event) {
+    event.preventDefault();
     let year = document.querySelector(".year");
     let yearNumber = Number(year.innerText) - 1;
     year.innerText = yearNumber;
@@ -80,7 +83,8 @@ leftArrow.addEventListener("click", function () {
     createNumbers(squareAlign(localStorage.month, Number(localStorage.year)));
 });
 
-rightArrow.addEventListener("click", function () {
+rightArrow.addEventListener("click", function (event) {
+    event.preventDefault();
     let year = document.querySelector(".year");
     let yearNumber = Number(year.innerText) + 1;
     year.innerText = yearNumber;
@@ -94,6 +98,7 @@ rightArrow.addEventListener("click", function () {
 
 month.forEach(function (theMonth) {
     theMonth.addEventListener("click", function(event) {
+        event.preventDefault();
         let named = event.target.innerText;
         document.querySelector(".month").innerText = `${named}`;
         monthPhp = named;
@@ -443,3 +448,8 @@ function createNumbers (array) {
         inputs++;
     }
 }
+
+buttonAdd.addEventListener('click', function (event) {
+    event.preventDefault();
+    document.querySelector(".add-hour").style.display = "block"
+})

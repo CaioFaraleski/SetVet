@@ -12,5 +12,5 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-var database = firebase.database()
-var dbRefUsers = database.ref('users')
+// var database = firebase.database()
+// var dbRefUsers = database.ref('users')

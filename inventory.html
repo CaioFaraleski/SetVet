@@ -25,23 +25,23 @@
                 SETVET
             </h1>
         </div>
-        <div class="buttons-home d-flex justify-content-between align-items-center">
+        <div class="buttons-home d-flex align-items-center">
             <a href="index.html">Home</a>
-            <a href="calendar.html">Agenda</a>
-            <a href="clients.html">Clientes</a>
-            <a href="services.html">Serviços</a>
-            <!-- <a href="financial.html">Financeiro</a> -->
-            <a href="inventory.html">Produtos</a>
+            <a href="calendar.html" class="dnone">Agenda</a>
+            <a href="clients.html" class="dnone">Clientes</a>
+            <a href="services.html" class="dnone">Serviços</a>
+            <a href="inventory.html" class="dnone">Produtos</a>
             <a href="about.html">Sobre</a>
         </div>
         <div class="signup me-4">
-            <a href="">Entrar</a>
+            <a href="register.html">Entrar</a>
+            <a href="" id="logout">Sair</a>
         </div>
     </header>
     <main class="d-flex justify-content-center align-items-center">
         <div class="w-100 h-100 d-flex justify-content-center align-items-center">
             <div class="table d-flex">
-                <div class="hidden">
+                <div class="hidden" id="addHidden">
                     <div class="w-100 h-100 d-flex flex-column justify-content-between align-items-center">
                         <div class="window-header d-flex justify-content-between align-items-center px-3 w-100">
                             Adicionar Produtos
@@ -50,10 +50,10 @@
                             </figure>
                         </div>
                         <form action="" class="d-flex flex-column justify-content-start align-items-center">
-                            <input type="text" class="mt-4" placeholder="Nome do Produto">
-                            <input type="text" class="mt-4" placeholder="Preço do Produto">
-                            <input type="text" class="mt-4" placeholder="Quantidade">
-                            <input type="submit" class="mt-5 submit">
+                            <input type="text" class="mt-4" placeholder="Nome do Produto" id="addName" required>
+                            <input type="text" class="mt-4" placeholder="Preço do Produto" id="addPrice" required>
+                            <input type="text" class="mt-4" placeholder="Quantidade" id="addAmount" required>
+                            <input type="submit" class="mt-5 submit" id="addSubmit">
                         </form>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                                 <img src="assets/img/inventory/exit.png" class="w-100 h-100">
                             </figure>
                         </div>
-                        <form action="" class="d-flex flex-column justify-content-center align-items-center">
+                        <form action="" class="d-flex flex-column justify-content-center align-items-center" id="moreOrLessForm">
                             <input type="text" class="hidden-cod">
                             <div class="d-flex justify-content-between">
                                 <div>Remover</div>
@@ -74,8 +74,8 @@
                                     <span class="slider round"></span>
                                 </label>
                             </div>
-                            <input type="text" class="mt-4" placeholder="Quantidade">
-                            <input type="submit" class="my-5 submit">
+                            <input type="text" class="mt-4" placeholder="Quantidade" id="quantMoreOrLess">
+                            <input type="submit" class="my-5 submit" id="moreOrLessSubmit">
                         </form>
                     </div>
                 </div>
@@ -87,8 +87,9 @@
                             </figure>
                     </div>
                     <form action="" class="d-flex align-items-center justify-content-around flex-wrap">
-                        <label for="cod">Código<input class="ms-2" type="text" id="cod" name="cod"></label>
+                        <label for="cod"><input class="ms-2" type="text" id="cod" name="cod"></label>
                         <label for="name">Nome<input class="ms-2" type="text" id="name" name="name"></label>
+                        <label for="date">Data<input class="ms-2" type="text" id="date" name="date"></label>
                         <label for="val">Valor<input class="ms-2" type="text" id="val" name="val"></label>
                         <label for="quant">Quantidade<input class="ms-2" type="text" id="quant" name="quant"></label>
                         <div class="w-100 d-flex justify-content-center"><input type="submit" id="att" value="Atualizar"></div>
@@ -99,19 +100,19 @@
                     <div class="products d-flex flex-column justify-content-center align-items-start w-50">
                         Produtos:
                         <span>
-                            528
+                            
                         </span>
                     </div>
                     <div class="sold d-flex flex-column justify-content-center align-items-start w-50">
                         Vendidos:
                         <span>
-                            30
+                            
                         </span>
                     </div>
                     <div class="best-seller d-flex flex-column justify-content-center align-items-start w-50">
                         Mais vendido:
                         <span>
-                            Bolinha
+                            
                         </span>
                     </div>
                     <button>
@@ -131,16 +132,16 @@
                                 </figure>
                             </div>
                             <div class="order-list flex-column">
-                                <div class="w-100 d-flex justify-content-start align-items-center ps-3">
+                                <div class="w-100 d-flex justify-content-start align-items-center ps-3" id="orderByName">
                                     Nome
                                 </div>
-                                <div class="w-100 d-flex justify-content-start align-items-center ps-3">
-                                    Código
+                                <div class="w-100 d-flex justify-content-start align-items-center ps-3" id="orderByDate">
+                                    Data
                                 </div>
-                                <div class="w-100 d-flex justify-content-start align-items-center ps-3">
+                                <div class="w-100 d-flex justify-content-start align-items-center ps-3" id="orderByPrice">
                                     Valor
                                 </div>
-                                <div class="w-100 d-flex justify-content-start align-items-center ps-3">
+                                <div class="w-100 d-flex justify-content-start align-items-center ps-3" id="orderByAmount">
                                     Quantidade
                                 </div>
                             </div>
@@ -150,7 +151,7 @@
                                 <img src="assets/img/inventory/magnifier.png" class="w-100 h-100">
                             </figure>
                             <form action="POST">
-                                <input type="text" placeholder="Pesquisar produtos">
+                                <input type="search" placeholder="Pesquisar produtos" id="searchInventory">
                             </form>
                         </div>
                     </div>
@@ -172,13 +173,8 @@
                                 Quantidade
                             </div>
                         </div>
-                        <div class="table-items d-flex flex-column">
-                            <div class="item w-100 ps-4 py-2"><div class="cod ps-2">45635</div><div class="product ps-3">Bolinha</div><div class="date ps-4">02/04/2021</div><div class="price ps-4">R$35,00</div><div class="amount ps-4"><span>300/</span>500</div><figure><img src="assets/img/inventory/more-or-less.png" class="w-100 h-100"></figure><figure><img src="assets/img/inventory/edit.png" class="w-100 h-100"></figure><figure><img src="assets/img/inventory/delete-item.png" class="w-100 h-100"></figure></div>
-                            <div class="item w-100 ps-4 py-2"><div class="cod ps-2">45635</div><div class="product ps-3">Bolinha</div><div class="date ps-4">02/04/2021</div><div class="price ps-4">R$35,00</div><div class="amount ps-4"><span>200/</span>500</div><figure><img src="assets/img/inventory/more-or-less.png" class="w-100 h-100"></figure><figure><img src="assets/img/inventory/edit.png" class="w-100 h-100"></figure><figure><img src="assets/img/inventory/delete-item.png" class="w-100 h-100"></figure></div>
-                            <div class="item w-100 ps-4 py-2"><div class="cod ps-2">45635</div><div class="product ps-3">Rabatchones</div><div class="date ps-4">02/04/2021</div><div class="price ps-4">R$35,00</div><div class="amount ps-4"><span>20/</span>500</div><figure><img src="assets/img/inventory/more-or-less.png" class="w-100 h-100"></figure><figure><img src="assets/img/inventory/edit.png" class="w-100 h-100"></figure><figure><img src="assets/img/inventory/delete-item.png" class="w-100 h-100"></figure></div>
-                            <div class="item w-100 ps-4 py-2"><div class="cod ps-2">45635</div><div class="product ps-3">Flintstones</div><div class="date ps-4">02/04/2021</div><div class="price ps-4">R$35,00</div><div class="amount ps-4"><span>0/</span>500</div><figure><img src="assets/img/inventory/more-or-less.png" class="w-100 h-100"></figure><figure><img src="assets/img/inventory/edit.png" class="w-100 h-100"></figure><figure><img src="assets/img/inventory/delete-item.png" class="w-100 h-100"></figure></div>
-                            <div class="item w-100 ps-4 py-2"><div class="cod ps-2">45635</div><div class="product ps-3">Lucacheia</div><div class="date ps-4">02/04/2021</div><div class="price ps-4">R$35,00</div><div class="amount ps-4"><span>0/</span>700</div><figure><img src="assets/img/inventory/more-or-less.png" class="w-100 h-100"></figure><figure><img src="assets/img/inventory/edit.png" class="w-100 h-100"></figure><figure><img src="assets/img/inventory/delete-item.png" class="w-100 h-100"></figure></div>
-                            
+                        <div class="table-items d-flex flex-column" id="tableItems">
+
                         </div>
                     </div>
                 </div>
@@ -186,8 +182,13 @@
         </div>
     </main>
     <footer>
-
     </footer>
 </body>
+<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-database.js"></script>
+<script src="javascript/firebase.js"></script>
+<script src="javascript/login.js"></script>
 <script src="javascript/inventory.js"></script>
+<!-- <script src="javascript/inventoryDb.js"></script> -->
 </html>

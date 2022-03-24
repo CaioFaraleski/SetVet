@@ -16,12 +16,19 @@ funcButton.addEventListener('click', function() {
 document.querySelectorAll(".loginWithFacebook").forEach(function (item) {
     item.addEventListener('click', function (event) {
         event.preventDefault();
-        loginTwitter();
+        loginFacebook();
     });
 });
 
-function loginFacebook () {
-    firebase.auth().signInWithPopup(new firebase.auth.FacebookAuthProvider()).catch(function (error) {
+function loginGithub () {
+    firebase.auth().signInWithPopup(new firebase.auth.GithubAuthProvider()).then(function (dataSnapshot) {
+        data = {
+            nameAccount: dataSnapshot.user.displayName
+        }
+        firebase.database().ref("users").child(dataSnapshot.user.uid).push(data).then(function () {
+            console.log("foi filho")
+        })
+    }).catch(function (error) {
         console.log(error)
     });
 }
@@ -29,7 +36,7 @@ function loginFacebook () {
 document.querySelectorAll(".loginWithGoogle").forEach(function (item) {
     item.addEventListener('click', function (event) {
         event.preventDefault();
-        loginTwitter();
+        loginGoogle();
     });
 });
 
@@ -39,16 +46,16 @@ function loginGoogle () {
     });
 }
 
-document.querySelectorAll(".loginWithTwitter").forEach(function (item) {
+document.querySelectorAll(".loginWithGithub").forEach(function (item) {
     item.addEventListener('click', function (event) {
         event.preventDefault();
-        loginTwitter();
+        loginGithub();
     });
 });
 
 
-function loginTwitter () {
-    firebase.auth().signInWithPopup(new firebase.auth.TwitterAuthProvider()).catch(function (error) {
+function loginFacebook () {
+    firebase.auth().signInWithPopup(new firebase.auth.FacebookAuthProvider()).catch(function (error) {
         console.log(error)
     });
 }

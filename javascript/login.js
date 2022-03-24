@@ -2,7 +2,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         loginForm.style.display = "none";
         registerForm.style.display = "none";
-        if (user.emailVerified) {
+        if (user.emailVerified || user.providerData.providerId !== "password") {
             console.log(user)
             console.log(firebase.auth().currentUser.emailVerified)
             localStorage.setItem("uid", user.uid)

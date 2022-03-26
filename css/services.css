@@ -226,7 +226,7 @@ main .table-services .right .sub-table .card-service {
 }
 
 main .table-services .right .sub-table .card-service .inside {
-  background-color: #b7b7b7;
+  background-color: #939393;
   border-radius: 1.2rem;
   cursor: pointer;
   color: #ffffff;
@@ -247,13 +247,17 @@ main .table-services .right .sub-table .card-service .inside .delete {
           filter: invert(1);
 }
 
+main .table-services .right .sub-table .card-service .inside .delete .removeService:hover {
+  opacity: 0.6;
+}
+
 main .table-services .right .sub-table .card-service .inside figure {
   width: 3rem;
 }
 
 main .table-services .right .sub-table .card-service .inside figure img {
-  -webkit-filter: brightness(1);
-          filter: brightness(1);
+  -webkit-filter: invert(1);
+          filter: invert(1);
 }
 
 main .table-services .right .sub-table .card-service .inside .hdn {

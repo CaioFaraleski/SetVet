@@ -21,14 +21,7 @@ document.querySelectorAll(".loginWithFacebook").forEach(function (item) {
 });
 
 function loginGithub () {
-    firebase.auth().signInWithPopup(new firebase.auth.GithubAuthProvider()).then(function (dataSnapshot) {
-        data = {
-            nameAccount: dataSnapshot.user.displayName
-        }
-        firebase.database().ref("users").child(dataSnapshot.user.uid).push(data).then(function () {
-            console.log("foi filho")
-        })
-    }).catch(function (error) {
+    firebase.auth().signInWithPopup(new firebase.auth.GithubAuthProvider()).catch(function (error) {
         console.log(error)
     });
 }

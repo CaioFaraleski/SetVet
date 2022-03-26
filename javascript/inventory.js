@@ -22,13 +22,10 @@ ifLoged(redirectTo);
 
 firebase.database().ref('users').child(localStorage.getItem("uid")).child('produtos').orderByChild(orderBySelected).on('value', function (dataSnapshot) {
     fillProductList(dataSnapshot);
-    bestSeller();
-    sell();
-    products();
+    bestSoldAndTotal(dataSnapshot);
 });
 
 function fillProductList (dataSnapshot) {
-    console.log(dataSnapshot)
     tableItems.innerText = "";
     let name;
     let price;
@@ -187,7 +184,7 @@ function addRemove () {
                     price: Number(obj[i].item.price),
                     nowAmount: Number(obj[i].item.nowAmount) - Number(quantMoreOrLess.value),
                     totalAmount: Number(obj[i].item.totalAmount),
-                    seller: Number(obj[i].item.seller),
+                    seller: Number(obj[i].item.seller) + Number(quantMoreOrLess.value),
                     timestamp: Number(obj[i].item.timestamp)
                 }
             }
@@ -217,19 +214,40 @@ function getMaxOfArray(numArray) {
     return Math.max.apply(null, numArray);
 }
 
-function bestSeller () {
-    let totalnumber = [];
-    for (let i = 0; i < document.querySelectorAll(".item").length; i++) {
-        let array = document.querySelectorAll(".item")[i].querySelector(".amount").innerText.split("/");
-        let now = Number(array[0]);
-        let total = Number(array[1]);
-        
-        totalnumber.push(total - now);
-        
+function bestSoldAndTotal (table) {
+    let soldList = [];
+    let maior = 0;
+    let nomeMaior;
+    let soma = 0;
+    table.forEach(function (item) {
+        soldList.push({num: item.val().seller, name: item.val().name});
+    });
+    
+    for (let i = 0; i < soldList.length; i++) {
+        soma += soldList[i].num;
+        if ( soldList[i].num > maior ) {
+            maior = soldList[i].num;
+            nomeMaior = soldList[i].name
+        }
     }
-    let num = getMaxOfArray(totalnumber);
-    let prodName = document.querySelectorAll(".item")[totalnumber.indexOf(num)].querySelector(".product").innerText;
-    document.querySelector(".best-seller").querySelector("span").innerText = `${prodName}`;
+    
+    bestSeller.children[0].innerText = nomeMaior;
+    totalProducts.children[0].innerText = soldList.length;
+    soldItems.children[0].innerText = soma;
+
+
+    // let totalnumber = [];
+    // for (let i = 0; i < document.querySelectorAll(".item").length; i++) {
+    //     let array = document.querySelectorAll(".item")[i].querySelector(".amount").innerText.split("/");
+    //     let now = Number(array[0]);
+    //     let total = Number(array[1]);
+        
+    //     totalnumber.push(total - now);
+        
+    // }
+    // let num = getMaxOfArray(totalnumber);
+    // let prodName = document.querySelectorAll(".item")[totalnumber.indexOf(num)].querySelector(".product").innerText;
+    // document.querySelector(".best-seller").querySelector("span").innerText = `${prodName}`;
     
 }
 

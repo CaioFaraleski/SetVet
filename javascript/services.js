@@ -46,7 +46,7 @@ card.forEach(function (div) {
     div.children[0].addEventListener("mouseout", function(event) {
         div.children[0].style.width = "12.5rem";
         div.children[0].style.height = "12.5rem";
-        div.children[0].style.backgroundColor = "#b7b7b7";
+        div.children[0].style.backgroundColor = "#939393";
         div.children[0].style.fontSize = "1.2rem";
         div.children[0].style.alignItems = "center";
         div.children[0].style.padding = "0 2";
@@ -64,3 +64,9 @@ addProduct.addEventListener("click", function() {
 exit.children[0].addEventListener("click", function() {
     wind.style.display = "none";
 });
+
+document.querySelectorAll(".removeService").forEach(function (item) {
+    item.addEventListener('click', function (event) {
+        console.log("x paiiiiiiiiiiiiiii")
+    });
+})

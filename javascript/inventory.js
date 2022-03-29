@@ -234,20 +234,6 @@ function bestSoldAndTotal (table) {
     bestSeller.children[0].innerText = nomeMaior;
     totalProducts.children[0].innerText = soldList.length;
     soldItems.children[0].innerText = soma;
-
-
-    // let totalnumber = [];
-    // for (let i = 0; i < document.querySelectorAll(".item").length; i++) {
-    //     let array = document.querySelectorAll(".item")[i].querySelector(".amount").innerText.split("/");
-    //     let now = Number(array[0]);
-    //     let total = Number(array[1]);
-        
-    //     totalnumber.push(total - now);
-        
-    // }
-    // let num = getMaxOfArray(totalnumber);
-    // let prodName = document.querySelectorAll(".item")[totalnumber.indexOf(num)].querySelector(".product").innerText;
-    // document.querySelector(".best-seller").querySelector("span").innerText = `${prodName}`;
     
 }
 
@@ -289,6 +275,8 @@ orderByName.addEventListener('click', function (event) {
         fillProductList(dataSnapshot);
     });
     localStorage.setItem("orderBy", "name");
+    arrowOrderBy.children[1].style.display = "none";
+    arrowOrderBy.children[0].children[1].children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png";
 });
 
 orderByDate.addEventListener('click', function (event) {
@@ -298,7 +286,8 @@ orderByDate.addEventListener('click', function (event) {
         fillProductList(dataSnapshot);
     });
     localStorage.setItem("orderBy", "timestamp");
-
+    arrowOrderBy.children[1].style.display = "none";
+    arrowOrderBy.children[0].children[1].children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png";
 });
 
 orderByPrice.addEventListener('click', function (event) {
@@ -308,7 +297,8 @@ orderByPrice.addEventListener('click', function (event) {
         fillProductList(dataSnapshot);
     });
     localStorage.setItem("orderBy", "price");
-
+    arrowOrderBy.children[1].style.display = "none";
+    arrowOrderBy.children[0].children[1].children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png";
 });
 
 orderByAmount.addEventListener('click', function (event) {
@@ -318,7 +308,8 @@ orderByAmount.addEventListener('click', function (event) {
         fillProductList(dataSnapshot);
     });
     localStorage.setItem("orderBy", "nowAmount");
-
+    arrowOrderBy.children[1].style.display = "none";
+    arrowOrderBy.children[0].children[1].children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png";
 });
 
 searchInventory.addEventListener('keyup', function (event) {
@@ -375,43 +366,6 @@ exit.children[0].addEventListener("click", function() {
     wind.style.display = "none";
 });
 
-orderItem.addEventListener("click", function(event) {
-    let item = event.target.innerText;
-    if(item === "Nome") {
-        names = true;
-        cod = false;
-        quant = false;
-        value = false;
-        arrowOrderBy.children[1].style.display = "none";
-        arrowOrderBy.children[0].children[1].children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png";
-    }
-    else if(item === "Código") {
-        names = false;
-        cod = true;
-        quant = false;
-        value = false;
-        arrowOrderBy.children[1].style.display = "none";
-        arrowOrderBy.children[0].children[1].children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png";
-    }
-    else if(item === "Quantidade") {
-        names = false;
-        cod = false;
-        quant = true;
-        value = false;
-        arrowOrderBy.children[1].style.display = "none";
-        arrowOrderBy.children[0].children[1].children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png";
-    }
-    else if(item === "Valor") {
-        names = false;
-        cod = false;
-        quant = false;
-        value = true;
-        arrowOrderBy.children[1].style.display = "none";
-        arrowOrderBy.children[0].children[1].children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png";
-    }
-});
-
-
 arrowOrderBy.children[0].addEventListener('click', function () {
     if(arrowOrderBy.children[0].children[1].children[0].src === "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png") {
         arrowOrderBy.children[0].children[1].children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/up-arrow.png";
@@ -422,6 +376,7 @@ arrowOrderBy.children[0].addEventListener('click', function () {
         arrowOrderBy.children[1].style.display = "none";
     }
 });
+
 addSubmit.addEventListener('click', function (event) {
     event.preventDefault();
     if (addName !== "" && addPrice !== "" && addAmount !== "") {

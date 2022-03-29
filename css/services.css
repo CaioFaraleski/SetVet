@@ -64,11 +64,7 @@ body header .signup #logout {
   display: none;
 }
 
-main {
-  min-height: 91vh;
-}
-
-main .hidden {
+.hidden {
   display: none;
   position: absolute;
   width: 45rem;
@@ -76,35 +72,36 @@ main .hidden {
   top: 8rem;
   right: 41rem;
   background-color: #ffffff;
+  z-index: 10;
 }
 
-main .hidden .window-header {
+.hidden .window-header {
   background-color: #2dbb70;
   height: 5rem;
   font-size: 1.5rem;
   color: #ffffff;
 }
 
-main .hidden .window-header .exit {
+.hidden .window-header .exit {
   cursor: pointer;
   height: 1.5rem;
   width: 1.5rem;
 }
 
-main .hidden .window-header .exit:hover {
+.hidden .window-header .exit:hover {
   opacity: 0.8;
 }
 
-main .hidden form {
+.hidden form {
   width: 70%;
   height: 70%;
 }
 
-main .hidden form .hdn {
+.hidden form .hdn {
   display: none;
 }
 
-main .hidden form input, main .hidden form div {
+.hidden form input, .hidden form div {
   width: 20rem;
   height: 3.2rem;
   border: none;
@@ -112,33 +109,33 @@ main .hidden form input, main .hidden form div {
   font-size: 1.1rem;
 }
 
-main .hidden form input:focus, main .hidden form div:focus {
+.hidden form input:focus, .hidden form div:focus {
   outline: none;
 }
 
-main .hidden form div {
+.hidden form div {
   border: none;
   font-size: 1.3rem;
   font-weight: 500;
   cursor: pointer;
 }
 
-main .hidden form div figure {
+.hidden form div figure {
   height: 100%;
   width: 51px;
 }
 
-main .hidden form div figure img {
+.hidden form div figure img {
   -webkit-filter: brightness(0);
           filter: brightness(0);
 }
 
-main .hidden form div .down {
+.hidden form div .down {
   width: 1rem;
   height: 1rem;
 }
 
-main .hidden form div .imgs {
+.hidden form div .imgs {
   position: absolute;
   border: solid black 3px;
   width: 20rem;
@@ -152,7 +149,7 @@ main .hidden form div .imgs {
       grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
-main .hidden form div .imgs figure {
+.hidden form div .imgs figure {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -166,16 +163,16 @@ main .hidden form div .imgs figure {
   margin: 0;
 }
 
-main .hidden form div .imgs figure:hover {
+.hidden form div .imgs figure:hover {
   background-color: #bbbbbb;
 }
 
-main .hidden form div .imgs figure img {
+.hidden form div .imgs figure img {
   -webkit-filter: brightness(0);
           filter: brightness(0);
 }
 
-main .hidden form .submit {
+.hidden form .submit {
   height: 2.5rem;
   border: none;
   background-color: #189251;
@@ -183,8 +180,12 @@ main .hidden form .submit {
   font-size: 1.2rem;
 }
 
-main .hidden form .submit:hover {
+.hidden form .submit:hover {
   background-color: #178048;
+}
+
+main {
+  min-height: 91vh;
 }
 
 main .table-services {
@@ -208,6 +209,66 @@ main .table-services .table-header button {
   font-weight: 400;
   background-color: #2dbb70;
   border: none;
+}
+
+main .table-services .table-header .orderby {
+  width: 11.5rem;
+  font-size: 1.5rem;
+  color: #999999;
+  margin-left: 5rem;
+  cursor: pointer;
+}
+
+main .table-services .table-header .orderby .order-text div {
+  width: 75%;
+}
+
+main .table-services .table-header .orderby .order-text figure {
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+}
+
+main .table-services .table-header .orderby .order-text:hover {
+  -webkit-filter: brightness(0);
+          filter: brightness(0);
+}
+
+main .table-services .table-header .orderby .order-list {
+  width: 16rem;
+  position: absolute;
+  top: 214px;
+  display: none;
+}
+
+main .table-services .table-header .orderby .order-list div {
+  background-color: #ffffff;
+  height: 3rem;
+  font-size: 1.2rem;
+}
+
+main .table-services .table-header .orderby .order-list div:hover {
+  background-color: #e0e0e0;
+}
+
+main .table-services .table-header .search {
+  height: 4rem;
+  margin-right: 14rem;
+}
+
+main .table-services .table-header .search figure {
+  width: 2rem;
+  height: 2rem;
+}
+
+main .table-services .table-header .search input {
+  border: none;
+  border-bottom: 2px solid #999999;
+  font-size: 1.2rem;
+}
+
+main .table-services .table-header .search input:focus {
+  outline: none;
 }
 
 main .table-services .right {

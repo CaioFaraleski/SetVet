@@ -70,4 +70,22 @@ const redirectTo = function () {
     window.location.href = "http://127.0.0.1:5500/index.html";
 };
 
+function withBlur () {
+    document.querySelector("header").style.opacity = "0.5";
+    document.querySelector("main").style.opacity = "0.5";
+    document.querySelector("footer").style.opacity = "0.5";
+    document.querySelector("header").style.filter = "blur(1px)";
+    document.querySelector("main").style.filter = "blur(1px)";
+    document.querySelector("footer").style.filter = "blur(1px)";
+}
+
+function withoutBlur () {
+    document.querySelector("header").style.opacity = "1";
+    document.querySelector("main").style.opacity = "1";
+    document.querySelector("footer").style.opacity = "1";
+    document.querySelector("header").style.filter = "blur(0px)";
+    document.querySelector("main").style.filter = "blur(0px)";
+    document.querySelector("footer").style.filter = "blur(0px)";
+}
+
 

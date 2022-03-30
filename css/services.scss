@@ -2,6 +2,46 @@
 @import 'variables.scss';
 
 
+.areYouSure {
+    position: absolute;
+    display: none;
+    width: 30rem;
+    height: 15rem;
+    background-color: #ffffff;
+    color: #494949;
+    box-shadow: #ececec 0px 0px 6px 0px;
+    font-weight: 500;
+    font-size: 1.8rem;
+    top: calc(50% - 7.5rem);
+    left: calc(50% - 15rem);
+    text-align: center;
+    z-index: 10;
+    button {
+        width: 7rem;
+        height: 2.5rem;
+        background-color: #ffffff;
+        border: none;
+        font-weight: 500;
+        font-size: 1.1rem;
+    }
+    .cancel {
+        color: #ffffff;
+        background-color: #1daa5f;
+    }
+    .yes {
+        color: #696969;
+        border: 3px solid #696969;
+    }
+}
+.loading {
+    display: none;
+    position: absolute;
+    width: 8rem;
+    height: 8rem;
+    top: calc(50% - 4rem);
+    left: calc(50% - 4rem);
+    z-index: 11;
+}
 .hidden {
     display: none;
     position: absolute;
@@ -10,6 +50,8 @@
     top: 8rem;
     right: 41rem;
     background-color: $white;
+    box-shadow: #e1e1e1 0px 0px 6px 0px;
+
     z-index: 10;
     .window-header {
         background-color: #2dbb70;
@@ -113,6 +155,9 @@ main {
                 font-weight: 400;
                 background-color: #2dbb70;
                 border: none;
+                &:hover {
+                    background-color: #229e5c;
+                }
             }
             .orderby {
                 width: 11.5rem;

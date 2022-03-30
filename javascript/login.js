@@ -88,4 +88,8 @@ function withoutBlur () {
     document.querySelector("footer").style.filter = "blur(0px)";
 }
 
+function displayLoading (display) {
+    document.querySelector(".loading").style.display = display;
+}
+
 

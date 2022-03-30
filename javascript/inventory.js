@@ -1,3 +1,4 @@
+displayLoading("block");
 let orderItem = document.querySelector(".order-list");
 let arrowOrderBy = document.querySelector(".orderby");
 let addProduct = document.querySelector(".left-infos");
@@ -21,9 +22,10 @@ let orderBySelected = localStorage.getItem("orderBy") ? localStorage.getItem("or
 ifLoged(redirectTo);
 
 firebase.database().ref('users').child(localStorage.getItem("uid")).child('produtos').orderByChild(orderBySelected).on('value', function (dataSnapshot) {
+    displayLoading("none");
     fillProductList(dataSnapshot);
     bestSoldAndTotal(dataSnapshot);
-});
+})
 
 function fillProductList (dataSnapshot) {
     tableItems.innerText = "";
@@ -95,6 +97,7 @@ function fillProductList (dataSnapshot) {
             arrowOrderBy.children[1].style.display = "none";
             arrowOrderBy.children[0].children[1].children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png";
             windMore.querySelector(".hidden-cod").value = `${pai.children[0].innerText}^^${array}`;
+            withBlur();
         });
     })
     edit = document.querySelectorAll(".editImg");
@@ -115,23 +118,37 @@ function fillProductList (dataSnapshot) {
             windEdit.querySelector("#date").value = `${items[2]}`;
             windEdit.querySelector("#val").value = `${items[3]}`;
             windEdit.querySelector("#quant").value = `${items[4]}`;
-            windEdit.querySelector("#cod").style.display = "none";
-            windEdit.querySelector(".cod").style.display = "none";
+            withBlur();
         })
     })
     remove = document.querySelectorAll(".deleteImg");
     remove.forEach(function (item) {
         item.addEventListener('click', function (event) {
-            deleteItem(event.target.parentNode.parentNode)
-        })
-    })
+            document.querySelector(".areYouSure").setAttribute("id" , event.target.parentNode.parentNode.children[0].innerText);
+            document.querySelector(".areYouSure").style.display = "flex";
+            withBlur();
+        });
+    });
 }
+
+document.querySelector(".cancel").addEventListener('click', function (event) {
+    event.target.parentNode.id = "";
+    event.target.parentNode.style.display = "none";
+    withoutBlur();
+});
+
+document.querySelector(".yes").addEventListener('click', function (event) {
+    displayLoading("block")
+    deleteItem(event.target.parentNode.id);
+    event.target.parentNode.id = "";
+    event.target.parentNode.style.display = "none";
+    withoutBlur();
+});
 
 
 function deleteItem (item) {
-    let id = item.children[0].innerText;
-    firebase.database().ref("users").child(localStorage.getItem("uid")).child("produtos").child(id).remove().then(function () {
-        console.log("hahahahahahahahahahahahaahahazhahahahahaha puta")
+    firebase.database().ref(`users/${localStorage.getItem("uid")}/produtos`).child(item).remove().then(function () {
+        displayLoading("none");
     });
 }
 
@@ -165,13 +182,16 @@ function addRemove () {
                     nowAmount: Number(numn),
                     totalAmount: Number(numt),
                     seller: Number(obj[i].item.seller),
-                    timestamp: Number(obj[i].item.timestamp)
+                    timestamp: Number(obj[i].item.timestamp),
+                    nameToLowerCase: obj[i].item.name.toLowerCase()
                 }
             }
         }
-        firebase.database().ref('users').child(localStorage.getItem('uid')).child('produtos').child(keys).update(data).then(function() {
+        firebase.database().ref(`users/${localStorage.getItem("uid")}/produtos`).child(keys).update(data).then(function() {
             quantMoreOrLess.value = "";
             windMore.style.display = "none";
+            withoutBlur();
+            displayLoading("none");
         });
     }
     else {
@@ -185,13 +205,16 @@ function addRemove () {
                     nowAmount: Number(obj[i].item.nowAmount) - Number(quantMoreOrLess.value),
                     totalAmount: Number(obj[i].item.totalAmount),
                     seller: Number(obj[i].item.seller) + Number(quantMoreOrLess.value),
-                    timestamp: Number(obj[i].item.timestamp)
+                    timestamp: Number(obj[i].item.timestamp),
+                    nameToLowerCase: obj[i].item.name.toLowerCase()
                 }
             }
         }
-        firebase.database().ref('users').child(localStorage.getItem('uid')).child('produtos').child(keys).update(data).then(function() {
+        firebase.database().ref(`users/${localStorage.getItem("uid")}/produtos`).child(keys).update(data).then(function() {
             quantMoreOrLess.value = "";
             windMore.style.display = "none";
+            withoutBlur();
+            displayLoading("none");
         });
     }
 }
@@ -251,7 +274,8 @@ function update () {
             nowAmount: Number(separate[0]),
             totalAmount: Number(separate[1]),
             timestamp: dataSnapshot.val().timestamp,
-            seller: dataSnapshot.val().seller
+            seller: dataSnapshot.val().seller,
+            nameToLowerCase: document.querySelector("#name").value.toLowerCase()
         }
         firebase.database().ref(`users/${localStorage.getItem("uid")}/produtos/${(document.querySelector("#cod").value)}`).update(data).then(function () {
             document.querySelector("#cod").value = "";
@@ -260,6 +284,8 @@ function update () {
             document.querySelector("#val").value = "";
             document.querySelector("#quant").value = "";
             document.querySelector(".hidden-edits").style.display = "none";
+            withoutBlur();
+            displayLoading("none");
         });
     })
 }
@@ -269,10 +295,12 @@ function products () {
 }
 
 orderByName.addEventListener('click', function (event) {
+    displayLoading("block");
     event.target.parentNode.style.display = "none";
     event.target.parentNode.parentNode.children[0].children[1].children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png";
     firebase.database().ref(`users/${localStorage.getItem("uid")}/produtos`).orderByChild("name").once("value").then(function (dataSnapshot) {
         fillProductList(dataSnapshot);
+        displayLoading("none");
     });
     localStorage.setItem("orderBy", "name");
     arrowOrderBy.children[1].style.display = "none";
@@ -280,10 +308,12 @@ orderByName.addEventListener('click', function (event) {
 });
 
 orderByDate.addEventListener('click', function (event) {
+    displayLoading("block");
     event.target.parentNode.style.display = "none";
     event.target.parentNode.parentNode.children[0].children[1].children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png";
     firebase.database().ref(`users/${localStorage.getItem("uid")}/produtos`).orderByChild("timestamp").once("value").then(function (dataSnapshot) {
         fillProductList(dataSnapshot);
+        displayLoading("none");
     });
     localStorage.setItem("orderBy", "timestamp");
     arrowOrderBy.children[1].style.display = "none";
@@ -291,10 +321,12 @@ orderByDate.addEventListener('click', function (event) {
 });
 
 orderByPrice.addEventListener('click', function (event) {
+    displayLoading("block");
     event.target.parentNode.style.display = "none";
     event.target.parentNode.parentNode.children[0].children[1].children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png";
     firebase.database().ref(`users/${localStorage.getItem("uid")}/produtos`).orderByChild("price").once("value").then(function (dataSnapshot) {
         fillProductList(dataSnapshot);
+        displayLoading("none");
     });
     localStorage.setItem("orderBy", "price");
     arrowOrderBy.children[1].style.display = "none";
@@ -302,10 +334,12 @@ orderByPrice.addEventListener('click', function (event) {
 });
 
 orderByAmount.addEventListener('click', function (event) {
+    displayLoading("block");
     event.target.parentNode.style.display = "none";
     event.target.parentNode.parentNode.children[0].children[1].children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png";
     firebase.database().ref(`users/${localStorage.getItem("uid")}/produtos`).orderByChild("nowAmount").once("value").then(function (dataSnapshot) {
         fillProductList(dataSnapshot);
+        displayLoading("none");
     });
     localStorage.setItem("orderBy", "nowAmount");
     arrowOrderBy.children[1].style.display = "none";
@@ -313,26 +347,30 @@ orderByAmount.addEventListener('click', function (event) {
 });
 
 searchInventory.addEventListener('keyup', function (event) {
+    displayLoading("block");
     if (searchInventory.value !== "") {
-        firebase.database().ref(`users/${localStorage.getItem("uid")}/produtos`).orderByChild("name").startAt(searchInventory.value).endAt(searchInventory.value + '\uf8ff').once("value").then(function (dataSnapshot) {
-            fillProductList(dataSnapshot)
+        firebase.database().ref(`users/${localStorage.getItem("uid")}/produtos`).orderByChild("nameToLowerCase").startAt(searchInventory.value.toLowerCase()).endAt(searchInventory.value.toLowerCase() + '\uf8ff').once("value").then(function (dataSnapshot) {
+            fillProductList(dataSnapshot);
+            displayLoading("none");
         })
     }
     else {
         firebase.database().ref(`users/${localStorage.getItem("uid")}/produtos`).once("value").then(function (dataSnapshot) {
-            fillProductList(dataSnapshot)
+            fillProductList(dataSnapshot);
+            displayLoading("none");
         })
     }
 })
 
 moreOrLessSubmit.addEventListener("click", function(event) {
     event.preventDefault();
+    displayLoading("block");
     addRemove();
 })
 
 att.addEventListener('click', function (event) {
     event.preventDefault();
-    console.log("é isso aí filho da puta")
+    displayLoading("block");
     update();
 })
 
@@ -347,23 +385,27 @@ label.addEventListener("click", function() {
     }
 });
 
-exitMore.children[0].addEventListener("click", function() {
-    windMore.style.display = "none";
-});
-
-exitEdit.children[0].addEventListener("click", function() {
-    windEdit.style.display = "none";
-});
-
 addProduct.querySelector("button").addEventListener("click", function() {
     wind.style.display = "block";
     windEdit.style.display = "none";
     arrowOrderBy.children[1].style.display = "none";
     arrowOrderBy.children[0].children[1].children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png";
+    withBlur();
 });
 
 exit.children[0].addEventListener("click", function() {
     wind.style.display = "none";
+    withoutBlur();
+});
+
+exitMore.children[0].addEventListener("click", function() {
+    windMore.style.display = "none";
+    withoutBlur();
+});
+
+exitEdit.children[0].addEventListener("click", function() {
+    windEdit.style.display = "none";
+    withoutBlur();
 });
 
 arrowOrderBy.children[0].addEventListener('click', function () {
@@ -379,23 +421,26 @@ arrowOrderBy.children[0].addEventListener('click', function () {
 
 addSubmit.addEventListener('click', function (event) {
     event.preventDefault();
-    if (addName !== "" && addPrice !== "" && addAmount !== "") {
+    if (addName.value !== "" && addPrice.value !== "" && addAmount.value !== "") {
         let now = new Date();
+        console.log(now)
         let infos = {
-            name: addName.value,
+            name: `${addName.value[0].toUpperCase()}${addName.value.slice(1)}`,
             data: `${now.getDate()}/${now.getMonth() + 1}/${now.getFullYear()}`,
             timestamp: now.getTime(),
             price: Number(addPrice.value),
             totalAmount: Number(addAmount.value),
             nowAmount: Number(addAmount.value),
-            seller: 0
+            seller: 0,
+            nameToLowerCase: addName.value.toLowerCase()
         }
 
-        firebase.database().ref('users').child(firebase.auth().currentUser.uid).child("produtos").push(infos).then(function () {
+        firebase.database().ref(`users/${localStorage.getItem("uid")}/produtos`).push(infos).then(function () {
             addName.value = "";
             addPrice.value = "";
             addAmount.value = "";
             addHidden.style.display = "none";
+            withoutBlur();
         }).catch(function (error) {
             console.log(error)
         })

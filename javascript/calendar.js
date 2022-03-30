@@ -1,3 +1,4 @@
+displayLoading("block");
 let leftArrow = document.querySelector(".left-arr");
 let rightArrow = document.querySelector(".right-arr");
 let months = document.querySelector(".months");
@@ -17,9 +18,60 @@ let inputOne = hiddenInput[0];
 let InputTwo = hiddenInput[1];
 let InputThree = hiddenInput[2];
 let check = document.querySelector(".adicionar");
-let buttonAdd = document.querySelector(".button-add")
+let buttonAdd = document.querySelector(".button-add");
+let exit = document.querySelector(".exit-hour");
+let divItem;
 
 ifLoged(redirectTo);
+localizeAppoint();
+
+function fillCommitmentsList (dataSnapshot, tf) {
+    let pai = document.querySelector(".appointments");
+    pai.innerHTML = "";
+    dataSnapshot.forEach(function (item) {
+        if(Number(item.val().year) == Number(theYear.innerText) && Number(item.val().month) == Number(daysOfMonth(theMonth.innerText, theYear.innerText)[1]) && Number(item.val().day) == Number(theDay.innerText)) {
+            tf = true;
+            divItem = document.createElement("div");
+            let figureDelete = document.createElement("figure");
+            let imgDelete = document.createElement("img");
+            divItem.classList.add("d-flex", "justify-content-between", "w-100");
+            divItem.innerText = `${item.val().namePet}, ${item.val().service} às ${item.val().hour}:${item.val().minute}`;
+            pai.appendChild(divItem);
+            figureDelete.classList.add("me-3");
+            divItem.appendChild(figureDelete);
+            imgDelete.setAttribute("src", "assets/img/inventory/delete-item.png");
+            imgDelete.setAttribute("id", item.key);
+            imgDelete.classList.add("w-100", "h-100", "deleteAppointments");
+            figureDelete.appendChild(imgDelete);
+        }
+    })
+    document.querySelectorAll(".deleteAppointments").forEach(function (item) {
+        item.addEventListener('click', function (event) {
+            document.querySelector(".areYouSure").setAttribute("id" , event.target.id);
+            document.querySelector(".areYouSure").style.display = "flex";
+            withBlur();
+        })
+    })
+    return tf;
+}
+
+document.querySelector(".cancel").addEventListener('click', function (event) {
+    event.target.parentNode.id = "";
+    event.target.parentNode.style.display = "none";
+    withoutBlur();
+});
+
+document.querySelector(".yes").addEventListener('click', function (event) {
+    displayLoading("block")
+    firebase.database().ref(`users/${localStorage.getItem("uid")}/commitments`).child(event.target.parentNode.id).remove().then(function () {
+        localizeAppoint();
+    })
+    event.target.parentNode.id = "";
+    event.target.parentNode.style.display = "none";
+    withoutBlur();
+});
+
+
 
 function setYear () {
     if(localStorage.year !== undefined) {
@@ -51,27 +103,27 @@ function setDay () {
         document.querySelector(".theday").querySelector("span").innerText = localStorage.day;
     }
 }
+
+function localizeAppoint () {
+    firebase.database().ref(`users/${localStorage.getItem("uid")}/commitments`).once("value").then(function (dataSnapshot) {
+        let tf = false;
+        tf = fillCommitmentsList(dataSnapshot, tf);
+        if (!tf) {
+            document.querySelector(".appointments").innerText = "Não tem nada marcado nesta data!";
+            displayLoading("none");
+        }
+        displayLoading("none");
+    });
+}
+
 setYear();
 setMonth();
 setDay();
 createNumbers(squareAlign(localStorage.month, Number(localStorage.year)));
 
-
-check.addEventListener("click", function() {
-    if(check.checked) {
-        document.querySelector(".calendar").style.display = "none";
-        document.querySelector(".vaccine").style.display = "flex";
-        document.querySelector(".check").children[0].children[0].innerText = "Agenda de Vacinação"
-    }
-    else {
-        document.querySelector(".calendar").style.display = "flex";
-        document.querySelector(".vaccine").style.display = "none";
-        document.querySelector(".check").children[0].children[0].innerText = "Agenda Geral"
-    }
-});
-
 leftArrow.addEventListener("click", function (event) {
     event.preventDefault();
+    displayLoading("block");
     let year = document.querySelector(".year");
     let yearNumber = Number(year.innerText) - 1;
     year.innerText = yearNumber;
@@ -81,10 +133,12 @@ leftArrow.addEventListener("click", function (event) {
     InputTwo.value = localStorage.month;
     InputThree.value = localStorage.day;
     createNumbers(squareAlign(localStorage.month, Number(localStorage.year)));
+    localizeAppoint()
 });
 
 rightArrow.addEventListener("click", function (event) {
     event.preventDefault();
+    displayLoading("block");
     let year = document.querySelector(".year");
     let yearNumber = Number(year.innerText) + 1;
     year.innerText = yearNumber;
@@ -94,11 +148,13 @@ rightArrow.addEventListener("click", function (event) {
     InputTwo.value = localStorage.month;
     InputThree.value = localStorage.day;
     createNumbers(squareAlign(localStorage.month, Number(localStorage.year)));
+    localizeAppoint()
 });
 
 month.forEach(function (theMonth) {
     theMonth.addEventListener("click", function(event) {
         event.preventDefault();
+        displayLoading("block");
         let named = event.target.innerText;
         document.querySelector(".month").innerText = `${named}`;
         monthPhp = named;
@@ -107,6 +163,7 @@ month.forEach(function (theMonth) {
         InputTwo.value = localStorage.month;
         InputThree.value = localStorage.day;
         createNumbers(squareAlign(localStorage.month, Number(localStorage.year)));
+        localizeAppoint()
     });
 });
 
@@ -117,6 +174,7 @@ days.forEach(function (theDay) {
             return;
         }
         else {
+            displayLoading("block");
             document.querySelector(".theday").querySelector("span").innerText = `${named}`;
             dayPhp = named;
             localStorage.setItem("day", `${named}`);
@@ -124,8 +182,14 @@ days.forEach(function (theDay) {
             InputTwo.value = localStorage.month;
             InputThree.value = localStorage.day;
             createNumbers(squareAlign(localStorage.month, Number(localStorage.year)));
+            localizeAppoint()
         }
     });
+});
+
+exit.children[0].addEventListener("click", function() {
+    document.querySelector(".add-hour").style.display = "none";
+    withoutBlur();
 });
 
 function Bissexto (year) {
@@ -436,6 +500,7 @@ function createNumbers (array) {
     for (let i = 1; i <= days; i++) {
         document.querySelector(".days").querySelectorAll("input")[inputs - 1].value = `${i}`;
         document.querySelector(".days").querySelectorAll("input")[inputs - 1].className = "hidden-submit";
+        document.querySelector(".days").querySelectorAll("input")[inputs - 1].style.cursor = "pointer";
         inputs++;
     }
     for (let i = 1; i <= end; i++) {
@@ -451,5 +516,32 @@ function createNumbers (array) {
 
 buttonAdd.addEventListener('click', function (event) {
     event.preventDefault();
-    document.querySelector(".add-hour").style.display = "block"
+    document.querySelector(".add-hour").style.display = "block";
+    withBlur();
+});
+
+addCalendarSubmit.addEventListener('click', function (event) {
+    event.preventDefault();
+    displayLoading("block");
+    let data = dateCalendar.value.split("-");
+    let time = timeCalendar.value.split(":");
+    let infos = {
+        namePet: `${petCalendar.value[0].toUpperCase()}${petCalendar.value.slice(1)}`,
+        service: `${serviceCalendar.value[0].toUpperCase()}${serviceCalendar.value.slice(1)}`,
+        year: data[0],
+        month: data[1],
+        day: data[2],
+        hour: time[0],
+        minute: time[1]
+    }
+    firebase.database().ref(`users/${localStorage.getItem("uid")}/commitments`).push(infos).then(function () {
+        dateCalendar.value = "";
+        timeCalendar.value = "";
+        petCalendar.value = "";
+        serviceCalendar.value = "";
+        document.querySelector(".add-hour").style.display = "none";
+        withoutBlur();
+        localizeAppoint();
+    });
+    displayLoading("none");
 })

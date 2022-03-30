@@ -64,6 +64,52 @@ body header .signup #logout {
   display: none;
 }
 
+.areYouSure {
+  position: absolute;
+  display: none;
+  width: 30rem;
+  height: 15rem;
+  background-color: #ffffff;
+  color: #494949;
+  -webkit-box-shadow: #ececec 0px 0px 6px 0px;
+          box-shadow: #ececec 0px 0px 6px 0px;
+  font-weight: 500;
+  font-size: 1.8rem;
+  top: calc(50% - 7.5rem);
+  left: calc(50% - 15rem);
+  text-align: center;
+  z-index: 10;
+}
+
+.areYouSure button {
+  width: 7rem;
+  height: 2.5rem;
+  background-color: #ffffff;
+  border: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.areYouSure .cancel {
+  color: #ffffff;
+  background-color: #1daa5f;
+}
+
+.areYouSure .yes {
+  color: #696969;
+  border: 3px solid #696969;
+}
+
+.loading {
+  display: none;
+  position: absolute;
+  width: 8rem;
+  height: 8rem;
+  top: calc(50% - 4rem);
+  left: calc(50% - 4rem);
+  z-index: 11;
+}
+
 .hidden {
   display: none;
   position: absolute;
@@ -72,6 +118,8 @@ body header .signup #logout {
   top: 8rem;
   right: 41rem;
   background-color: #ffffff;
+  -webkit-box-shadow: #e1e1e1 0px 0px 6px 0px;
+          box-shadow: #e1e1e1 0px 0px 6px 0px;
   z-index: 10;
 }
 
@@ -209,6 +257,10 @@ main .table-services .table-header button {
   font-weight: 400;
   background-color: #2dbb70;
   border: none;
+}
+
+main .table-services .table-header button:hover {
+  background-color: #229e5c;
 }
 
 main .table-services .table-header .orderby {

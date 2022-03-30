@@ -64,6 +64,112 @@ body header .signup #logout {
   display: none;
 }
 
+.areYouSure {
+  position: absolute;
+  display: none;
+  width: 30rem;
+  height: 15rem;
+  background-color: #ffffff;
+  color: #494949;
+  -webkit-box-shadow: #ececec 0px 0px 6px 0px;
+          box-shadow: #ececec 0px 0px 6px 0px;
+  font-weight: 500;
+  font-size: 1.8rem;
+  top: calc(50% - 7.5rem);
+  left: calc(50% - 15rem);
+  text-align: center;
+  z-index: 10;
+}
+
+.areYouSure button {
+  width: 7rem;
+  height: 2.5rem;
+  background-color: #ffffff;
+  border: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.areYouSure .cancel {
+  color: #ffffff;
+  background-color: #1daa5f;
+}
+
+.areYouSure .yes {
+  color: #696969;
+  border: 3px solid #696969;
+}
+
+.loading {
+  display: none;
+  position: absolute;
+  width: 8rem;
+  height: 8rem;
+  top: calc(50% - 4rem);
+  left: calc(50% - 4rem);
+  z-index: 11;
+}
+
+.add-hour {
+  position: absolute;
+  width: 45rem;
+  height: 40rem;
+  border: none;
+  background-color: #ffffff;
+  top: calc(50% - 22.5rem);
+  right: calc(50% - 20rem);
+  -webkit-box-shadow: #e1e1e1 0px 0px 6px 0px;
+          box-shadow: #e1e1e1 0px 0px 6px 0px;
+  z-index: 10;
+  display: none;
+}
+
+.add-hour .window-header {
+  background-color: #2dbb70;
+  height: 12.5%;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.add-hour .window-header .exit-hour {
+  cursor: pointer;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.add-hour .window-header .exit-hour:hover {
+  opacity: 0.8;
+}
+
+.add-hour form {
+  width: 70%;
+  height: 87.5%;
+}
+
+.add-hour form input {
+  width: 20rem;
+  height: 3.2rem;
+  border: none;
+  border-bottom: 2px solid #000000;
+  font-size: 1.1rem;
+}
+
+.add-hour form input:focus {
+  outline: none;
+}
+
+.add-hour form .submit {
+  height: 2.5rem;
+  border: none;
+  background-color: #189251;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+.add-hour form .submit:hover {
+  background-color: #178048;
+}
+
 main {
   min-height: 91vh;
 }
@@ -144,66 +250,6 @@ main .check .switch .slider:before {
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
-}
-
-main .add-hour {
-  position: absolute;
-  width: 60rem;
-  height: 25rem;
-  border: none;
-  background-color: #ffffff;
-  top: 100px;
-  right: 240px;
-  z-index: 10;
-  display: none;
-}
-
-main .add-hour .header-edits {
-  background-color: #2dbb70;
-  height: 4rem;
-  font-size: 1.5rem;
-  color: #ffffff;
-  height: 20%;
-}
-
-main .add-hour .header-edits .exit-edits {
-  cursor: pointer;
-  height: 2.5rem;
-  width: 2.5rem;
-}
-
-main .add-hour .header-edits .exit-edits:hover {
-  opacity: 0.8;
-}
-
-main .add-hour-vaccine {
-  position: absolute;
-  width: 60rem;
-  height: 25rem;
-  border: none;
-  background-color: #ffffff;
-  top: 100px;
-  right: 240px;
-  z-index: 10;
-  display: none;
-}
-
-main .add-hour-vaccine .header-edits-vaccine {
-  background-color: #2dbb70;
-  height: 4rem;
-  font-size: 1.5rem;
-  color: #ffffff;
-  height: 20%;
-}
-
-main .add-hour-vaccine .header-edits-vaccine .exit-edits-vaccine {
-  cursor: pointer;
-  height: 2.5rem;
-  width: 2.5rem;
-}
-
-main .add-hour-vaccine .header-edits-vaccine .exit-edits-vaccine:hover {
-  opacity: 0.8;
 }
 
 main .calendar {
@@ -347,19 +393,20 @@ main .calendar .mid .button-add {
 }
 
 main .calendar .mid .button-add .add {
-  background-color: #2dbb70;
-  background-image: linear-gradient(110deg, #2dbb70 1%, #189251 99%);
+  background-color: #1ca05a;
   width: 10rem;
   height: 3.5rem;
   border: none;
-  -webkit-box-shadow: 0 0 1em #00B554;
-          box-shadow: 0 0 1em #00B554;
 }
 
 main .calendar .mid .button-add .add figure {
   height: 1.8rem;
   width: 1.8rem;
   margin: 0;
+}
+
+main .calendar .mid .button-add .add:hover {
+  background-color: #1f8f53;
 }
 
 main .calendar .right {
@@ -390,6 +437,15 @@ main .calendar .right .appointments div figure {
           filter: invert(0.6);
   width: 1rem;
   height: 1rem;
+}
+
+main .calendar .right .appointments div figure .deleteAppointments {
+  cursor: pointer;
+}
+
+main .calendar .right .appointments div figure .deleteAppointments:hover {
+  -webkit-filter: invert(1);
+          filter: invert(1);
 }
 
 main .vaccine {

@@ -1,3 +1,4 @@
+displayLoading("block");
 let addProduct = document.querySelector(".add-service");
 let exit = document.querySelector(".exit");
 let wind = document.querySelector(".hidden");
@@ -10,7 +11,7 @@ ifLoged(redirectTo);
 
 firebase.database().ref(`users/${localStorage.getItem("uid")}/services`).orderByChild(orderBySelected).on("value", function (dataSnapshot) {
     fillServicesList(dataSnapshot)
-    
+    displayLoading("none");
 })
 
 function fillServicesList (dataSnapshot) {
@@ -80,14 +81,30 @@ function fillServicesList (dataSnapshot) {
     });
     document.querySelectorAll(".removeService").forEach(function (item) {
         item.addEventListener('click', function (event) {
-            deleteItem(event.target);
+            document.querySelector(".areYouSure").setAttribute("id" , event.target.id);
+            document.querySelector(".areYouSure").style.display = "flex";
+            withBlur();
         })
     });
 }
 
+document.querySelector(".cancel").addEventListener('click', function (event) {
+    event.target.parentNode.id = "";
+    event.target.parentNode.style.display = "none";
+    withoutBlur();
+});
+
+document.querySelector(".yes").addEventListener('click', function (event) {
+    displayLoading("block")
+    deleteItem(event.target.parentNode.id);
+    event.target.parentNode.id = "";
+    event.target.parentNode.style.display = "none";
+    withoutBlur();
+});
+
 function deleteItem (target) {
-    firebase.database().ref(`users/${localStorage.getItem("uid")}/services`).child(target.id).remove().then(function () {
-        console.log("hahahahahahahahahahahahaahahazhahahahahaha puta")
+    firebase.database().ref(`users/${localStorage.getItem("uid")}/services`).child(target).remove().then(function () {
+        displayLoading("none")
     });
 }
 
@@ -114,10 +131,12 @@ orderBy.children[0].addEventListener('click', function () {
 });
 
 orderByNameService.addEventListener('click', function (event) {
+    displayLoading("block");
     event.target.parentNode.style.display = "none";
     event.target.parentNode.parentNode.children[0].children[1].children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png";
     firebase.database().ref(`users/${localStorage.getItem("uid")}/services`).orderByChild("name").once("value").then(function (dataSnapshot) {
         fillServicesList(dataSnapshot);
+        displayLoading("none");
     });
     localStorage.setItem("orderByService", "name");
     orderBy.children[1].style.display = "none";
@@ -125,10 +144,12 @@ orderByNameService.addEventListener('click', function (event) {
 });
 
 orderByDateService.addEventListener('click', function (event) {
+    displayLoading("block");
     event.target.parentNode.style.display = "none";
     event.target.parentNode.parentNode.children[0].children[1].children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png";
     firebase.database().ref(`users/${localStorage.getItem("uid")}/services`).orderByChild("timestamp").once("value").then(function (dataSnapshot) {
         fillServicesList(dataSnapshot);
+        displayLoading("none");
     });
     localStorage.setItem("orderByService", "timestamp");
     orderBy.children[1].style.display = "none";
@@ -136,10 +157,12 @@ orderByDateService.addEventListener('click', function (event) {
 });
 
 orderByImageService.addEventListener('click', function (event) {
+    displayLoading("block");
     event.target.parentNode.style.display = "none";
     event.target.parentNode.parentNode.children[0].children[1].children[0].src = "https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png";
     firebase.database().ref(`users/${localStorage.getItem("uid")}/services`).orderByChild("numImage").once("value").then(function (dataSnapshot) {
         fillServicesList(dataSnapshot);
+        displayLoading("none");
     });
     localStorage.setItem("orderByService", "numImage");
     orderBy.children[1].style.display = "none";
@@ -167,21 +190,25 @@ exit.children[0].addEventListener("click", function () {
 });
 
 searchServices.addEventListener('keyup', function (event) {
+    displayLoading("block");
     if (searchServices.value !== "") {
         firebase.database().ref(`users/${localStorage.getItem("uid")}/services`).orderByChild("nameToLowerCase").startAt(searchServices.value.toLowerCase()).endAt(searchServices.value.toLowerCase() + '\uf8ff').once("value").then(function (dataSnapshot) {
-            fillServicesList(dataSnapshot)
+            fillServicesList(dataSnapshot);
+            displayLoading("none");
         })
     }
     else {
         firebase.database().ref(`users/${localStorage.getItem("uid")}/services`).orderByChild("name").once("value").then(function (dataSnapshot) {
-            fillServicesList(dataSnapshot)
+            fillServicesList(dataSnapshot);
+            displayLoading("none");
         })
     }
 })
 
 addServiceSubmit.addEventListener("click", function (event) {
     event.preventDefault();
-    let name = addNameService.value;
+    displayLoading("block");
+    let name = `${addNameService.value[0].toUpperCase()}${addNameService.value.slice(1)}`;
     let numImg = imageServiceNumber.value.replace(".png", "");
     numImg = numImg.replace("https://caiofaraleski.github.io/SetVet/assets/img/services/", "");
     let description = addDescriptionService.value;
@@ -197,11 +224,14 @@ addServiceSubmit.addEventListener("click", function (event) {
     }
     firebase.database().ref(`users/${localStorage.getItem("uid")}/services`).push(data).then(function () {
         console.log("foi porra, adicionado com succes");
-    }).catch(function (error) {
-        console.log(error)
+        withoutBlur();
+        displayLoading("none");
+    }, function () {
+        console.log("foi porra, adicionado com succes");
+        withoutBlur();
+        displayLoading("none");
     });
     wind.style.display = "none";
-    withoutBlur();
 })
 
 document.querySelectorAll(".removeService").forEach(function (item) {

@@ -64,50 +64,88 @@ body header .signup #logout {
   display: none;
 }
 
-main {
-  min-height: 91vh;
-}
-
-main .table {
-  width: 100rem;
-  height: 50rem;
-  margin: 0;
+.areYouSure {
   position: absolute;
+  display: none;
+  width: 30rem;
+  height: 15rem;
+  background-color: #ffffff;
+  color: #494949;
+  -webkit-box-shadow: #ececec 0px 0px 6px 0px;
+          box-shadow: #ececec 0px 0px 6px 0px;
+  font-weight: 500;
+  font-size: 1.8rem;
+  top: calc(50% - 7.5rem);
+  left: calc(50% - 15rem);
+  text-align: center;
+  z-index: 10;
 }
 
-main .table .hidden {
+.areYouSure button {
+  width: 7rem;
+  height: 2.5rem;
+  background-color: #ffffff;
+  border: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.areYouSure .cancel {
+  color: #ffffff;
+  background-color: #1daa5f;
+}
+
+.areYouSure .yes {
+  color: #696969;
+  border: 3px solid #696969;
+}
+
+.loading {
+  display: none;
+  position: absolute;
+  width: 8rem;
+  height: 8rem;
+  top: calc(50% - 4rem);
+  left: calc(50% - 4rem);
+  z-index: 11;
+}
+
+.hidden {
   display: none;
   position: absolute;
   width: 45rem;
   height: 40rem;
-  top: 3rem;
-  right: 25rem;
+  top: calc(50% - 20rem);
+  right: calc(50% - 22.5rem);
   background-color: #ffffff;
+  -webkit-box-shadow: #e1e1e1 0px 0px 6px 0px;
+          box-shadow: #e1e1e1 0px 0px 6px 0px;
+  z-index: 10;
 }
 
-main .table .hidden .window-header {
+.hidden .window-header {
   background-color: #2dbb70;
   height: 5rem;
   font-size: 1.5rem;
   color: #ffffff;
 }
 
-main .table .hidden .window-header .exit {
+.hidden .window-header .exit {
   cursor: pointer;
   height: 1.5rem;
   width: 1.5rem;
 }
 
-main .table .hidden .window-header .exit:hover {
+.hidden .window-header .exit:hover {
   opacity: 0.8;
 }
 
-main .table .hidden form {
+.hidden form {
   width: 70%;
   height: 70%;
 }
 
-main .table .hidden form input {
+.hidden form input {
   width: 20rem;
   height: 3.2rem;
   border: none;
@@ -115,11 +153,11 @@ main .table .hidden form input {
   font-size: 1.1rem;
 }
 
-main .table .hidden form input:focus {
+.hidden form input:focus {
   outline: none;
 }
 
-main .table .hidden form .submit {
+.hidden form .submit {
   height: 2.5rem;
   border: none;
   background-color: #189251;
@@ -127,22 +165,25 @@ main .table .hidden form .submit {
   font-size: 1.2rem;
 }
 
-main .table .hidden form .submit:hover {
+.hidden form .submit:hover {
   background-color: #178048;
 }
 
-main .table .hidden-moreorless {
+.hidden-moreorless {
   display: none;
   position: absolute;
   width: 45rem;
   height: 40rem;
-  top: 3rem;
-  right: 25rem;
+  top: calc(50% - 20rem);
+  right: calc(50% - 22.5rem);
+  -webkit-box-shadow: #e1e1e1 0px 0px 6px 0px;
+          box-shadow: #e1e1e1 0px 0px 6px 0px;
   background-color: #ffffff;
   border: none;
+  z-index: 10;
 }
 
-main .table .hidden-moreorless .window-header {
+.hidden-moreorless .window-header {
   background-color: #2dbb70;
   height: 5rem;
   font-size: 1.5rem;
@@ -150,59 +191,59 @@ main .table .hidden-moreorless .window-header {
   height: 15%;
 }
 
-main .table .hidden-moreorless .window-header .exit-more {
+.hidden-moreorless .window-header .exit-more {
   cursor: pointer;
   height: 1.5rem;
   width: 1.5rem;
 }
 
-main .table .hidden-moreorless .window-header .exit-more:hover {
+.hidden-moreorless .window-header .exit-more:hover {
   opacity: 0.8;
 }
 
-main .table .hidden-moreorless form {
+.hidden-moreorless form {
   width: 70%;
   height: 85%;
 }
 
-main .table .hidden-moreorless form div {
+.hidden-moreorless form div {
   width: 10rem;
 }
 
-main .table .hidden-moreorless form div div {
+.hidden-moreorless form div div {
   width: 5rem;
   font-size: 1.3rem;
   color: red;
 }
 
-main .table .hidden-moreorless form .switch {
+.hidden-moreorless form .switch {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 34px;
 }
 
-main .table .hidden-moreorless form .switch input {
+.hidden-moreorless form .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-main .table .hidden-moreorless form .switch input:checked + .slider {
+.hidden-moreorless form .switch input:checked + .slider {
   background-color: #2dbb70;
 }
 
-main .table .hidden-moreorless form .switch input:focus + .slider {
+.hidden-moreorless form .switch input:focus + .slider {
   -webkit-box-shadow: 0 0 1px #2dbb70;
           box-shadow: 0 0 1px #2dbb70;
 }
 
-main .table .hidden-moreorless form .switch input:checked + .slider:before {
+.hidden-moreorless form .switch input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   transform: translateX(26px);
 }
 
-main .table .hidden-moreorless form .switch .slider {
+.hidden-moreorless form .switch .slider {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -214,7 +255,7 @@ main .table .hidden-moreorless form .switch .slider {
   transition: .4s;
 }
 
-main .table .hidden-moreorless form .switch .slider:before {
+.hidden-moreorless form .switch .slider:before {
   position: absolute;
   content: "";
   height: 26px;
@@ -226,19 +267,19 @@ main .table .hidden-moreorless form .switch .slider:before {
   transition: .4s;
 }
 
-main .table .hidden-moreorless form .switch .round {
+.hidden-moreorless form .switch .round {
   border-radius: 34px;
 }
 
-main .table .hidden-moreorless form .switch .round:before {
+.hidden-moreorless form .switch .round:before {
   border-radius: 50%;
 }
 
-main .table .hidden-moreorless form .hidden-cod {
+.hidden-moreorless form .hidden-cod {
   display: none;
 }
 
-main .table .hidden-moreorless form input {
+.hidden-moreorless form input {
   width: 20rem;
   height: 3.2rem;
   border: none;
@@ -246,11 +287,11 @@ main .table .hidden-moreorless form input {
   font-size: 1.1rem;
 }
 
-main .table .hidden-moreorless form input:focus {
+.hidden-moreorless form input:focus {
   outline: none;
 }
 
-main .table .hidden-moreorless form .submit {
+.hidden-moreorless form .submit {
   height: 2.5rem;
   border: none;
   background-color: #189251;
@@ -258,64 +299,83 @@ main .table .hidden-moreorless form .submit {
   font-size: 1.2rem;
 }
 
-main .table .hidden-moreorless form .submit:hover {
+.hidden-moreorless form .submit:hover {
   background-color: #178048;
 }
 
-main .table .hidden-edits {
+.hidden-edits {
   position: absolute;
-  width: 60rem;
-  height: 25rem;
+  width: 45rem;
+  height: 40rem;
   border: none;
   background-color: #ffffff;
-  top: 100px;
-  right: 240px;
-  z-index: 10;
+  top: calc(50% - 20rem);
+  right: calc(50% - 22.5rem);
+  -webkit-box-shadow: #e1e1e1 0px 0px 6px 0px;
+          box-shadow: #e1e1e1 0px 0px 6px 0px;
   display: none;
+  z-index: 10;
 }
 
-main .table .hidden-edits .header-edits {
+.hidden-edits .window-header {
   background-color: #2dbb70;
-  height: 4rem;
+  height: 12.5%;
   font-size: 1.5rem;
   color: #ffffff;
-  height: 20%;
 }
 
-main .table .hidden-edits .header-edits .exit-edits {
+.hidden-edits .window-header .exit-edits {
   cursor: pointer;
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
-main .table .hidden-edits .header-edits .exit-edits:hover {
+.hidden-edits .window-header .exit-edits:hover {
   opacity: 0.8;
 }
 
-main .table .hidden-edits form {
-  height: 80%;
+.hidden-edits form {
+  width: 70%;
+  height: 81%;
 }
 
-main .table .hidden-edits form input {
+.hidden-edits form #cod, .hidden-edits form #date {
+  display: none;
+}
+
+.hidden-edits form input {
+  width: 20rem;
+  height: 3.2rem;
   border: none;
   border-bottom: 2px solid #000000;
+  font-size: 1.1rem;
 }
 
-main .table .hidden-edits form input:focus {
+.hidden-edits form input:focus {
   outline: none;
 }
 
-main .table .hidden-edits form #att {
-  width: 15rem;
-  height: 2.7rem;
-  background-color: #189251;
+.hidden-edits form .submit {
+  height: 2.5rem;
   border: none;
-  font-size: 1.2rem;
+  background-color: #189251;
   color: #ffffff;
+  font-size: 1.2rem;
 }
 
-main .table .hidden-edits form #att:hover {
+.hidden-edits form .submit:hover {
   background-color: #178048;
+}
+
+main {
+  min-height: 91vh;
+}
+
+main .table {
+  width: 100rem;
+  height: 50rem;
+  margin: 0;
+  position: absolute;
 }
 
 main .table .left-infos {

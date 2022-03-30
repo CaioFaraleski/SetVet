@@ -16,6 +16,68 @@
     <link rel="shortcut icon" href="assets/img/home/header-logo.png" type="image/x-icon">
 </head>
 <body>
+    <img src="assets/img/loading.gif" class="loading">
+    <div class="areYouSure justify-content-center align-items-center flex-wrap">
+        <div class="w-100 d-flex justify-content-center">Você tem certeza que deseja remover este item?</div>
+        <button class="yes me-4">Ok</button>
+        <button class="cancel ms-4">Cancelar</button>
+    </div>
+    <div class="hidden" id="addHidden">
+        <div class="w-100 h-100 d-flex flex-column justify-content-between align-items-center">
+            <div class="window-header d-flex justify-content-between align-items-center px-3 w-100">
+                Adicionar Produtos
+                <figure class="exit">
+                    <img src="assets/img/inventory/exit.png" class="w-100 h-100">
+                </figure>
+            </div>
+            <form action="" class="d-flex flex-column justify-content-start align-items-center">
+                <input type="text" class="mt-4" placeholder="Nome do Produto" id="addName" required>
+                <input type="text" class="mt-4" placeholder="Preço do Produto" id="addPrice" required>
+                <input type="text" class="mt-4" placeholder="Quantidade" id="addAmount" required>
+                <input type="submit" class="mt-5 submit" id="addSubmit">
+            </form>
+        </div>
+    </div>
+    <div class="hidden-moreorless">
+        <div class="w-100 h-100 d-flex flex-column justify-content-between align-items-center">
+            <div class="window-header d-flex justify-content-between align-items-center px-3 w-100">
+                Adicionar ou remover itens do estoque
+                <figure class="exit-more">
+                    <img src="assets/img/inventory/exit.png" class="w-100 h-100">
+                </figure>
+            </div>
+            <form action="" class="d-flex flex-column justify-content-center align-items-center" id="moreOrLessForm">
+                <input type="text" class="hidden-cod">
+                <div class="d-flex justify-content-between">
+                    <div>Remover</div>
+                    <label class="switch">
+                        <input type="checkbox" class="adicionar" value="adicionar">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <input type="text" class="mt-4" placeholder="Quantidade" id="quantMoreOrLess">
+                <input type="submit" class="my-5 submit" id="moreOrLessSubmit">
+            </form>
+        </div>
+    </div>
+    <div class="hidden-edits">
+        <div class="w-100 h-100 d-flex flex-column align-items-center">
+            <div class="window-header d-flex justify-content-between align-items-center px-3 w-100">
+                Editar Produtos
+                    <figure class="exit-edits">
+                        <img src="assets/img/inventory/exit.png" class="w-100 h-100">
+                    </figure>
+            </div>
+            <form action="" class="d-flex flex-column justify-content-center align-items-center">
+                <input class="mt-4" type="text" id="cod" name="cod">
+                <input class="mt-4" type="text" id="name" name="name" placeholder="Nome do produto">
+                <input class="mt-4" type="text" id="date" name="date">
+                <input class="mt-4" type="text" id="val" name="val" placeholder="Preço do produto">
+                <input class="mt-4" type="text" id="quant" name="quant" placeholder="Quantidade em estoque">
+                <input class="mt-5 submit" type="submit" id="att" value="Atualizar">
+            </form>
+        </div>
+    </div>
     <header class="d-flex justify-content-between align-items-center">
         <div class="d-flex align-items-center">
             <figure>
@@ -41,60 +103,6 @@
     <main class="d-flex justify-content-center align-items-center">
         <div class="w-100 h-100 d-flex justify-content-center align-items-center">
             <div class="table d-flex">
-                <div class="hidden" id="addHidden">
-                    <div class="w-100 h-100 d-flex flex-column justify-content-between align-items-center">
-                        <div class="window-header d-flex justify-content-between align-items-center px-3 w-100">
-                            Adicionar Produtos
-                            <figure class="exit">
-                                <img src="assets/img/inventory/exit.png" class="w-100 h-100">
-                            </figure>
-                        </div>
-                        <form action="" class="d-flex flex-column justify-content-start align-items-center">
-                            <input type="text" class="mt-4" placeholder="Nome do Produto" id="addName" required>
-                            <input type="text" class="mt-4" placeholder="Preço do Produto" id="addPrice" required>
-                            <input type="text" class="mt-4" placeholder="Quantidade" id="addAmount" required>
-                            <input type="submit" class="mt-5 submit" id="addSubmit">
-                        </form>
-                    </div>
-                </div>
-                <div class="hidden-moreorless">
-                    <div class="w-100 h-100 d-flex flex-column justify-content-between align-items-center">
-                        <div class="window-header d-flex justify-content-between align-items-center px-3 w-100">
-                            Adicionar ou remover itens ao estoque
-                            <figure class="exit-more">
-                                <img src="assets/img/inventory/exit.png" class="w-100 h-100">
-                            </figure>
-                        </div>
-                        <form action="" class="d-flex flex-column justify-content-center align-items-center" id="moreOrLessForm">
-                            <input type="text" class="hidden-cod">
-                            <div class="d-flex justify-content-between">
-                                <div>Remover</div>
-                                <label class="switch">
-                                    <input type="checkbox" class="adicionar" value="adicionar">
-                                    <span class="slider round"></span>
-                                </label>
-                            </div>
-                            <input type="text" class="mt-4" placeholder="Quantidade" id="quantMoreOrLess">
-                            <input type="submit" class="my-5 submit" id="moreOrLessSubmit">
-                        </form>
-                    </div>
-                </div>
-                <div class="hidden-edits">
-                    <div class="header-edits d-flex justify-content-between align-items-center px-3">
-                        Editar Produtos
-                            <figure class="exit-edits">
-                                <img src="assets/img/inventory/exit.png" class="w-100 h-100">
-                            </figure>
-                    </div>
-                    <form action="" class="d-flex align-items-center justify-content-around flex-wrap">
-                        <label for="cod"><input class="ms-2" type="text" id="cod" name="cod"></label>
-                        <label for="name">Nome<input class="ms-2" type="text" id="name" name="name"></label>
-                        <label for="date">Data<input class="ms-2" type="text" id="date" name="date"></label>
-                        <label for="val">Valor<input class="ms-2" type="text" id="val" name="val"></label>
-                        <label for="quant">Quantidade<input class="ms-2" type="text" id="quant" name="quant"></label>
-                        <div class="w-100 d-flex justify-content-center"><input type="submit" id="att" value="Atualizar"></div>
-                    </form>
-                </div>
                 <div class="left-infos d-flex flex-column justify-content-around align-items-center">
                     Visão geral
                     <div class="products d-flex flex-column justify-content-center align-items-start w-50" id="totalProducts">

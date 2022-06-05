@@ -93,7 +93,7 @@
     }
 }
 main {
-    min-height: 91vh;
+    height: 91vh;
     .check {
         position: absolute;
         z-index: 30;
@@ -159,8 +159,8 @@ main {
           }
     }
     .calendar {
-        width: 100rem;
-        height: 50rem;
+        width: 83.4%;
+        height: 81.4%;
         display: flex;
         .left {
             width: 20%;
@@ -170,13 +170,16 @@ main {
             box-shadow: 0 0 1em $green;
             z-index: 2;
             .years {
-                height: 8rem;
+                height: 16.1%;
                 button {
                     background-color: transparent;
                     border: none;
-                    width: 1.8rem;
+                    width: 9%;
                     &:hover {
                         filter: brightness(0.5);
+                    }
+                    img {
+                        width: 100%;
                     }
                 }
                 .year {
@@ -185,6 +188,7 @@ main {
                 }
             }
             .months {
+                height: 69.2%;
                 button {
                     color: $white;
                     background-color: transparent;
@@ -193,7 +197,7 @@ main {
                     display: flex;
                     justify-content: start;
                     align-items: center;
-                    height: 2.8rem;
+                    height: 8.3%;
                     padding-left: 3.8rem;
                     &:hover {
                         background-color: #00a84f;
@@ -209,6 +213,7 @@ main {
             z-index: 1;
             .month {
                 height: 17%;
+                width: 100%;
                 font-size: 2.2rem;
                 color: $light-gray;
             }
@@ -256,12 +261,11 @@ main {
                 height: 13%;
                 .add {
                     background-color: #1ca05a;
-                    width: 10rem;
-                    height: 3.5rem;
+                    width: 20%;
+                    height: 54%;
                     border: none;
                     figure {
-                        height: 1.8rem;
-                        width: 1.8rem;
+                        height: 53%;
                         margin: 0;
                     }
                     &:hover {
@@ -442,4 +446,16 @@ main {
 }
 ::-webkit-scrollbar-thumb {
     background-color: $dark-green;
+}
+
+@media (max-width: 1536px) {
+    html {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 1366px) {
+    html {
+        font-size: 10px;
+    }
 }

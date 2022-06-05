@@ -28,10 +28,15 @@ body {
             font-size: 2rem;
             color: $white;
         }
+        .title-logo {
+            width: 9.4%;
+        }
         .buttons-home {
             justify-content: center;
-            width: 53rem;
+            width: 46%;
+            height: 30%;
             a {
+                height: 100%;
                 margin-left: 5rem;
                 color: $white;
                 font-size: 1.3rem;
@@ -45,7 +50,9 @@ body {
             }
         }
         .signup {
+            height: 30%;
             a {
+                height: 100%;
                 color: $white;
                 font-size: 1.5rem;
                 text-decoration: none;

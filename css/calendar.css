@@ -32,14 +32,20 @@ body header h1 {
   color: #ffffff;
 }
 
+body header .title-logo {
+  width: 9.4%;
+}
+
 body header .buttons-home {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 53rem;
+  width: 46%;
+  height: 30%;
 }
 
 body header .buttons-home a {
+  height: 100%;
   margin-left: 5rem;
   color: #ffffff;
   font-size: 1.3rem;
@@ -54,7 +60,12 @@ body header .buttons-home .dnone {
   display: none;
 }
 
+body header .signup {
+  height: 30%;
+}
+
 body header .signup a {
+  height: 100%;
   color: #ffffff;
   font-size: 1.5rem;
   text-decoration: none;
@@ -171,7 +182,7 @@ body header .signup #logout {
 }
 
 main {
-  min-height: 91vh;
+  height: 91vh;
 }
 
 main .check {
@@ -253,8 +264,8 @@ main .check .switch .slider:before {
 }
 
 main .calendar {
-  width: 100rem;
-  height: 50rem;
+  width: 83.4%;
+  height: 81.4%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -271,13 +282,13 @@ main .calendar .left {
 }
 
 main .calendar .left .years {
-  height: 8rem;
+  height: 16.1%;
 }
 
 main .calendar .left .years button {
   background-color: transparent;
   border: none;
-  width: 1.8rem;
+  width: 9%;
 }
 
 main .calendar .left .years button:hover {
@@ -285,9 +296,17 @@ main .calendar .left .years button:hover {
           filter: brightness(0.5);
 }
 
+main .calendar .left .years button img {
+  width: 100%;
+}
+
 main .calendar .left .years .year {
   color: #ffffff;
   font-size: 1.5rem;
+}
+
+main .calendar .left .months {
+  height: 69.2%;
 }
 
 main .calendar .left .months button {
@@ -304,7 +323,7 @@ main .calendar .left .months button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 2.8rem;
+  height: 8.3%;
   padding-left: 3.8rem;
 }
 
@@ -323,6 +342,7 @@ main .calendar .mid {
 
 main .calendar .mid .month {
   height: 17%;
+  width: 100%;
   font-size: 2.2rem;
   color: #9e9e9e;
 }
@@ -394,14 +414,13 @@ main .calendar .mid .button-add {
 
 main .calendar .mid .button-add .add {
   background-color: #1ca05a;
-  width: 10rem;
-  height: 3.5rem;
+  width: 20%;
+  height: 54%;
   border: none;
 }
 
 main .calendar .mid .button-add .add figure {
-  height: 1.8rem;
-  width: 1.8rem;
+  height: 53%;
   margin: 0;
 }
 
@@ -638,5 +657,17 @@ main .vaccine .right-vaccine .appointments-vaccine div figure {
 
 ::-webkit-scrollbar-thumb {
   background-color: #2dbb70;
+}
+
+@media (max-width: 1536px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 1366px) {
+  html {
+    font-size: 10px;
+  }
 }
 /*# sourceMappingURL=calendar.css.map */

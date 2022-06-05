@@ -79,7 +79,7 @@
         <div class="buttons-home d-flex align-items-center">
             <a href="index.html">Home</a>
             <a href="calendar.html" class="dnone">Agenda</a>
-            <a href="clients.html" class="dnone">Clientes</a>
+            <a href="" class="dnone">Clientes</a>
             <a href="services.html" class="dnone">Serviços</a>
             <a href="inventory.html" class="dnone">Produtos</a>
             <a href="about.html">Sobre</a>
@@ -93,32 +93,36 @@
         <div class="table-services d-flex flex-wrap">
             <div class="table-header d-flex justify-content-center align-items-center w-100">
                 Gerenciador de Serviços
-                <div class="orderby d-flex align-items-center flex-wrap mb-2 mt-3">
-                    <div class="order-text d-flex w-100">
-                        <div>Ordenar por</div>
-                        <figure class="ms-2">
-                            <img src="https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png" class="w-100 h-100">
-                        </figure>
-                    </div>
-                    <div class="order-list flex-column">
-                        <div class="w-100 d-flex justify-content-start align-items-center ps-3" id="orderByNameService">
-                            Nome
+                <div class="orderby-parent d-flex justify-content-end align-items-end">
+                    <div class="orderby d-flex align-items-center flex-wrap">
+                        <div class="order-text d-flex w-100">
+                            <div>Ordenar por</div>
+                            <figure class="ms-2">
+                                <img src="https://caiofaraleski.github.io/SetVet/assets/img/inventory/down-arrow.png" class="w-100 h-100">
+                            </figure>
                         </div>
-                        <div class="w-100 d-flex justify-content-start align-items-center ps-3" id="orderByDateService">
-                            Data
-                        </div>
-                        <div class="w-100 d-flex justify-content-start align-items-center ps-3" id="orderByImageService">
-                            Imagem
+                        <div class="order-list flex-column">
+                            <div class="w-100 d-flex justify-content-start align-items-center ps-3" id="orderByNameService">
+                                Nome
+                            </div>
+                            <div class="w-100 d-flex justify-content-start align-items-center ps-3" id="orderByDateService">
+                                Data
+                            </div>
+                            <div class="w-100 d-flex justify-content-start align-items-center ps-3" id="orderByImageService">
+                                Imagem
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="search d-flex mb-2">
-                    <figure class="me-2">
-                        <img src="assets/img/inventory/magnifier.png" class="w-100 h-100">
-                    </figure>
-                    <form action="POST">
-                        <input type="search" placeholder="Pesquisar produtos" id="searchServices">
-                    </form>
+                <div class="search-parent">
+                    <div class="search d-flex">
+                        <figure class="m-0 d-flex align-self-start align-items-end">
+                            <img src="assets/img/inventory/magnifier.png" class="h-50">
+                        </figure>
+                        <form action="POST" class="h-100">
+                            <input class="w-100" type="search" placeholder="Pesquisar produtos" id="searchServices">
+                        </form>
+                    </div>
                 </div>
                 <button class="add-service">Adicionar</button>
             </div>

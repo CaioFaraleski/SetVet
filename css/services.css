@@ -32,14 +32,20 @@ body header h1 {
   color: #ffffff;
 }
 
+body header .title-logo {
+  width: 9.4%;
+}
+
 body header .buttons-home {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 53rem;
+  width: 46%;
+  height: 30%;
 }
 
 body header .buttons-home a {
+  height: 100%;
   margin-left: 5rem;
   color: #ffffff;
   font-size: 1.3rem;
@@ -54,7 +60,12 @@ body header .buttons-home .dnone {
   display: none;
 }
 
+body header .signup {
+  height: 30%;
+}
+
 body header .signup a {
+  height: 100%;
   color: #ffffff;
   font-size: 1.5rem;
   text-decoration: none;
@@ -233,12 +244,12 @@ body header .signup #logout {
 }
 
 main {
-  min-height: 91vh;
+  height: 91vh;
 }
 
 main .table-services {
-  width: 100rem;
-  height: 50rem;
+  width: 83.4%;
+  height: 81.4%;
 }
 
 main .table-services .table-header {
@@ -251,8 +262,8 @@ main .table-services .table-header {
 
 main .table-services .table-header button {
   font-size: 1.3rem;
-  width: 10rem;
-  height: 3.5rem;
+  width: 11.7%;
+  height: 35.1%;
   color: #ffffff;
   font-weight: 400;
   background-color: #2dbb70;
@@ -263,63 +274,80 @@ main .table-services .table-header button:hover {
   background-color: #229e5c;
 }
 
-main .table-services .table-header .orderby {
-  width: 11.5rem;
+main .table-services .table-header .orderby-parent {
+  width: 19.2%;
+  height: 38%;
+}
+
+main .table-services .table-header .orderby-parent .orderby {
+  width: 69.6%;
+  font-size: 57.7%;
   font-size: 1.5rem;
   color: #999999;
-  margin-left: 5rem;
   cursor: pointer;
 }
 
-main .table-services .table-header .orderby .order-text div {
+main .table-services .table-header .orderby-parent .orderby .order-text {
+  height: 100%;
+}
+
+main .table-services .table-header .orderby-parent .orderby .order-text div {
   width: 75%;
 }
 
-main .table-services .table-header .orderby .order-text figure {
+main .table-services .table-header .orderby-parent .orderby .order-text figure {
   width: 1rem;
   height: 1rem;
   margin: 0;
 }
 
-main .table-services .table-header .orderby .order-text:hover {
+main .table-services .table-header .orderby-parent .orderby .order-text:hover {
   -webkit-filter: brightness(0);
           filter: brightness(0);
 }
 
-main .table-services .table-header .orderby .order-list {
+main .table-services .table-header .orderby-parent .orderby .order-list {
   width: 16rem;
   position: absolute;
   top: 214px;
   display: none;
 }
 
-main .table-services .table-header .orderby .order-list div {
+main .table-services .table-header .orderby-parent .orderby .order-list div {
   background-color: #ffffff;
   height: 3rem;
   font-size: 1.2rem;
 }
 
-main .table-services .table-header .orderby .order-list div:hover {
+main .table-services .table-header .orderby-parent .orderby .order-list div:hover {
   background-color: #e0e0e0;
 }
 
-main .table-services .table-header .search {
+main .table-services .table-header .search-parent {
+  width: 34.6%;
+  height: 40.1%;
+}
+
+main .table-services .table-header .search-parent .search {
   height: 4rem;
-  margin-right: 14rem;
 }
 
-main .table-services .table-header .search figure {
-  width: 2rem;
-  height: 2rem;
+main .table-services .table-header .search-parent .search figure {
+  height: 90%;
 }
 
-main .table-services .table-header .search input {
+main .table-services .table-header .search-parent .search form {
+  width: 47%;
+}
+
+main .table-services .table-header .search-parent .search form input {
   border: none;
   border-bottom: 2px solid #999999;
   font-size: 1.2rem;
+  height: 51%;
 }
 
-main .table-services .table-header .search input:focus {
+main .table-services .table-header .search-parent .search form input:focus {
   outline: none;
 }
 
@@ -386,5 +414,17 @@ main .table-services .right .sub-table::-webkit-scrollbar {
 
 main .table-services .right .sub-table::-webkit-scrollbar-thumb {
   background-color: #c3c3c3;
+}
+
+@media (max-width: 1536px) {
+  html {
+    font-size: 12.3px;
+  }
+}
+
+@media (max-width: 1366px) {
+  html {
+    font-size: 10px;
+  }
 }
 /*# sourceMappingURL=services.css.map */

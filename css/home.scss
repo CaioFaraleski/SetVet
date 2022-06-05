@@ -19,16 +19,19 @@ body {
         background-repeat: no-repeat;
         background-size: 48rem;
         min-height: 88vh;
+        position: relative;
         div {
             width: 48rem;
             height: 23rem;
             font-size: 2rem;
             color: #ffffff;
-            margin: 0 0 0 26rem;
+            // margin: 0 0 0 26rem;
+            position: absolute;
+            right: 19%;
+            top: 14%;
         }
         a {
             text-decoration: none;
-            margin: 0 0 17rem 15rem;
             width: 25rem;
             height: 3rem;
             background-color: $white;
@@ -37,6 +40,9 @@ body {
             font-weight: 500;
             border: none;
             box-shadow: 0 0 0.5em #e2e2e2;
+            position: absolute;
+            bottom: 42%;
+            right: 35%;
             cursor: pointer;
             &:hover {
                 background-color: #f1f1f1;
@@ -53,4 +59,16 @@ body {
 }
 ::-webkit-scrollbar-thumb {
     background-color: $dark-green;
+}
+
+@media (max-width: 1536px) {
+    html {
+        font-size: 12.3px;
+    }
+}
+
+@media (max-width: 1366px) {
+    html {
+        font-size: 10px;
+    }
 }

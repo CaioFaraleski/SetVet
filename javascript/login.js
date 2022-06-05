@@ -38,7 +38,7 @@ if (localStorage.logado === "sim") {
     document.querySelector(".buttons-home").children[5].style.margin = "0"
     document.querySelector(".buttons-home").style.justifyContent = "space-between"
     document.querySelector(".signup").children[0].style.display = "none";
-    document.querySelector(".signup").children[1].style.display = "block";
+    document.querySelector(".signup").children[1].style.display = "flex";
 }
 
 logout.addEventListener('click', function() {

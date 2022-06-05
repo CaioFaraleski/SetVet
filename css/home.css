@@ -41,7 +41,7 @@ body header .buttons-home {
       -ms-flex-pack: center;
           justify-content: center;
   width: 46%;
-  height: 30%;
+  height: 35%;
 }
 
 body header .buttons-home a {
@@ -50,6 +50,12 @@ body header .buttons-home a {
   color: #ffffff;
   font-size: 1.3rem;
   text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body header .buttons-home a:hover {
@@ -61,7 +67,7 @@ body header .buttons-home .dnone {
 }
 
 body header .signup {
-  height: 30%;
+  height: 35%;
 }
 
 body header .signup a {
@@ -69,6 +75,12 @@ body header .signup a {
   color: #ffffff;
   font-size: 1.5rem;
   text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body header .signup #logout {
@@ -93,6 +105,7 @@ body main {
   background-repeat: no-repeat;
   background-size: 48rem;
   min-height: 88vh;
+  position: relative;
 }
 
 body main div {
@@ -100,12 +113,13 @@ body main div {
   height: 23rem;
   font-size: 2rem;
   color: #ffffff;
-  margin: 0 0 0 26rem;
+  position: absolute;
+  right: 19%;
+  top: 14%;
 }
 
 body main a {
   text-decoration: none;
-  margin: 0 0 17rem 15rem;
   width: 25rem;
   height: 3rem;
   background-color: #ffffff;
@@ -115,6 +129,9 @@ body main a {
   border: none;
   -webkit-box-shadow: 0 0 0.5em #e2e2e2;
           box-shadow: 0 0 0.5em #e2e2e2;
+  position: absolute;
+  bottom: 42%;
+  right: 35%;
   cursor: pointer;
 }
 
@@ -134,5 +151,17 @@ body main a:active {
 
 ::-webkit-scrollbar-thumb {
   background-color: #2dbb70;
+}
+
+@media (max-width: 1536px) {
+  html {
+    font-size: 12.3px;
+  }
+}
+
+@media (max-width: 1366px) {
+  html {
+    font-size: 10px;
+  }
 }
 /*# sourceMappingURL=home.css.map */

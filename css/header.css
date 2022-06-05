@@ -41,7 +41,7 @@ body header .buttons-home {
       -ms-flex-pack: center;
           justify-content: center;
   width: 46%;
-  height: 30%;
+  height: 35%;
 }
 
 body header .buttons-home a {
@@ -50,6 +50,12 @@ body header .buttons-home a {
   color: #ffffff;
   font-size: 1.3rem;
   text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body header .buttons-home a:hover {
@@ -61,7 +67,7 @@ body header .buttons-home .dnone {
 }
 
 body header .signup {
-  height: 30%;
+  height: 35%;
 }
 
 body header .signup a {
@@ -69,6 +75,12 @@ body header .signup a {
   color: #ffffff;
   font-size: 1.5rem;
   text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body header .signup #logout {

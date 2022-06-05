@@ -7,49 +7,52 @@ a {
 body {
   width: 100vw;
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background-image: url(../assets/img/login-bg.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: right;
 }
 
-body figure {
-  width: 2.5rem;
-  height: 2.5rem;
+body .div-left {
+  position: relative;
 }
 
-body figure #back-to-home {
+body .div-left .back {
+  position: absolute;
+  width: 5%;
+  top: 0;
+  left: 0;
+}
+
+body .div-left .back #back-to-home {
   cursor: pointer;
 }
 
-body figure #back-to-home:hover {
+body .div-left .back #back-to-home:hover {
   -webkit-filter: contrast(0.6);
           filter: contrast(0.6);
 }
 
-body div {
+body .div-left div {
+  width: 78.4%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
 }
 
-body div #registerForm {
+body .div-left div #registerForm {
   display: none;
 }
 
-body div #loginForm {
+body .div-left div #loginForm {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-body div form {
+body .div-left div form {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -61,22 +64,21 @@ body div form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-left: 27rem;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
 }
 
-body div form figure {
+body .div-left div form figure {
   width: 7rem;
   height: 7rem;
 }
 
-body div form h1 {
+body .div-left div form h1 {
   font-size: 1.7rem;
 }
 
-body div form .logins {
+body .div-left div form .logins {
   margin-top: 2.5rem;
   width: 20rem;
   height: 3.2rem;
@@ -87,15 +89,13 @@ body div form .logins {
       justify-content: space-around;
 }
 
-body div form .logins button {
+body .div-left div form .logins button {
   height: 100%;
-  width: 3.8rem;
   border: none;
-  border-radius: 100rem;
   background-color: transparent;
 }
 
-body div form .submit {
+body .div-left div form .submit {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -110,7 +110,7 @@ body div form .submit {
   background-color: #00B554;
 }
 
-body div form input {
+body .div-left div form input {
   border: none;
   border-bottom: 2px solid #000;
   width: 20rem;
@@ -120,18 +120,18 @@ body div form input {
   outline: 0;
 }
 
-body div #checkEmail {
+body .div-left div #checkEmail {
   display: none;
   margin-left: 15rem;
 }
 
-body div #checkEmail p {
+body .div-left div #checkEmail p {
   text-align: center;
   font-size: 2rem;
   width: 32rem;
 }
 
-body div #checkEmail button {
+body .div-left div #checkEmail button {
   width: 15rem;
   height: 2.5rem;
   border-radius: 2rem;
@@ -140,18 +140,18 @@ body div #checkEmail button {
   color: #fff;
 }
 
-body div #checked {
+body .div-left div #checked {
   display: none;
   margin-left: 15rem;
 }
 
-body div #checked p {
+body .div-left div #checked p {
   text-align: center;
   font-size: 2rem;
   width: 32rem;
 }
 
-body div #checked button {
+body .div-left div #checked button {
   width: 15rem;
   height: 2.5rem;
   border-radius: 2rem;
@@ -159,31 +159,59 @@ body div #checked button {
   background-color: #00B554;
 }
 
-body div #checked button a {
+body .div-left div #checked button a {
   color: #fff;
 }
 
-body #loginOrRegister {
-  margin: 5rem 0 0 28rem;
+body .div-right {
+  background-image: url(../assets/img/login-bg.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: top right;
 }
 
-body #loginOrRegister h2 {
+body .div-right #loginOrRegister {
+  width: 100%;
+  height: 50%;
+}
+
+body .div-right #loginOrRegister .div-h2 {
+  width: 60%;
+}
+
+body .div-right #loginOrRegister .div-h2 h2 {
+  width: 85%;
   color: #fff;
   text-align: center;
 }
 
-body #loginOrRegister h2 span {
+body .div-right #loginOrRegister .div-h2 h2 span {
   font-size: 2.5rem;
   font-weight: 700;
 }
 
-body #loginOrRegister button {
+body .div-right #loginOrRegister .div-bt {
+  width: 43%;
+}
+
+body .div-right #loginOrRegister .div-bt button {
   background-color: #fff;
   color: #00B554;
   border: none;
-  width: 15rem;
   height: 2.5rem;
   margin-top: 3rem;
   border-radius: 0.6rem;
+}
+
+@media (max-width: 1536px) {
+  html {
+    font-size: 12.3px;
+  }
+}
+
+@media (max-width: 1366px) {
+  html {
+    font-size: 10px;
+  }
 }
 /*# sourceMappingURL=register.css.map */

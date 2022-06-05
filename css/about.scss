@@ -19,12 +19,13 @@ main {
     section {
         height: 91vh;
         figure {
-            width: auto;
-            height: 25rem;
+            height: 40.7%;
+            margin: 0;
             display: none;
         }
         .box {
-            width: 45rem;
+            width: 37.5%;
+            height: 35.7%;
             .title {
                 display: none;
                 font-size: 4rem;
@@ -49,8 +50,8 @@ main {
             }
             a {
                 display: none;
-                width: 18rem;
-                height: 3.6rem;
+                width: 40%;
+                height: 16.4%;
                 border: none;
                 background-color: #22b16f;
                 font-size: 1.6rem;
@@ -87,4 +88,16 @@ main {
 }
 ::-webkit-scrollbar-thumb {
     background-color: $dark-green;
+}
+
+@media (max-width: 1536px) {
+    html {
+        font-size: 12.3px;
+    }
+}
+
+@media (max-width: 1366px) {
+    html {
+        font-size: 10px;
+    }
 }

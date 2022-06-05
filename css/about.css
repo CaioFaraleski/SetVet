@@ -110,13 +110,14 @@ main section {
 }
 
 main section figure {
-  width: auto;
-  height: 25rem;
+  height: 40.7%;
+  margin: 0;
   display: none;
 }
 
 main section .box {
-  width: 45rem;
+  width: 37.5%;
+  height: 35.7%;
 }
 
 main section .box .title {
@@ -146,8 +147,8 @@ main section .box .text {
 
 main section .box a {
   display: none;
-  width: 18rem;
-  height: 3.6rem;
+  width: 40%;
+  height: 16.4%;
   border: none;
   background-color: #22b16f;
   font-size: 1.6rem;
@@ -185,5 +186,17 @@ main .inventory {
 
 ::-webkit-scrollbar-thumb {
   background-color: #2dbb70;
+}
+
+@media (max-width: 1536px) {
+  html {
+    font-size: 12.3px;
+  }
+}
+
+@media (max-width: 1366px) {
+  html {
+    font-size: 10px;
+  }
 }
 /*# sourceMappingURL=about.css.map */

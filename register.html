@@ -15,58 +15,67 @@
   <link rel="shortcut icon" href="assets/img/home/header-logo.png" type="image/x-icon">
   <title>Login and Register</title>
 </head>
-<body>
-  <figure>
-    <a href="index.html">
-      <img src="assets/img/arrow-back.png" class="w-100 h-100 m-4" id="back-to-home">
-    </a>
-  </figure>
-  <div>
-    <form id="registerForm" class="h-100">
-      <figure>
-        <img src="assets/img/logo.png" class="w-100 h-100" alt="">
-      </figure>
-      <input type="text" name="name" placeholder="Insira um nome de usuário" id="namer">
-      <input type="email" name="email" placeholder="Insira um e-mail válido" id="emailr">
-      <input type="password" name="password" placeholder="Insira uma senha" id="passwordr">
-      <input type="password" name="check" placeholder="Verifique sua senha" id="checkpass">
-      <input type="submit" class="submit" id="register" value="Criar conta">
-      <h5 class="mt-4">ou</h4>
-      <div class="logins">
-        <button class="loginWithFacebook"><img src="assets/img/facebook.png" class="w-100 h-100" alt=""></button>
-        <button class="loginWithGoogle"><img src="assets/img/google.png" class="w-100 h-100" alt=""></button>
-        <button class="loginWithGithub"><img src="assets/img/github.png" class="w-100 h-100" alt=""></button>
+<body class="d-flex">
+  <div class="div-left d-flex justify-content-center align-items-center w-50 h-100">
+    <figure class="back">
+      <a href="index.html">
+        <img src="assets/img/arrow-back.png" class="w-100 h-100 m-4" id="back-to-home">
+      </a>
+    </figure>
+    <div>
+      <form id="registerForm" class="h-100">
+        <figure>
+          <img src="assets/img/logo.png" class="w-100 h-100" alt="">
+        </figure>
+        <input type="text" name="name" placeholder="Insira um nome de usuário" id="namer">
+        <input type="email" name="email" placeholder="Insira um e-mail válido" id="emailr">
+        <input type="password" name="password" placeholder="Insira uma senha" id="passwordr">
+        <input type="password" name="check" placeholder="Verifique sua senha" id="checkpass">
+        <input type="submit" class="submit" id="register" value="Criar conta">
+        <h5 class="mt-4">ou</h4>
+        <div class="logins">
+          <button class="loginWithFacebook"><img src="assets/img/facebook.png" class="w-100 h-100" alt=""></button>
+          <button class="loginWithGoogle"><img src="assets/img/google.png" class="w-100 h-100" alt=""></button>
+          <button class="loginWithGithub"><img src="assets/img/github.png" class="w-100 h-100" alt=""></button>
+        </div>
+      </form>
+      <form id="loginForm" class="h-100">
+        <figure>
+          <img src="assets/img/logo.png" class="w-100 h-100" alt="">
+        </figure>
+        <input type="email" name="email" placeholder="Insira seu e-mail" id="email">
+        <input type="password" name="password" placeholder="Insira sua senha" id="password">
+        <a class="d-flex justify-content-start w-100 fw-light mt-1">Esqueceu a senha?</a>
+        <input type="submit" class="submit" id="login" value="Entrar">
+        <h5 class="mt-4">ou</h4>
+        <div class="logins">
+          <button class="loginWithFacebook"><img src="assets/img/facebook.png" class="w-100 h-100" alt=""></button>
+          <button class="loginWithGoogle"><img src="assets/img/google.png" class="w-100 h-100" alt=""></button>
+          <button class="loginWithGithub"><img src="assets/img/github.png" class="w-100 h-100" alt=""></button>
+        </div>
+      </form>
+      <div id="checkEmail" class="flex-column align-items-center">
+        <p>Verifique seu e-mail clicando no botão abaixo!</p>
+        <button>Verifique seu e-mail</button>
       </div>
-    </form>
-    <form id="loginForm" class="h-100">
-      <figure>
-        <img src="assets/img/logo.png" class="w-100 h-100" alt="">
-      </figure>
-      <input type="email" name="email" placeholder="Insira seu e-mail" id="email">
-      <input type="password" name="password" placeholder="Insira sua senha" id="password">
-      <a class="d-flex justify-content-start w-100 fw-light mt-1">Esqueceu a senha?</a>
-      <input type="submit" class="submit" id="login" value="Entrar">
-      <h5 class="mt-4">ou</h4>
-      <div class="logins">
-        <button class="loginWithFacebook"><img src="assets/img/facebook.png" class="w-100 h-100" alt=""></button>
-        <button class="loginWithGoogle"><img src="assets/img/google.png" class="w-100 h-100" alt=""></button>
-        <button class="loginWithGithub"><img src="assets/img/github.png" class="w-100 h-100" alt=""></button>
+      <div id="checked" class="flex-column align-items-center">
+        <p>Seu e-mail foi verificado!</p>
+        <button><a href="index.html">Voltar</a></button>
       </div>
-    </form>
-    <div id="checkEmail" class="flex-column align-items-center">
-      <p>Verifique seu e-mail clicando no botão abaixo!</p>
-      <button>Verifique seu e-mail</button>
-    </div>
-    <div id="checked" class="flex-column align-items-center">
-      <p>Seu e-mail foi verificado!</p>
-      <button><a href="index.html">Voltar</a></button>
     </div>
   </div>
-  <div id="loginOrRegister" class="d-flex flex-column align-self-start">
-    <h2><span>Entre</span> para utilizar nossos serviços que te auxiliarão a gerenciar sua clínica.</h2>
-    <button id="funcButton">
-      Não possui uma conta?
-    </button>
+  <div class="div-right d-flex align-items-start w-50 h-100">
+    <div id="loginOrRegister" class="d-flex flex-column align-items-end justify-content-center">
+      <div class="div-h2 d-flex justify-content-start">
+        <h2
+        ><span>Entre</span> para utilizar nossos serviços que te auxiliarão a gerenciar sua clínica.</h2>
+      </div>
+      <div class="div-bt d-flex justify-content-start">
+        <button id="funcButton">
+          Não possui uma conta?
+        </button>
+      </div>
+    </div>
   </div>
 </body>
 <script src="javascript/register.js"></script>

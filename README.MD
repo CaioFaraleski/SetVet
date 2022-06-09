@@ -6,7 +6,7 @@ Se você quiser ver o projeto funcionando [clique aqui](https://caiofaraleski.gi
 
 ## Sobre o projeto
 
-Primeiramente este projeto foi criado para o meu TCC, do meu cruso Técnico de Informática. 
+Primeiramente este projeto foi criado para o meu TCC, do meu curso Técnico de Informática. 
 
 O propósito dele é de auxiliar na gerência de clínicas veterinárias, onde você pode: gerenciar seus clientes, marcar qualquer tipo de compromisso, gerenciar seus serviços e por fim se sua clínica tiver um estoque você também pode gerencia-lo por aqui.
 

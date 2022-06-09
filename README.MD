@@ -2,7 +2,7 @@
 
 <img href="" />![Preview-Screens](./img-readme.png)
 
-Se você quiser ver o projeto funcionando [clique aqui](https://drive.google.com/drive/folders/1rXFlogxaT5E0pthrrLhF1D_wOVbSHwhD).
+Se você quiser ver o projeto funcionando [clique aqui](https://caiofaraleski.github.io/SetVet/index.html).
 
 ## Sobre o projeto
 

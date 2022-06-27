@@ -1,12 +1,13 @@
+// config your changes 
 var firebaseConfig = {
-  apiKey: "AIzaSyC5trSTNssAA_F6y5UT6ENsrKLKbIzgyvM",
-  authDomain: "setvet-96c51.firebaseapp.com",
-  databaseURL: "https://setvet-96c51-default-rtdb.firebaseio.com",
-  projectId: "setvet-96c51",
-  storageBucket: "setvet-96c51.appspot.com",
-  messagingSenderId: "269858069719",
-  appId: "1:269858069719:web:4b5250b6653425a36a6492",
-  measurementId: "G-LGS15HGT1B"
+  apiKey: "apiKey",
+  authDomain: "authDomain",
+  databaseURL: "databaseURL",
+  projectId: "projectId",
+  storageBucket: "storageBucket",
+  messagingSenderId: "messagingSenderId",
+  appId: "appId",
+  measurementId: "measurementId"
 };
 
 // Initialize Firebase

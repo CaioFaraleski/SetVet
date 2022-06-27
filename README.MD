@@ -2,7 +2,7 @@
 
 <img href="" />![Preview-Screens](./img-readme.png)
 
-Se você quiser ver o projeto funcionando [clique aqui](https://caiofaraleski.github.io/SetVet/index.html).
+Se você quiser ver o projeto funcionando [clique aqui](https://setvet-96c51.web.app).
 
 ## Sobre o projeto
 
